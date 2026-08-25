@@ -1,5 +1,5 @@
-@extends('admin.dashboard')
-@section('admin')
+@extends('frontend.dashboard')
+@section('frontend')
 
 <section class="py-60">
       <div class="container">
