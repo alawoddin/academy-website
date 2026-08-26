@@ -6,7 +6,7 @@
 
               <div class="main-menu__logo">
                 <a href="{{ url('/') }}">
-                  <img src="{{ asset('frontend/assets/media/logo.png') }}" alt="Khedmat">
+                  <img src="{{ asset('frontend/assets/media/logos.png') }}" alt="Khedmat">
                 </a>
               </div>
 
