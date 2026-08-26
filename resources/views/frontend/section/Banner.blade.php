@@ -1,5 +1,4 @@
-@extends('frontend.dashboard')
-@section('frontend')
+
 
  <section class="hero-banner-1">
       <div class="container">
@@ -42,4 +41,4 @@
       </div>
     </section>
 
-@endsection
+

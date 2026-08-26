@@ -1,5 +1,4 @@
-@extends('frontend.dashboard')
-@section('frontend')
+
 
  <div class="py-80 bg-white">
       <div class="brands-slider">
@@ -42,4 +41,3 @@
       </div>
     </div>
 
-@endsection

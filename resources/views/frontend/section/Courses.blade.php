@@ -1,5 +1,4 @@
-@extends('frontend.dashboard')
-@section('frontend')
+
 
  <section class="courses-1 py-60">
       <div class="container">
@@ -226,4 +225,3 @@
       </div>
     </section>
 
-@endsection

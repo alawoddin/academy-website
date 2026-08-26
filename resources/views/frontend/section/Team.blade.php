@@ -1,5 +1,3 @@
-@extends('frontend.dashboard')
-@section('frontend')
 
 <section class="team py-60">
       <img src="assets/media/shapes/dots-1.png" alt="" class="dots">
@@ -122,6 +120,3 @@
         </div>
       </div>
     </section>
-
-    
-@endsection
