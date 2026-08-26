@@ -12,7 +12,7 @@
               tortor tincidunt egestas sit risus donec.</p>
             <div class="about__card mb-24 wow fadeInLeft" data-wow-delay="200ms">
               <div class="about__card__icon">
-                <img src="assets/media/icons/Clock.png" alt="">
+                <img src="{{asset('frontend/assets/media/icons/Clock.png')}}" alt="">
               </div>
               <div class="about__card__content">
                 <h5 class="mb-4p">Latest Courses</h5>
@@ -22,7 +22,7 @@
             </div>
             <div class="about__card mb-24 wow fadeInLeft" data-wow-delay="400ms">
               <div class="about__card__icon">
-                <img src="assets/media/icons/WiFi.png" alt="">
+                <img src="{{asset('frontend/assets/media/icons/WiFi.png')}}" alt="">
               </div>
               <div class="about__card__content">
                 <h5 class="mb-4p">Latest Courses</h5>
@@ -37,10 +37,10 @@
           <div class="col-lg-6">
             <div class="educate-tilt"
               data-tilt-options='{ "glare": false, "maxGlare": 0, "maxTilt": 2, "speed": 700, "scale": 1 }'>
-              <img src="assets/media/resources/about-1.png" alt="">
+              <img src="{{asset('frontend/assets/media/resources/about-1.png')}}" alt="">
             </div>
           </div>
         </div>
       </div>
     </section>
-    
+    {{-- {{asset('frontend/')}} --}}

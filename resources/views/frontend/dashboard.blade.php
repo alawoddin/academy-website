@@ -22,6 +22,9 @@
   <link rel="stylesheet" href="{{asset('frontend/assets/vendor/animate/animate.min.css')}}">
   <link rel="stylesheet" href="{{asset('frontend/assets/css/app.css')}}">
 
+  
+
+
 
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
@@ -59,53 +62,7 @@
 
 
 
-    <!-- Hero Banner Start -->
     
-    <!-- Hero Banner End -->
-
-    <!-- Features Area Start -->
-    
-    <!-- Features Area End -->
-
-    <!-- About Area Start -->
-    
-    <!-- About Area End -->
-
-    <!-- Brands Area Start -->
-    
-    <!-- Brands Area End -->
-
-    <!-- Courses Category Area Start -->
-   
-    <!-- Courses Category Area End -->
-
-    <!-- Courses Area Start -->
-   
-    <!-- Courses Area End -->
-
-    <!-- Team Area Start -->
-    
-    <!-- Team Area End -->
-
-    <!-- Discount Banner Area Start -->
-    
-    <!-- Discount Banner Area End -->
-
-    <!-- Testimonials Area Start -->
-    <
-    <!-- Testimonials Area End -->
-
-    <!-- Blogs Area Start -->
-    
-    <!-- Blogs Area End -->
-
-    <!-- Contact Banner Area Start -->
-    
-    <!-- Contact Banner Area End -->
-
-    <!-- Footer Area Start -->
-   
-    <!-- Footer Area End -->
 
   </div>
 
