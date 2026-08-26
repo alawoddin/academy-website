@@ -30,7 +30,7 @@
               </div>
             </div>
             <div class="text-end wow fadeInUp" data-wow-delay="600ms">
-              <a href="{{ url('/') }}#contact" class="educate-btn"><span class="educate-btn__curve"></span>Learn More</a>
+              <a href="{{ route('about') }}" class="educate-btn"><span class="educate-btn__curve"></span>Learn More</a>
             </div>
           </div>
           <div class="col-lg-6">

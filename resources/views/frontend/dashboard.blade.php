@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="{{asset('frontend/assets/vendor/slickslider/slick.css')}}">
   <link rel="stylesheet" href="{{asset('frontend/assets/vendor/jquery-magnific-popup/jquery.magnific-popup.css')}}">
   <link rel="stylesheet" href="{{asset('frontend/assets/vendor/animate/animate.min.css')}}">
+  <link rel="stylesheet" href="{{asset('frontend/assets/vendor/odometer/odometer.min.css')}}">
   <link rel="stylesheet" href="{{asset('frontend/assets/css/app.css')}}">
 
   
@@ -110,6 +111,7 @@
   <script src="{{asset('frontend/assets/vendor/slickslider/slick.min.js')}}"></script>
   <script src="{{asset('frontend/assets/vendor/tilt/tilt.jquery.js')}}"></script>
   <script src="{{asset('frontend/assets/vendor/wow/wow.js')}}"></script>
+  <script src="{{asset('frontend/assets/vendor/odometer/odometer.min.js')}}"></script>
 
   <!-- Site Scripts -->
   <script src="{{ asset('frontend/assets/js/app.js') }}"></script>

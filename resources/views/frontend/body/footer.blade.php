@@ -25,7 +25,7 @@
               <div class="footer_widget">
                 <h5 class="medium-black mb-16">Explore</h5>
                 <ul class="unstyled list">
-                  <li><a href="{{ url('/') }}#about"><i class="fad fa-chevron-right"></i>About Us</a></li>
+                  <li><a href="{{ route('about') }}"><i class="fad fa-chevron-right"></i>About Us</a></li>
                   <li><a href="{{ url('/') }}#features"><i class="fad fa-chevron-right"></i>Features</a></li>
                   <li><a href="{{ url('/') }}#team"><i class="fad fa-chevron-right"></i>Teacher’s Detail</a></li>
                 </ul>

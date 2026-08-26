@@ -13,13 +13,13 @@
               <div class="main-menu__nav">
                 <ul class="main-menu__list">
                   <li>
-                    <a href="{{ url('/') }}" class="active">Home</a>
+                    <a href="{{ url('/') }}" class="{{ request()->is('/') ? 'active' : '' }}">Home</a>
                   </li>
                   <li>
                     <a href="{{ url('/') }}#courses">Courses</a>
                   </li>
                   <li>
-                    <a href="{{ url('/') }}#about">About</a>
+                    <a href="{{ route('about') }}" class="{{ request()->routeIs('about') ? 'active' : '' }}">About</a>
                   </li>
                   <li>
                     <a href="{{ url('/') }}#team">Instructors</a>
