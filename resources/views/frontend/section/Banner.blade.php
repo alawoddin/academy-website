@@ -17,7 +17,7 @@
                       data-wow-delay="700ms"></span></h1>
                 <h4 class="mb-48">Make Your Free Account & Get Discounts</h4>
                 <div class="btn_block">
-                  <a href="{{ url('/') }}#contact" class="educate-btn sec"><span class="educate-btn__curve"></span>Enroll Now </a>
+                  <a href="{{ url('/') }}#enroll" class="educate-btn sec"><span class="educate-btn__curve"></span>Enroll Now </a>
                   <img src="{{ asset('frontend/assets/media/shapes/arrow.png') }}" alt="Arrow" class="arrow">
                 </div>
                 <div class="video-btn wow zoomIn" data-wow-delay="700ms">

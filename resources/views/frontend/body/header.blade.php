@@ -27,6 +27,7 @@
                   <li>
                     <a href="{{ url('/') }}#blogs">Blog</a>
                   </li>
+                  <li><a href="{{ url('/') }}#enroll">Enroll</a></li>
                   <li><a href="{{ url('/') }}#contact">Contact</a></li>
                 </ul>
               </div>
@@ -38,7 +39,7 @@
               <a href="{{ route('login') }}" class="main-menu__login">
                 <i class="fal fa-user"></i>
               </a>
-              <a href="{{ url('/') }}#contact" class="educate-btn sm d-xl-flex d-none"><span
+              <a href="{{ url('/') }}#enroll" class="educate-btn sm d-xl-flex d-none"><span
                   class="educate-btn__curve"></span>Enroll Now</a>
               <a href="#" class="main-menu__toggler mobile-nav__toggler">
                 <i class="fa fa-bars"></i>

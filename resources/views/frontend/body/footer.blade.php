@@ -37,6 +37,7 @@
                 <ul class="unstyled list">
                   <li><a href="{{ route('login') }}"><i class="fad fa-chevron-right"></i>Login</a></li>
                   <li><a href="{{ route('register') }}"><i class="fad fa-chevron-right"></i>Register</a></li>
+                  <li><a href="{{ url('/') }}#enroll"><i class="fad fa-chevron-right"></i>Enroll Now</a></li>
                   <li><a href="{{ url('/') }}#contact"><i class="fad fa-chevron-right"></i>Contact Us</a></li>
                 </ul>
               </div>

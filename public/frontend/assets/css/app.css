@@ -6147,4 +6147,37 @@ footer .copyright_row P {
   }
 }
 
+/*-------------------------
+  Enroll Section
+-------------------------*/
+.enroll-section {
+  scroll-margin-top: 120px;
+}
+.enroll-section .enroll-form-card {
+  background: #fefcfb;
+  border-radius: 15px;
+  box-shadow: 2px 1px 5px 0px rgba(2, 69, 122, 0.04), 9px 4px 10px 0px rgba(2, 69, 122, 0.03), 19px 10px 13px 0px rgba(2, 69, 122, 0.02), 35px 17px 15px 0px rgba(2, 69, 122, 0.01), 54px 27px 17px 0px rgba(2, 69, 122, 0);
+  padding: 32px;
+}
+.enroll-section .enroll-form .form-control,
+.enroll-section .enroll-form select,
+.enroll-section .enroll-form textarea {
+  width: 100%;
+  background: #fff !important;
+  min-height: 48px;
+}
+.enroll-section .enroll-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+.enroll-section .enroll-form select {
+  color: #7a8582;
+  appearance: auto;
+}
+.enroll-section .enroll-success {
+  color: #0aa6d7;
+  font-weight: 600;
+  margin-top: 16px;
+}
+
 /*# sourceMappingURL=app.css.map */

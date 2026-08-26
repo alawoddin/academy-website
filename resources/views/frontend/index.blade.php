@@ -13,6 +13,7 @@
   @include('frontend.section.Discount')
   @include('frontend.section.Testimonials')
   @include('frontend.section.Blogs')
+  @include('frontend.section.Enroll')
   @include('frontend.section.Contact')
 
 

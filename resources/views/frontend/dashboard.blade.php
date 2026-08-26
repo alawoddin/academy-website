@@ -140,6 +140,17 @@
  @endif 
 </script>
 
+<script>
+  document.getElementById('enroll-form')?.addEventListener('submit', function (event) {
+    event.preventDefault();
+    var success = document.getElementById('enroll-success');
+    if (success) {
+      success.hidden = false;
+    }
+    this.reset();
+  });
+</script>
+
 
 
 </body>
