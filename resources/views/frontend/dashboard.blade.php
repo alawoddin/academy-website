@@ -92,7 +92,7 @@
   
 
 
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
 
       
     {{-- <script src="{{ asset('backend/assets/js/bundle.js') }}"></script>
@@ -109,8 +109,8 @@
   <script src="{{asset('frontend/assets/vendor/tilt/tilt.jquery.js')}}"></script>
   <script src="{{asset('frontend/assets/vendor/wow/wow.js')}}"></script>
 
-  <!-- Site Scripts -->
-  <script src="{{asset('backend/assets/js/app.js')}}"></script>
+  {{-- <!-- Site Scripts -->
+  <script src="{{asset('backend/assets/js/app.js')}}"></script> --}}
 
 
      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>

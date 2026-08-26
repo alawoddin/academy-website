@@ -1,7 +1,7 @@
  <footer>
       <div class="footer_main py-60">
-        <img src="assets/media/shapes/vector-7.png" alt="" class="vector_shape">
-        <img src="assets/media/shapes/dots-1.png" alt="" class="dots">
+        <img src="{{asset('frontend/assets/media/shapes/vector-7.png')}}" alt="" class="vector_shape">
+        <img src="{{asset('frontend/assets/media/shapes/dots-1.png')}}" alt="" class="dots">
         <div class="container">
           <div class="row">
             <div class="col-xl-3 ">
@@ -57,22 +57,22 @@
             <ul class="unstyled social_icons_list">
               <li>
                 <a href="#">
-                  <img src="assets/media/icons/brands/Instagram.png" alt="">
+                  <img src="{{asset('frontend/assets/media/icons/brands/Instagram.png')}}" alt="">
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <img src="assets/media/icons/brands/Facebook.png" alt="">
+                  <img src="{{asset('frontend/assets/media/icons/brands/Facebook.png')}}" alt="">
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <img src="assets/media/icons/brands/Twitter.png" alt="">
+                  <img src="{{asset('frontend/assets/media/icons/brands/Twitter.png')}}" alt="">
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <img src="assets/media/icons/brands/Linkedin.png" alt="">
+                  <img src="{{asset('frontend/assets/media/icons/brands/Linkedin.pn')}}g" alt="">
                 </a>
               </li>
             </ul>

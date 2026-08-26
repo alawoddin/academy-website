@@ -12,7 +12,7 @@
           <div class="col-lg-4 col-md-6">
             <div class="blog_card mb-24 mb-xl-0">
               <div class="blog_card_img_block">
-                <img src="assets/media/blog/b-1.png" alt="">
+                <img src="{{asset('frontend/assets/media/blog/b-1.png')}}" alt="">
                 <p class="date">9 May 2024</p>
               </div>
               <div class="blog_card_text_block">
@@ -21,7 +21,7 @@
                 <p class="mb-24">Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam tempus...</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="author">
-                    <img src="assets/media/users/u-1.png" alt="">
+                    <img src="{{asset('frontend/assets/media/users/u-1.png')}}" alt="">
                     <h6 class="dark-gray">Michal Clark</h6>
                   </div>
                   <a href="blog-detail.html" class="h6 color-primary educate_link_btn">Read More<i
@@ -33,7 +33,7 @@
           <div class="col-lg-4 col-md-6">
             <div class="blog_card mb-24 mb-xl-0">
               <div class="blog_card_img_block">
-                <img src="assets/media/blog/b-2.png" alt="">
+                <img src="{{asset('frontend/assets/media/blog/b-2.png')}}" alt="">
                 <p class="date">9 May 2024</p>
               </div>
               <div class="blog_card_text_block">
@@ -42,7 +42,7 @@
                 <p class="mb-24">Lorem ipsum dolor sit amet consectetur. Non convallis sed id...</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="author">
-                    <img src="assets/media/users/u-2.png" alt="">
+                    <img src="{{asset('frontend/assets/media/users/u-2.png')}}" alt="">
                     <h6 class="dark-gray">Jeremy Jhon</h6>
                   </div>
                   <a href="blog-detail.html" class="h6 color-primary educate_link_btn">Read More<i
@@ -54,7 +54,7 @@
           <div class="col-lg-4 col-md-6">
             <div class="blog_card">
               <div class="blog_card_img_block">
-                <img src="assets/media/blog/b-3.png" alt="">
+                <img src="{{asset('frontend/assets/media/blog/b-3.png')}}" alt="">
                 <p class="date">9 May 2024</p>
               </div>
               <div class="blog_card_text_block">
@@ -63,7 +63,7 @@
                 <p class="mb-24">Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam...</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="author">
-                    <img src="assets/media/users/u-3.png" alt="">
+                    <img src="{{asset('frontend/assets/media/users/u-3.png')}}" alt="">
                     <h6 class="dark-gray">Yuki Kabuto</h6>
                   </div>
                   <a href="blog-detail.html" class="h6 color-primary educate_link_btn">Read More<i
