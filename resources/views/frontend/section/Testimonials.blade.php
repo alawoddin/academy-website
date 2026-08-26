@@ -1,26 +1,26 @@
-section class="testimonials py-60">
+<section class="testimonials py-60" id="testimonials">
       <div class="container">
         <div class="row">
           <div class="col-xl-5">
             <div class="testimonials_text_block">
-              <img src="assets/media/shapes/quote3d.png" alt="" class="quote_icon">
+              <img src="{{ asset('frontend/assets/media/shapes/quote3d.png') }}" alt="" class="quote_icon">
               <h6 class="color-primary mb-8">–––– Testimonials</h6>
               <h2 class="mb-16">Student’s Stories! Some Awesome Comments By Our <span class="fm-sec">Students!</span>
               </h2>
               <p>Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam tempus. Volutpat tortor tincidunt
                 egestas sit risus donec.</p>
-              <img src="assets/media/shapes/vector-2.png" alt="" class="vector_hol">
-              <img src="assets/media/shapes/dots-1.png" alt="" class="dots_group">
+              <img src="{{ asset('frontend/assets/media/shapes/vector-2.png') }}" alt="" class="vector_hol">
+              <img src="{{ asset('frontend/assets/media/shapes/dots-1.png') }}" alt="" class="dots_group">
             </div>
           </div>
           <div class="col-xl-7 col-lg-10 offset-xl-0 offset-lg-1">
             <div class="testimonials_slider_1_block">
-              <img src="assets/media/shapes/bg-elements-1.png" alt="" class="bg_elements">
+              <img src="{{ asset('frontend/assets/media/shapes/bg-elements-1.png') }}" alt="" class="bg_elements">
               <div class="testimonials_slider">
                 <div class="card-block">
                   <div class="testimonial_card">
                     <div class="testimonial_card_img_block">
-                      <img src="assets/media/users/Image.png" alt="" class="user_img">
+                      <img src="{{ asset('frontend/assets/media/users/Image.png') }}" alt="Jophie Alen" class="user_img">
                       <div class="quote_block"></div>
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78 64" fill="none" class="quote_mark">
                         <path
@@ -35,14 +35,14 @@ section class="testimonials py-60">
                         <p class="review_text">Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam
                           tempus. Volutpat tortor tincidunt egestas sit risus donec.</p>
                       </div>
-                      <img src="assets/media/shapes/bg-elements-2.png" alt="" class="bottom_shape">
+                      <img src="{{ asset('frontend/assets/media/shapes/bg-elements-2.png') }}" alt="" class="bottom_shape">
                     </div>
                   </div>
                 </div>
                 <div class="card-block">
                   <div class="testimonial_card">
                     <div class="testimonial_card_img_block">
-                      <img src="assets/media/users/Image-1.png" alt="" class="user_img">
+                      <img src="{{ asset('frontend/assets/media/users/Image-1.png') }}" alt="Angel Whites" class="user_img">
                       <div class="quote_block"></div>
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78 64" fill="none" class="quote_mark">
                         <path
@@ -57,7 +57,7 @@ section class="testimonials py-60">
                         <p class="review_text">Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam
                           tempus. Volutpat tortor tincidunt egestas sit risus donec.</p>
                       </div>
-                      <img src="assets/media/shapes/bg-elements-2.png" alt="" class="bottom_shape">
+                      <img src="{{ asset('frontend/assets/media/shapes/bg-elements-2.png') }}" alt="" class="bottom_shape">
 
                     </div>
                   </div>
@@ -65,7 +65,7 @@ section class="testimonials py-60">
                 <div class="card-block">
                   <div class="testimonial_card">
                     <div class="testimonial_card_img_block">
-                      <img src="assets/media/users/Image.png" alt="" class="user_img">
+                      <img src="{{ asset('frontend/assets/media/users/Image.png') }}" alt="Jophie Alen" class="user_img">
                       <div class="quote_block"></div>
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78 64" fill="none" class="quote_mark">
                         <path
@@ -80,7 +80,7 @@ section class="testimonials py-60">
                         <p class="review_text">Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam
                           tempus. Volutpat tortor tincidunt egestas sit risus donec.</p>
                       </div>
-                      <img src="assets/media/shapes/bg-elements-2.png" alt="" class="bottom_shape">
+                      <img src="{{ asset('frontend/assets/media/shapes/bg-elements-2.png') }}" alt="" class="bottom_shape">
 
                     </div>
                   </div>

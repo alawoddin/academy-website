@@ -75,7 +75,7 @@
   <div class="search-popup">
     <div class="search-popup__overlay search-toggler"></div>
     <div class="search-popup__content">
-      <form role="search" method="get" class="search-popup__form" action="https://uiparadox.co.uk/templates/educate/index.html">
+      <form role="search" method="get" class="search-popup__form" action="{{ url('/') }}">
         <input type="text" id="search" placeholder="Search Here...">
         <button type="submit"><i class="fal fa-search"></i></button>
       </form>
@@ -111,8 +111,8 @@
   <script src="{{asset('frontend/assets/vendor/tilt/tilt.jquery.js')}}"></script>
   <script src="{{asset('frontend/assets/vendor/wow/wow.js')}}"></script>
 
-  {{-- <!-- Site Scripts -->
-  <script src="{{asset('backend/assets/js/app.js')}}"></script> --}}
+  <!-- Site Scripts -->
+  <script src="{{ asset('frontend/assets/js/app.js') }}"></script>
 
 
      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>

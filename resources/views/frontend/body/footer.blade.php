@@ -1,12 +1,12 @@
  <footer>
       <div class="footer_main py-60">
-        <img src="{{asset('frontend/assets/media/shapes/vector-7.png')}}" alt="" class="vector_shape">
-        <img src="{{asset('frontend/assets/media/shapes/dots-1.png')}}" alt="" class="dots">
+        <img src="{{ asset('frontend/assets/media/shapes/vector-7.png') }}" alt="" class="vector_shape">
+        <img src="{{ asset('frontend/assets/media/shapes/dots-1.png') }}" alt="" class="dots">
         <div class="container">
           <div class="row">
             <div class="col-xl-3 ">
               <div class="footer_widget">
-                <a href="https://uiparadox.co.uk/templates/educate/index.html" class="mb-8"><img src="assets/media/logo.png" alt=""></a>
+                <a href="{{ url('/') }}" class="mb-8"><img src="{{ asset('frontend/assets/media/logo.png') }}" alt="Khedmat"></a>
                 <p class="description_text">Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam tempus.
                   Volutpat tortor tincidunt egestas sit risus donec.</p>
               </div>
@@ -15,9 +15,9 @@
               <div class="footer_widget">
                 <h5 class="medium-black mb-16">Quick Links</h5>
                 <ul class="unstyled list">
-                  <li><a href="#"><i class="fad fa-chevron-right"></i>Courses</a></li>
-                  <li><a href="#"><i class="fad fa-chevron-right"></i>Join a Career</a></li>
-                  <li><a href="#"><i class="fad fa-chevron-right"></i>Upcoming Events</a></li>
+                  <li><a href="{{ url('/') }}#courses"><i class="fad fa-chevron-right"></i>Courses</a></li>
+                  <li><a href="{{ route('register') }}"><i class="fad fa-chevron-right"></i>Join a Career</a></li>
+                  <li><a href="{{ url('/') }}#discount"><i class="fad fa-chevron-right"></i>Upcoming Events</a></li>
                 </ul>
               </div>
             </div>
@@ -25,9 +25,9 @@
               <div class="footer_widget">
                 <h5 class="medium-black mb-16">Explore</h5>
                 <ul class="unstyled list">
-                  <li><a href="about.html"><i class="fad fa-chevron-right"></i>About Us</a></li>
-                  <li><a href="gallery.html"><i class="fad fa-chevron-right"></i>Gallery</a></li>
-                  <li><a href="team-detail.html"><i class="fad fa-chevron-right"></i>Teacher’s Detail</a></li>
+                  <li><a href="{{ url('/') }}#about"><i class="fad fa-chevron-right"></i>About Us</a></li>
+                  <li><a href="{{ url('/') }}#features"><i class="fad fa-chevron-right"></i>Features</a></li>
+                  <li><a href="{{ url('/') }}#team"><i class="fad fa-chevron-right"></i>Teacher’s Detail</a></li>
                 </ul>
               </div>
             </div>
@@ -35,9 +35,9 @@
               <div class="footer_widget">
                 <h5 class="medium-black mb-16">Information</h5>
                 <ul class="unstyled list">
-                  <li><a href="login.html"><i class="fad fa-chevron-right"></i>Login</a></li>
-                  <li><a href="register.html"><i class="fad fa-chevron-right"></i>Register</a></li>
-                  <li><a href="contact.html"><i class="fad fa-chevron-right"></i>Contact Us</a></li>
+                  <li><a href="{{ route('login') }}"><i class="fad fa-chevron-right"></i>Login</a></li>
+                  <li><a href="{{ route('register') }}"><i class="fad fa-chevron-right"></i>Register</a></li>
+                  <li><a href="{{ url('/') }}#contact"><i class="fad fa-chevron-right"></i>Contact Us</a></li>
                 </ul>
               </div>
             </div>
@@ -46,9 +46,9 @@
                 <h5 class="medium-black mb-16">Contact Us</h5>
                 <ul class="unstyled list">
                   <li class="mb-16"><i class="fal fa-map-marker-alt"></i>Pul-e-Surkh, Kabul, Afghanistan</li>
-                  <li class="mb-16"><a href="mailto:info@example.com"><i
-                        class="fal fa-envelope"></i>tawanatechnology.com</a></li>
-                  <li><a href="tel:123456789"><i class="fal fa-phone-alt"></i>+93 788077685</a></li>
+                  <li class="mb-16"><a href="mailto:info@tawanatechnology.com"><i
+                        class="fal fa-envelope"></i>info@tawanatechnology.com</a></li>
+                  <li><a href="tel:+93788077685"><i class="fal fa-phone-alt"></i>+93 788077685</a></li>
                 </ul>
               </div>
             </div>
@@ -56,29 +56,29 @@
           <div class="bottom-row">
             <ul class="unstyled social_icons_list">
               <li>
-                <a href="#">
-                  <img src="{{asset('frontend/assets/media/icons/brands/Instagram.png')}}" alt="">
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener">
+                  <img src="{{ asset('frontend/assets/media/icons/brands/Instagram.png') }}" alt="Instagram">
                 </a>
               </li>
               <li>
-                <a href="#">
-                  <img src="{{asset('frontend/assets/media/icons/brands/Facebook.png')}}" alt="">
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener">
+                  <img src="{{ asset('frontend/assets/media/icons/brands/Facebook.png') }}" alt="Facebook">
                 </a>
               </li>
               <li>
-                <a href="#">
-                  <img src="{{asset('frontend/assets/media/icons/brands/Twitter.png')}}" alt="">
+                <a href="https://twitter.com/" target="_blank" rel="noopener">
+                  <img src="{{ asset('frontend/assets/media/icons/brands/Twitter.png') }}" alt="Twitter">
                 </a>
               </li>
               <li>
-                <a href="#">
-                  <img src="{{asset('frontend/assets/media/icons/brands/Linkedin.pn')}}g" alt="">
+                <a href="https://www.linkedin.com/" target="_blank" rel="noopener">
+                  <img src="{{ asset('frontend/assets/media/icons/brands/Linkedin.png') }}" alt="LinkedIn">
                 </a>
               </li>
             </ul>
             <div class="newsletter_block">
               <h5>Newsletter</h5>
-              <form class="newsletter">
+              <form class="newsletter" action="{{ url('/') }}#contact" method="get">
                 <input type="email" class="form-control" required placeholder="Your email">
                 <button type="submit" class="educate-btn sm"><span class="educate-btn__curve"></span>Subscribe</button>
               </form>
@@ -87,6 +87,6 @@
         </div>
       </div>
       <div class="copyright_row">
-        <p>©2025 Educate All Rights Reserved.</p>
+        <p>©{{ date('Y') }} Khedmat All Rights Reserved.</p>
       </div>
     </footer>
