@@ -20,6 +20,10 @@ Route::get('/dashboard', function () {
 
 });
 
+Route::get('/about', function () {
+    return view('frontend.pages.about');
+})->name('about');
+
 //End User Route
 
 ///Admin Route
