@@ -1,4 +1,4 @@
-@extends('frontend.section')
+@extends('frontend.dashboard')
 @section('frontend')
 
 @include('frontend.section.Banner')
@@ -12,6 +12,8 @@
   @include('frontend.section.Team')
   @include('frontend.section.Discount')
   @include('frontend.section.Testimonials')
+  @include('frontend.section.Blogs')
+  @include('frontend.section.Contact')
 
 
 @endsection

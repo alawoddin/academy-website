@@ -55,6 +55,7 @@
         @yield('frontend')
 
   @include('frontend.body.footer')
+  @include('frontend.body.MobileMenu')
 
 
 
@@ -95,234 +96,21 @@
     <!-- Testimonials Area End -->
 
     <!-- Blogs Area Start -->
-    <section class="py-60 ">
-      <div class="container">
-        <div class="section-title mb-48">
-          <div class="heading">
-            <h6 class="color-primary mb-8">–––– Blogs</h6>
-            <h2>Latest News By<br> Talented <span class="fm-sec">Authors!</span></h2>
-          </div>
-          <a href="blog-grid.html" class="educate-btn d-md-block d-none"><span class="educate-btn__curve"></span>View
-            All</a>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-6">
-            <div class="blog_card mb-24 mb-xl-0">
-              <div class="blog_card_img_block">
-                <img src="assets/media/blog/b-1.png" alt="">
-                <p class="date">9 May 2024</p>
-              </div>
-              <div class="blog_card_text_block">
-                <h5 class="mb-8"><a class="blog_title" href="blog-detail.html">Remote Learning Tips: Thrive in Online
-                    Classes</a></h5>
-                <p class="mb-24">Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam tempus...</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="author">
-                    <img src="assets/media/users/u-1.png" alt="">
-                    <h6 class="dark-gray">Michal Clark</h6>
-                  </div>
-                  <a href="blog-detail.html" class="h6 color-primary educate_link_btn">Read More<i
-                      class="far fa-chevron-right"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="blog_card mb-24 mb-xl-0">
-              <div class="blog_card_img_block">
-                <img src="assets/media/blog/b-2.png" alt="">
-                <p class="date">9 May 2024</p>
-              </div>
-              <div class="blog_card_text_block">
-                <h5 class="mb-8"><a class="blog_title" href="blog-detail.html">The Power of Lifelong Learning: Why It
-                    Matters?</a></h5>
-                <p class="mb-24">Lorem ipsum dolor sit amet consectetur. Non convallis sed id...</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="author">
-                    <img src="assets/media/users/u-2.png" alt="">
-                    <h6 class="dark-gray">Jeremy Jhon</h6>
-                  </div>
-                  <a href="blog-detail.html" class="h6 color-primary educate_link_btn">Read More<i
-                      class="far fa-chevron-right"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="blog_card">
-              <div class="blog_card_img_block">
-                <img src="assets/media/blog/b-3.png" alt="">
-                <p class="date">9 May 2024</p>
-              </div>
-              <div class="blog_card_text_block">
-                <h5 class="mb-8"><a class="blog_title" href="blog-detail.html">The Art of Effective Note-Taking:
-                    Strategies for Students</a></h5>
-                <p class="mb-24">Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam...</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="author">
-                    <img src="assets/media/users/u-3.png" alt="">
-                    <h6 class="dark-gray">Yuki Kabuto</h6>
-                  </div>
-                  <a href="blog-detail.html" class="h6 color-primary educate_link_btn">Read More<i
-                      class="far fa-chevron-right"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    
     <!-- Blogs Area End -->
 
     <!-- Contact Banner Area Start -->
-    <section class="py-60 ">
-      <div class="container">
-        <div class="contact_banner">
-          <h2 class="mb-8 color-white">Ask Any Questions <br><span class="fm-sec">You Want!</span></h2>
-          <p class="mb-16 color-white">Contact on this number for any Questions!</p>
-          <div class="mx-auto">
-            <a href="tel:123456789" class="h5 phone_number">+93 788077685</a>
-          </div>
-          <div class="icons">
-            <img src="assets/media/shapes/dots-1.png" alt="" class="element-1">
-            <img src="assets/media/shapes/vector-3.png" alt="" class="element-2">
-            <img src="assets/media/shapes/paint.png" alt="" class="element-3">
-            <img src="assets/media/shapes/vector-4.png" alt="" class="element-5">
-            <img src="assets/media/shapes/dots-1.png" alt="" class="element-4">
-            <img src="assets/media/shapes/tag.png" alt="" class="element-6">
-            <img src="assets/media/shapes/errow.png" alt="" class="element-7">
-            <img src="assets/media/shapes/circle-lines.png" alt="" class="element-8">
-            <img src="assets/media/shapes/mic-speaker.png" alt="" class="element-9">
-          </div>
-        </div>
-      </div>
-    </section>
+    
     <!-- Contact Banner Area End -->
 
     <!-- Footer Area Start -->
-    <footer>
-      <div class="footer_main py-60">
-        <img src="assets/media/shapes/vector-7.png" alt="" class="vector_shape">
-        <img src="assets/media/shapes/dots-1.png" alt="" class="dots">
-        <div class="container">
-          <div class="row">
-            <div class="col-xl-3 ">
-              <div class="footer_widget">
-                <a href="https://uiparadox.co.uk/templates/educate/index.html" class="mb-8"><img src="assets/media/logo.png" alt=""></a>
-                <p class="description_text">Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam tempus.
-                  Volutpat tortor tincidunt egestas sit risus donec.</p>
-              </div>
-            </div>
-            <div class="col-xl-2 col-lg-3 col-sm-6">
-              <div class="footer_widget">
-                <h5 class="medium-black mb-16">Quick Links</h5>
-                <ul class="unstyled list">
-                  <li><a href="#"><i class="fad fa-chevron-right"></i>Courses</a></li>
-                  <li><a href="#"><i class="fad fa-chevron-right"></i>Join a Career</a></li>
-                  <li><a href="#"><i class="fad fa-chevron-right"></i>Upcoming Events</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-xl-2 col-lg-3 col-sm-6">
-              <div class="footer_widget">
-                <h5 class="medium-black mb-16">Explore</h5>
-                <ul class="unstyled list">
-                  <li><a href="about.html"><i class="fad fa-chevron-right"></i>About Us</a></li>
-                  <li><a href="gallery.html"><i class="fad fa-chevron-right"></i>Gallery</a></li>
-                  <li><a href="team-detail.html"><i class="fad fa-chevron-right"></i>Teacher’s Detail</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-xl-2 col-lg-3 col-sm-6">
-              <div class="footer_widget">
-                <h5 class="medium-black mb-16">Information</h5>
-                <ul class="unstyled list">
-                  <li><a href="login.html"><i class="fad fa-chevron-right"></i>Login</a></li>
-                  <li><a href="register.html"><i class="fad fa-chevron-right"></i>Register</a></li>
-                  <li><a href="contact.html"><i class="fad fa-chevron-right"></i>Contact Us</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-              <div class="footer_widget">
-                <h5 class="medium-black mb-16">Contact Us</h5>
-                <ul class="unstyled list">
-                  <li class="mb-16"><i class="fal fa-map-marker-alt"></i>Pul-e-Surkh, Kabul, Afghanistan</li>
-                  <li class="mb-16"><a href="mailto:info@example.com"><i
-                        class="fal fa-envelope"></i>tawanatechnology.com</a></li>
-                  <li><a href="tel:123456789"><i class="fal fa-phone-alt"></i>+93 788077685</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="bottom-row">
-            <ul class="unstyled social_icons_list">
-              <li>
-                <a href="#">
-                  <img src="assets/media/icons/brands/Instagram.png" alt="">
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img src="assets/media/icons/brands/Facebook.png" alt="">
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img src="assets/media/icons/brands/Twitter.png" alt="">
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img src="assets/media/icons/brands/Linkedin.png" alt="">
-                </a>
-              </li>
-            </ul>
-            <div class="newsletter_block">
-              <h5>Newsletter</h5>
-              <form class="newsletter">
-                <input type="email" class="form-control" required placeholder="Your email">
-                <button type="submit" class="educate-btn sm"><span class="educate-btn__curve"></span>Subscribe</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="copyright_row">
-        <p>©2025 Educate All Rights Reserved.</p>
-      </div>
-    </footer>
+   
     <!-- Footer Area End -->
 
   </div>
 
-  <!-- Mobile Menu Start -->
-  <div class="mobile-nav__wrapper">
-    <div class="mobile-nav__overlay mobile-nav__toggler"></div>
-    <div class="mobile-nav__content">
-      <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
-      <div class="logo-box">
-        <a href="https://uiparadox.co.uk/templates/educate/index.html" aria-label="logo image"><img src="assets/media/logo-light.png" alt="educate"></a>
-      </div>
-      <div class="mobile-nav__container"></div>
-      <ul class="mobile-nav__contact list-unstyled">
-        <li>
-          <i class="fas fa-envelope"></i>
-          <a href="mailto:example@company.com">example@company.com</a>
-        </li>
-        <li>
-          <i class="fa fa-phone-alt"></i>
-          <a href="tel:+12345678">+123 (4567) -890</a>
-        </li>
-      </ul>
-      <div class="mobile-nav__social">
-             
-        <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.pinterest.com/"><i class="fab fa-pinterest-p"></i></a>
-        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
-      </div>
-    </div>
-  </div>
+  <!-- MobileMenu Start -->
+  
   <!-- Mobile Menu End -->
 
   <div class="search-popup">
