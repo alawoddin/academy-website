@@ -31,46 +31,7 @@
 </head>
 
 
-<body class="custom-cursor locked">
-
-  <!-- cursor style  -->
-  <div class="custom-cursor__cursor"></div>
-  <div class="custom-cursor__cursor-two"></div>
-
-  {{-- @include('admin.body.preloader') --}}
-
-
-  <!-- Main Wrapper Start -->
-  <div id="main-wrapper" class="main-wrapper">
-    <!-- Header Area start -->
-  @include('admin.body.header')
-    
-    <!-- Sticky Header -->
-    <div class="stricky-header stricked-menu main-menu">
-      <div class="sticky-header__content"></div>
-    </div>
-    <!-- Header Area End  -->
-
-    <!-- Hero Banner Start -->
-  @include('frontend.section.banner')
-
-    
-   
-    <!-- Hero Banner End -->
-
-    <!-- Features Area Start -->
-  @include('frontend.section.Features')
-    
-    <!-- Features Area End -->
-
-    <!-- About Area Start -->
-  @include('frontend.section.About')
-    
-    <!-- About Area End -->
-
-    <!-- Brands Area Start -->
-  @include('frontend.section.Brands')
-
+<body >
 
    
    
