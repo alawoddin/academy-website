@@ -22,7 +22,7 @@
                   <li><i class="fal fa-clock"></i>60+</li>
                 </ul>
               </div>
-              <img src="assets/media/courses/categories/c-1.png" alt="" class="image">
+              <img src="{{asset('frontend/assets/media/courses/categories/c-1.png')}}" alt="" class="image">
             </div>
           </div>
           <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="300ms">
@@ -36,7 +36,7 @@
                   <li><i class="fal fa-clock"></i>60+</li>
                 </ul>
               </div>
-              <img src="assets/media/courses/categories/c-2.png" alt="" class="image">
+              <img src="{{asset('frontend/assets/media/courses/categories/c-2.png')}}" alt="" class="image">
             </div>
           </div>
           <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="450ms">
@@ -50,7 +50,7 @@
                   <li><i class="fal fa-clock"></i>60+</li>
                 </ul>
               </div>
-              <img src="assets/media/courses/categories/c-4.png" alt="" class="image">
+              <img src="{{asset('frontend/assets/media/courses/categories/c-4.png')}}" alt="" class="image">
             </div>
           </div>
           <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="600ms">
@@ -64,7 +64,7 @@
                   <li><i class="fal fa-clock"></i>60+</li>
                 </ul>
               </div>
-              <img src="assets/media/courses/categories/c-3.png" alt="" class="image">
+              <img src="{{asset('frontend/assets/media/courses/categories/c-3.png')}}" alt="" class="image">
             </div>
           </div>
           <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="750ms">
@@ -78,7 +78,7 @@
                   <li><i class="fal fa-clock"></i>60+</li>
                 </ul>
               </div>
-              <img src="assets/media/courses/categories/c-5.png" alt="" class="image">
+              <img src="{{asset('frontend/assets/media/courses/categories/c-5.png')}}" alt="" class="image">
             </div>
           </div>
           <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="900ms">
@@ -92,7 +92,7 @@
                   <li><i class="fal fa-clock"></i>60+</li>
                 </ul>
               </div>
-              <img src="assets/media/courses/categories/c-6.png" alt="" class="image">
+              <img src="{{asset('frontend/assets/media/courses/categories/c-6.png')}}" alt="" class="image">
             </div>
           </div>
         </div>
