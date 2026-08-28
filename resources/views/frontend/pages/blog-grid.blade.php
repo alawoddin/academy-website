@@ -1,0 +1,206 @@
+@extends('frontend.dashboard')
+@section('frontend')
+
+<!-- Page Title Banner Start -->
+        <section class="page_title_banner">
+            <div class="container">
+                <div class="content">
+                    <div class="title">
+                        <h1>Blog Grid</h1>
+                        <img src="{{ asset('frontend/assets/media/shapes/tag-2.png') }}" alt="" class="tag">
+                    </div>
+                    <div class="educate-tilt"
+                        data-tilt-options='{ "glare": false, "maxGlare": 0, "maxTilt": 2, "speed": 700, "scale": 1 }'>
+                        <img src="{{ asset('frontend/assets/media/resources/page_title.png') }}" alt="" class="main_img">
+                    </div>
+                    <img src="{{ asset('frontend/assets/media/shapes/circle-lines-2.png') }}" alt="" class="circle_vector">
+                </div>
+            </div>
+        </section>
+        <!-- Page Title Banner End -->
+
+        <!-- Blogs Area Start -->
+        <section class="py-60">
+            <div class="container">
+                <div class="filter_row">
+                    <div class="left_block">
+                        <div class="select_filter">
+                            <span class="dark-gray">Short by:</span>
+                            <select name="select" class="has-nice-select">
+                                <option value="1">Newest</option>
+                                <option value="2">Oldest</option>
+                                <option value="3">Popular</option>
+                                <option value="4">A-Z</option>
+                            </select>
+                        </div>
+                        <div class="select_filter">
+                            <span class="dark-gray">Category:</span>
+                            <select name="select" class="has-nice-select">
+                                <option value="1">Student Life</option>
+                                <option value="2">Creative Arts</option>
+                                <option value="3">Graphic Design</option>
+                                <option value="4">Economic</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="right_block">
+                        <h6 class="dark-gray">Showing 1-9 of 50 results</h6>
+                        <form action="#" class="search_bar">
+                            <button type="submit"><i class="fal fa-search"></i></button>
+                            <input type="search" class="form-control" placeholder="Search here">
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="blog_card mb-24">
+                            <div class="blog_card_img_block">
+                                <img src="{{ asset('frontend/assets/media/blog/b-1.png') }}" alt="">
+                                <p class="date">9 May 2024</p>
+                            </div>
+                            <div class="blog_card_text_block">
+                                <h5 class="mb-8"><a class="blog_title" href="{{ route('blog.detail') }}">Remote Learning Tips:
+                                        Thrive in Online
+                                        Classes</a></h5>
+                                <p class="mb-24">Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam
+                                    tempus...</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="author">
+                                        <img src="{{ asset('frontend/assets/media/users/u-1.png') }}" alt="">
+                                        <h6 class="dark-gray">Michal Clark</h6>
+                                    </div>
+                                    <a href="{{ route('blog.detail') }}" class="h6 color-primary educate_link_btn">Read More<i
+                                            class="far fa-chevron-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="blog_card mb-24">
+                            <div class="blog_card_img_block">
+                                <img src="{{ asset('frontend/assets/media/blog/b-2.png') }}" alt="">
+                                <p class="date">9 May 2024</p>
+                            </div>
+                            <div class="blog_card_text_block">
+                                <h5 class="mb-8"><a class="blog_title" href="{{ route('blog.detail') }}">The Power of Lifelong
+                                        Learning: Why It
+                                        Matters?</a></h5>
+                                <p class="mb-24">Lorem ipsum dolor sit amet consectetur. Non convallis sed id...</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="author">
+                                        <img src="{{ asset('frontend/assets/media/users/u-2.png') }}" alt="">
+                                        <h6 class="dark-gray">Jeremy Jhon</h6>
+                                    </div>
+                                    <a href="{{ route('blog.detail') }}" class="h6 color-primary educate_link_btn">Read More<i
+                                            class="far fa-chevron-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="blog_card mb-24">
+                            <div class="blog_card_img_block">
+                                <img src="{{ asset('frontend/assets/media/blog/b-3.png') }}" alt="">
+                                <p class="date">9 May 2024</p>
+                            </div>
+                            <div class="blog_card_text_block">
+                                <h5 class="mb-8"><a class="blog_title" href="{{ route('blog.detail') }}">The Art of Effective
+                                        Note-Taking:
+                                        Strategies for Students</a></h5>
+                                <p class="mb-24">Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam...
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="author">
+                                        <img src="{{ asset('frontend/assets/media/users/u-3.png') }}" alt="">
+                                        <h6 class="dark-gray">Yuki Kabuto</h6>
+                                    </div>
+                                    <a href="{{ route('blog.detail') }}" class="h6 color-primary educate_link_btn">Read More<i
+                                            class="far fa-chevron-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="blog_card mb-24">
+                            <div class="blog_card_img_block">
+                                <img src="{{ asset('frontend/assets/media/blog/b-4.png') }}" alt="">
+                                <p class="date">9 May 2024</p>
+                            </div>
+                            <div class="blog_card_text_block">
+                                <h5 class="mb-8"><a class="blog_title" href="{{ route('blog.detail') }}">The Art of Effective
+                                        Note-Taking:
+                                        Strategies for Students</a></h5>
+                                <p class="mb-24">Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam...
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="author">
+                                        <img src="{{ asset('frontend/assets/media/users/u-3.png') }}" alt="">
+                                        <h6 class="dark-gray">Yuki Kabuto</h6>
+                                    </div>
+                                    <a href="{{ route('blog.detail') }}" class="h6 color-primary educate_link_btn">Read More<i
+                                            class="far fa-chevron-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="blog_card mb-24">
+                            <div class="blog_card_img_block">
+                                <img src="{{ asset('frontend/assets/media/blog/b-5.png') }}" alt="">
+                                <p class="date">9 May 2024</p>
+                            </div>
+                            <div class="blog_card_text_block">
+                                <h5 class="mb-8"><a class="blog_title" href="{{ route('blog.detail') }}">The Art of Effective
+                                        Note-Taking:
+                                        Strategies for Students</a></h5>
+                                <p class="mb-24">Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam...
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="author">
+                                        <img src="{{ asset('frontend/assets/media/users/u-3.png') }}" alt="">
+                                        <h6 class="dark-gray">Yuki Kabuto</h6>
+                                    </div>
+                                    <a href="{{ route('blog.detail') }}" class="h6 color-primary educate_link_btn">Read More<i
+                                            class="far fa-chevron-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="blog_card mb-24">
+                            <div class="blog_card_img_block">
+                                <img src="{{ asset('frontend/assets/media/blog/b-6.png') }}" alt="">
+                                <p class="date">9 May 2024</p>
+                            </div>
+                            <div class="blog_card_text_block">
+                                <h5 class="mb-8"><a class="blog_title" href="{{ route('blog.detail') }}">The Art of Effective
+                                        Note-Taking:
+                                        Strategies for Students</a></h5>
+                                <p class="mb-24">Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam...
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="author">
+                                        <img src="{{ asset('frontend/assets/media/users/u-3.png') }}" alt="">
+                                        <h6 class="dark-gray">Yuki Kabuto</h6>
+                                    </div>
+                                    <a href="{{ route('blog.detail') }}" class="h6 color-primary educate_link_btn">Read More<i
+                                            class="far fa-chevron-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="pagination">
+                        <li class="page-item"><a href="#" class="page-link arrow" aria-label="next"><i
+                                    class="far fa-chevron-left"></i></a></li>
+                        <li class="page-item"><a class="page-link current" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a href="#" class="page-link arrow" aria-label="next"><i
+                                    class="far fa-chevron-right"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- Blogs Area End -->
+
+@endsection

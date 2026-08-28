@@ -16,12 +16,7 @@ class AuthenticatedSessionController extends Controller
      */
     public function create(): View
     {
-        $notification = array(
-        'message' => 'Admin Paaword Updated Successfully',
-        'alert-type' => 'success'
-     );
-
-        return view('auth.login')->with($notification);
+        return view('auth.login');
     }
 
     /**

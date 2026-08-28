@@ -15,9 +15,9 @@
               <div class="footer_widget">
                 <h5 class="medium-black mb-16">Quick Links</h5>
                 <ul class="unstyled list">
-                  <li><a href="{{ url('/') }}#courses"><i class="fad fa-chevron-right"></i>Courses</a></li>
-                  <li><a href="{{ route('register') }}"><i class="fad fa-chevron-right"></i>Join a Career</a></li>
-                  <li><a href="{{ url('/') }}#discount"><i class="fad fa-chevron-right"></i>Upcoming Events</a></li>
+                  <li><a href="{{ route('courses') }}"><i class="fad fa-chevron-right"></i>Courses</a></li>
+                  <li><a href="{{ route('join') }}"><i class="fad fa-chevron-right"></i>Join a Career</a></li>
+                  <li><a href="{{ route('faq') }}"><i class="fad fa-chevron-right"></i>Faq's</a></li>
                 </ul>
               </div>
             </div>
@@ -26,8 +26,8 @@
                 <h5 class="medium-black mb-16">Explore</h5>
                 <ul class="unstyled list">
                   <li><a href="{{ route('about') }}"><i class="fad fa-chevron-right"></i>About Us</a></li>
-                  <li><a href="{{ url('/') }}#features"><i class="fad fa-chevron-right"></i>Features</a></li>
-                  <li><a href="{{ url('/') }}#team"><i class="fad fa-chevron-right"></i>Teacher’s Detail</a></li>
+                  <li><a href="{{ route('gallery') }}"><i class="fad fa-chevron-right"></i>Gallery</a></li>
+                  <li><a href="{{ route('team.detail') }}"><i class="fad fa-chevron-right"></i>Teacher’s Detail</a></li>
                 </ul>
               </div>
             </div>
@@ -38,7 +38,7 @@
                   <li><a href="{{ route('login') }}"><i class="fad fa-chevron-right"></i>Login</a></li>
                   <li><a href="{{ route('register') }}"><i class="fad fa-chevron-right"></i>Register</a></li>
                   <li><a href="{{ url('/') }}#enroll"><i class="fad fa-chevron-right"></i>Enroll Now</a></li>
-                  <li><a href="{{ url('/') }}#contact"><i class="fad fa-chevron-right"></i>Contact Us</a></li>
+                  <li><a href="{{ route('contact') }}"><i class="fad fa-chevron-right"></i>Contact Us</a></li>
                 </ul>
               </div>
             </div>

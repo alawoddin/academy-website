@@ -6,7 +6,7 @@
             <h6 class="color-primary mb-8">–––– Course Categories</h6>
             <h2>Begin Your Learning,<br> Something For <span class="fm-sec">Everyone</span></h2>
           </div>
-          <a href="{{ url('/') }}#courses" class="educate-btn d-md-block d-none"><span class="educate-btn__curve"></span>View
+          <a href="{{ route('courses') }}" class="educate-btn d-md-block d-none"><span class="educate-btn__curve"></span>View
             All</a>
         </div>
         <div class="row">

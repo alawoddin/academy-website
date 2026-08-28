@@ -12,23 +12,55 @@
 
               <div class="main-menu__nav">
                 <ul class="main-menu__list">
-                  <li>
-                    <a href="{{ url('/') }}" class="{{ request()->is('/') ? 'active' : '' }}">Home</a>
+                  <li class="dropdown">
+                    <a href="javascript:void(0);" class="{{ request()->is('/') || request()->routeIs('home.two') ? 'active' : '' }}">Home</a>
+                    <ul>
+                      <li><a href="{{ url('/') }}">Home 1</a></li>
+                      <li><a href="{{ route('home.two') }}">Home 2</a></li>
+                    </ul>
                   </li>
-                  <li>
-                    <a href="{{ url('/') }}#courses">Courses</a>
+                  <li class="dropdown">
+                    <a href="javascript:void(0);" class="{{ request()->routeIs('courses', 'course.detail') ? 'active' : '' }}">Courses</a>
+                    <ul>
+                      <li><a href="{{ route('courses') }}">Courses Page</a></li>
+                      <li><a href="{{ route('course.detail') }}">Course Detail</a></li>
+                    </ul>
                   </li>
-                  <li>
-                    <a href="{{ route('about') }}" class="{{ request()->routeIs('about') ? 'active' : '' }}">About</a>
+                  <li class="dropdown">
+                    <a href="javascript:void(0);" class="{{ request()->routeIs('blog*') ? 'active' : '' }}">Blog</a>
+                    <ul class="sub-menu">
+                      <li class="dropdown">
+                        <a href="javascript:void(0);">Blog Grid</a>
+                        <ul class="sub-menu">
+                          <li><a href="{{ route('blog') }}">No Sidebar</a></li>
+                          <li><a href="{{ route('blog.grid.left') }}">Left Sidebar</a></li>
+                          <li><a href="{{ route('blog.grid.right') }}">Right Sidebar</a></li>
+                        </ul>
+                      </li>
+                      <li class="dropdown">
+                        <a href="javascript:void(0);">Blog List</a>
+                        <ul class="sub-menu">
+                          <li><a href="{{ route('blog.list.left') }}">Left Sidebar</a></li>
+                          <li><a href="{{ route('blog.list.right') }}">Right Sidebar</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="{{ route('blog.detail') }}">Blog Detail</a></li>
+                    </ul>
                   </li>
-                  <li>
-                    <a href="{{ url('/') }}#team">Instructors</a>
+                  <li class="dropdown">
+                    <a href="javascript:void(0);" class="{{ request()->routeIs('about', 'team', 'team.detail', 'join', 'gallery', 'faq') ? 'active' : '' }}">Pages</a>
+                    <ul>
+                      <li><a href="{{ route('about') }}">About</a></li>
+                      <li><a href="{{ route('team') }}">Our Teacher</a></li>
+                      <li><a href="{{ route('team.detail') }}">Teacher Detail</a></li>
+                      <li><a href="{{ route('join') }}">Become Teacher</a></li>
+                      <li><a href="{{ route('gallery') }}">Gallery</a></li>
+                      <li><a href="{{ route('faq') }}">Faq's</a></li>
+                      <li><a href="{{ route('login') }}">Login</a></li>
+                      <li><a href="{{ route('register') }}">Register</a></li>
+                    </ul>
                   </li>
-                  <li>
-                    <a href="{{ url('/') }}#blogs">Blog</a>
-                  </li>
-                  <li><a href="{{ url('/') }}#enroll">Enroll</a></li>
-                  <li><a href="{{ url('/') }}#contact">Contact</a></li>
+                  <li><a href="{{ route('contact') }}" class="{{ request()->routeIs('contact') ? 'active' : '' }}">Contact</a></li>
                 </ul>
               </div>
             </div>

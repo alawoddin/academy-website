@@ -24,6 +24,66 @@ Route::get('/about', function () {
     return view('frontend.pages.about');
 })->name('about');
 
+Route::get('/courses', function () {
+    return view('frontend.pages.courses');
+})->name('courses');
+
+Route::get('/course-detail', function () {
+    return view('frontend.pages.course-detail');
+})->name('course.detail');
+
+Route::get('/blog', function () {
+    return view('frontend.pages.blog-grid');
+})->name('blog');
+
+Route::get('/blog-grid-left', function () {
+    return view('frontend.pages.blog-grid-left');
+})->name('blog.grid.left');
+
+Route::get('/blog-grid-right', function () {
+    return view('frontend.pages.blog-grid-right');
+})->name('blog.grid.right');
+
+Route::get('/blog-list-left', function () {
+    return view('frontend.pages.blog-list-left');
+})->name('blog.list.left');
+
+Route::get('/blog-list-right', function () {
+    return view('frontend.pages.blog-list-right');
+})->name('blog.list.right');
+
+Route::get('/blog-detail', function () {
+    return view('frontend.pages.blog-detail');
+})->name('blog.detail');
+
+Route::get('/team', function () {
+    return view('frontend.pages.team');
+})->name('team');
+
+Route::get('/team-detail', function () {
+    return view('frontend.pages.team-detail');
+})->name('team.detail');
+
+Route::get('/join', function () {
+    return view('frontend.pages.join');
+})->name('join');
+
+Route::get('/gallery', function () {
+    return view('frontend.pages.gallery');
+})->name('gallery');
+
+Route::get('/faq', function () {
+    return view('frontend.pages.faq');
+})->name('faq');
+
+Route::get('/contact', function () {
+    return view('frontend.pages.contact');
+})->name('contact');
+
+Route::get('/home-2', function () {
+    return view('frontend.pages.home-2');
+})->name('home.two');
+
 //End User Route
 
 ///Admin Route

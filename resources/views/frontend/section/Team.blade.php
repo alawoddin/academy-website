@@ -11,7 +11,7 @@
             </div>
             <p class="mb-24">Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam tempus. Volutpat
               tortor tincidunt egestas sit risus donec.</p>
-            <a href="{{ url('/') }}#contact" class="educate-btn"><span class="educate-btn__curve"></span>View All</a>
+            <a href="{{ route('team') }}" class="educate-btn"><span class="educate-btn__curve"></span>View All</a>
           </div>
         </div>
         <div class="col-xl-7">

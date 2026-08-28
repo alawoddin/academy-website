@@ -6,7 +6,7 @@
             <h6 class="color-primary mb-8">–––– Popular Courses</h6>
             <h2>Courses Presented To <br> You By <span class="fm-sec">Experts</span></h2>
           </div>
-          <a href="{{ url('/') }}#categories" class="educate-btn d-md-block d-none"><span class="educate-btn__curve"></span>View
+          <a href="{{ route('courses') }}" class="educate-btn d-md-block d-none"><span class="educate-btn__curve"></span>View
             All</a>
         </div>
       </div>

@@ -5,7 +5,7 @@
             <h6 class="color-primary mb-8">–––– Blogs</h6>
             <h2>Latest News By<br> Talented <span class="fm-sec">Authors!</span></h2>
           </div>
-          <a href="{{ url('/') }}#blogs" class="educate-btn d-md-block d-none"><span class="educate-btn__curve"></span>View
+          <a href="{{ route('blog') }}" class="educate-btn d-md-block d-none"><span class="educate-btn__curve"></span>View
             All</a>
         </div>
         <div class="row">
