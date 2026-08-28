@@ -36,9 +36,17 @@ class AdminController extends Controller
    //End Method 
 
     public function AdminProfileStore(Request $request){
-     $id = Auth::user()->id;
-     $data = User::find($id);
+     $id = Auth::id();
 
+     $request->validate([
+        'name' => 'required|string|max:255',
+        'email' => 'required|email|max:255|unique:users,email,'.$id,
+        'phone' => 'nullable|string|max:50',
+        'address' => 'nullable|string|max:255',
+        'photo' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+     ]);
+
+     $data = User::findOrFail($id);
      $data->name = $request->name;
      $data->email = $request->email;
      $data->phone = $request->phone;
@@ -47,14 +55,19 @@ class AdminController extends Controller
      $oldPhotoPath = $data->photo;
 
      if ($request->hasFile('photo')) {
-        $file = $request->file('photo');     
+        $destination = public_path('upload/admin_images');
+        if (! is_dir($destination)) {
+            mkdir($destination, 0755, true);
+        }
+
+        $file = $request->file('photo');
         $filename = time().'.'.$file->getClientOriginalExtension();
-        $file->move(public_path('upload/admin_images'),$filename);
+        $file->move($destination, $filename);
         $data->photo = $filename;
 
         if ($oldPhotoPath && $oldPhotoPath !== $filename) {
            $this->deleteOldImage($oldPhotoPath);
-        } 
+        }
      }
 
      $data->save();
@@ -65,8 +78,6 @@ class AdminController extends Controller
      );
 
      return redirect()->back()->with($notification);
-
-
    }
    //End Method 
 
@@ -80,7 +91,8 @@ class AdminController extends Controller
 
 
    public function AdminChangePassword(){
-        return view('admin.admin_change_password');
+        $profileData = User::find(Auth::id());
+        return view('admin.admin_change_password', compact('profileData'));
    }
    //End Method 
 

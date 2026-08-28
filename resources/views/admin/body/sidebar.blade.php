@@ -52,13 +52,13 @@
                 </a>
               </li>
               <li>
-                <a href="profile.html">
+                <a href="{{ route('admin.profile') }}">
                   <i class="bi bi-filter-circle"></i>
                   <span class="menu-text">User Profile</span>
                 </a>
               </li>
               <li>
-                <a href="settings.html">
+                <a href="{{ route('admin.change.password') }}">
                   <i class="bi bi-gear"></i>
                   <span class="menu-text">Account Settings</span>
                 </a>
@@ -392,11 +392,11 @@
 
           <!-- Sidebar settings starts -->
           <div class="sidebar-settings gap-1 d-lg-flex d-none">
-            <a href="{{ route('admin.change.password') }}" class="settings-icon" data-bs-toggle="tooltip" data-bs-placement="top"
+            <a href="{{ route('admin.profile') }}" class="settings-icon" data-bs-toggle="tooltip" data-bs-placement="top"
               title="Profile">
               <i class="bi bi-person"></i>
             </a>
-            <a href="settings.html" class="settings-icon" data-bs-toggle="tooltip" data-bs-placement="top"
+            <a href="{{ route('admin.change.password') }}" class="settings-icon" data-bs-toggle="tooltip" data-bs-placement="top"
               title="Settings">
               <i class="bi bi-gear"></i>
             </a>

@@ -222,39 +222,39 @@
           <!-- Actions block ends -->
 
           <!-- Settings start -->
+          @php
+            $adminAvatar = (!empty(auth()->user()->photo) && file_exists(public_path('upload/admin_images/'.auth()->user()->photo)))
+                ? asset('upload/admin_images/'.auth()->user()->photo)
+                : asset('backend/assets/images/user3.png');
+          @endphp
           <div class="dropdown ms-3">
             <a id="userSettings" class="dropdown-toggle d-flex align-items-center py-1 avatar-box" href="#!"
               role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="assets/images/user3.png" class="rounded-circle img-3x" alt="Bootstrap Gallery">
+              <img src="{{ $adminAvatar }}" class="rounded-circle img-3x" alt="Admin">
               <span class="status online"></span>
             </a>
             <div class="dropdown-menu dropdown-menu-end shadow-lg p-3">
               <div class="user-header d-flex align-items-center mb-3">
-                <img src="assets/images/user3.png" class="rounded-circle img-3x me-2" alt="Modern Admin Dashboard">
+                <img src="{{ $adminAvatar }}" class="rounded-circle img-3x me-2" alt="Admin">
                 <div>
-                  <h6 class="mb-0 fw-semibold">Olivia Johnson</h6>
+                  <h6 class="mb-0 fw-semibold">{{ auth()->user()->name }}</h6>
                   <small class="text-muted">Administrator</small>
                 </div>
               </div>
-              <a class="dropdown-item d-flex align-items-center py-2 border mb-1" href="profile.html">
+              <a class="dropdown-item d-flex align-items-center py-2 border mb-1" href="{{ route('admin.profile') }}">
                 <i class="bi bi-person-circle me-2 text-primary"></i>
                 <span>My Profile</span>
               </a>
-              <a class="dropdown-item d-flex align-items-center py-2 border mb-1" href="settings.html">
+              <a class="dropdown-item d-flex align-items-center py-2 border mb-1" href="{{ route('admin.change.password') }}">
                 <i class="bi bi-gear-fill me-2 text-primary"></i>
                 <span>Account Settings</span>
               </a>
-              <a class="dropdown-item d-flex align-items-center justify-content-between py-2 border mb-1"
-                href="tasks.html">
-                <div><i class="bi bi-list-check me-2 text-primary"></i>My Tasks</div>
-                <span class="badge bg-primary rounded-pill">5</span>
-              </a>
-              <a class="dropdown-item d-flex align-items-center py-2 border" href="reset-password.html">
+              <a class="dropdown-item d-flex align-items-center py-2 border" href="{{ route('admin.change.password') }}">
                 <i class="bi bi-shield-lock me-2 text-primary"></i>
                 <span>Reset Password</span>
               </a>
               <div class="d-grid mt-2">
-                <a href="login.html" class="btn btn-primary d-flex align-items-center justify-content-center">
+                <a href="{{ route('admin.logout') }}" class="btn btn-primary d-flex align-items-center justify-content-center">
                   <i class="bi bi-box-arrow-right me-2"></i>Logout
                 </a>
               </div>
