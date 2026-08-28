@@ -1,5 +1,5 @@
-@extends('admin.dashboard')
-@section('admin') 
+@extends('instructor.dashboard')
+@section('instructor') 
 
 <div class="app-hero-header d-flex align-items-center">
 

@@ -42,20 +42,20 @@
     <div class="page-wrapper">
 
       <!-- App header starts -->
-      @include('admin.body.header')
+      @include('instructor.body.header')
       <!-- App header ends -->
 
       <!-- Main container starts -->
       <div class="main-container">
 
         <!-- Sidebar wrapper starts -->
-      @include('admin.body.sidebar')
+      @include('instructor.body.sidebar')
         
         <!-- Sidebar wrapper ends -->
 
         <!-- App container starts -->
         <div class="app-container">
-          @yield('admin')
+          @yield('instructor')
 
           <!-- App hero header starts -->
           
@@ -66,7 +66,7 @@
           <!-- App body ends -->
 
           <!-- App footer starts -->
-      @include('admin.body.footer')
+      @include('instructor.body.footer')
           
           <!-- App footer ends -->
 
