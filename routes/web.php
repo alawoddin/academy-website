@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Backend\AdminController;
+use App\Http\Controllers\Backend\InstructorController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\IsAdmin;
 use App\Http\Middleware\IsUser;
@@ -10,15 +11,30 @@ Route::get('/', function () {
     return view('frontend.index');
 });
 
-///User Route
-Route::middleware(['auth' ,IsUser::class ])->group(function () {
+Route::middleware('auth')->get('/dashboard', function () {
+    if (auth()->user()->role === 'admin') {
+        return redirect()->route('admin.dashboard');
+    }
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
+    return redirect()->route('instructor.dashboard');
 })->name('dashboard');
 
+///Instructor Route
+Route::prefix('instructor')->middleware(['auth', IsUser::class])->group(function () {
+
+    Route::get('/dashboard', function () {
+        return view('instructor.index');
+    })->name('instructor.dashboard');
+
+    Route::get('/logout', [InstructorController::class, 'InstructorLogout'])->name('instructor.logout');
+    Route::get('/profile', [InstructorController::class, 'InstructorProfile'])->name('instructor.profile');
+    Route::post('/profile/store', [InstructorController::class, 'InstructorProfileStore'])->name('instructor.profile.store');
+    Route::get('/change/password', [InstructorController::class, 'InstructorChangePassword'])->name('instructor.change.password');
+    Route::post('/password/update', [InstructorController::class, 'InstructorPasswordUpdate'])->name('instructor.password.update');
 
 });
+
+//End Instructor Route
 
 Route::get('/about', function () {
     return view('frontend.pages.about');

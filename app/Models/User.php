@@ -19,6 +19,16 @@ class User extends Authenticatable
      */
     protected $guarded = [];
 
+    public function isAdmin(): bool
+    {
+        return $this->role === 'admin';
+    }
+
+    public function isInstructor(): bool
+    {
+        return $this->role === 'instructor';
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

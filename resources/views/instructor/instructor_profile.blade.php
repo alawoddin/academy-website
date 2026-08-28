@@ -1,5 +1,5 @@
-@extends('admin.dashboard')
-@section('admin')
+@extends('instructor.dashboard')
+@section('instructor')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 <div class="nk-content-inner">
@@ -21,7 +21,7 @@
         <div class="card shadown-none">
             <div class="card-body">
      
-      <form action="{{ route('admin.profile.store') }}" method="post" enctype="multipart/form-data">
+      <form action="{{ route('instructor.profile.store') }}" method="post" enctype="multipart/form-data">
         @csrf           
      <div class="row g-3 gx-gs">
                     
@@ -75,7 +75,7 @@
         <div class="form-group">
             <label for="exampleFormControlInputText1" class="form-label">  </label>
             <div class="form-control-wrap">
-                 <img id="showImage" src="{{ (!empty($profileData->photo)) ? url('upload/admin_images/'.$profileData->photo) : url('upload/no_image.jpg') }}" class="rounded-circle avatar-xl img-thumbnail float-start" style="width: 80px; height:80px;">
+                 <img id="showImage" src="{{ (!empty($profileData->photo)) ? url('upload/instructor_images/'.$profileData->photo) : url('upload/no_image.jpg') }}" class="rounded-circle avatar-xl img-thumbnail float-start" style="width: 80px; height:80px;">
             </div>
         </div>
     </div>

@@ -1,5 +1,5 @@
-@extends('admin.dashboard')
-@section('admin')
+@extends('instructor.dashboard')
+@section('instructor')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 <div class="nk-content-inner">
@@ -21,7 +21,7 @@
         <div class="card shadown-none">
             <div class="card-body">
      
-      <form action="{{ route('admin.password.update') }}" method="post" enctype="multipart/form-data">
+      <form action="{{ route('instructor.password.update') }}" method="post" enctype="multipart/form-data">
         @csrf   
 
      <div class="row g-3 gx-gs">

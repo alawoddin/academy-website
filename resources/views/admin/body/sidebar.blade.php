@@ -408,7 +408,7 @@
               title="Contact Us">
               <i class="bi bi-phone-vibrate"></i>
             </a>
-            <a href="login.html" class="settings-icon" data-bs-toggle="tooltip" data-bs-placement="top" title="Logout">
+            <a href="{{ route('admin.logout') }}" class="settings-icon" data-bs-toggle="tooltip" data-bs-placement="top" title="Logout">
               <i class="bi bi-power"></i>
             </a>
           </div>
