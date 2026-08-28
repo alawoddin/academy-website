@@ -1,99 +1,77 @@
 document.addEventListener("DOMContentLoaded", function () {
-	var calendarEl = document.getElementById("dayGrid");
-	var calendar = new FullCalendar.Calendar(calendarEl, {
-		headerToolbar: {
-			left: "prevYear,prev,next,nextYear today",
-			center: "title",
-			right: "dayGridMonth,dayGridWeek,dayGridDay",
-		},
-		initialDate: "2022-10-12",
-		navLinks: true, // can click day/week names to navigate views
-		editable: true,
-		dayMaxEvents: true, // allow "more" link when too many events
-		events: [
-			{
-				title: "All Day Event",
-				start: "2022-10-01",
-				color: "#2f49d0",
-			},
-			{
-				title: "Long Event",
-				start: "2022-10-07",
-				end: "2022-10-10",
-				color: "#445bd5",
-			},
-			{
-				groupId: 999,
-				title: "Birthday",
-				start: "2022-10-09T16:00:00",
-				color: "#596dd9",
-			},
-			{
-				groupId: 999,
-				title: "Birthday",
-				start: "2022-10-16T16:00:00",
-				color: "#2a42bb",
-			},
-			{
-				title: "Conference",
-				start: "2022-10-11",
-				end: "2022-10-13",
-				color: "#2f49d0",
-			},
-			{
-				title: "Meeting",
-				start: "2022-10-14T10:30:00",
-				end: "2022-10-14T12:30:00",
-				color: "#6d80de",
-			},
-			{
-				title: "Lunch",
-				start: "2022-10-16T12:00:00",
-				color: "#8292e3",
-			},
-			{
-				title: "Meeting",
-				start: "2022-10-18T14:30:00",
-				color: "#2f49d0",
-			},
-			{
-				title: "Interview",
-				start: "2022-10-21T17:30:00",
-				color: "#2a42bb",
-			},
-			{
-				title: "Meeting",
-				start: "2022-10-22T20:00:00",
-				color: "#596dd9",
-			},
-			{
-				title: "Birthday",
-				start: "2022-10-13T07:00:00",
-				color: "#263aa6",
-			},
-			{
-				title: "Click for Google",
-				url: "http://google.com/",
-				start: "2022-10-28",
-				color: "#213392",
-			},
-			{
-				title: "Interview",
-				start: "2022-10-20",
-				color: "#8292e3",
-			},
-			{
-				title: "Product Launch",
-				start: "2022-10-29",
-				color: "#2a42bb",
-			},
-			{
-				title: "Leave",
-				start: "2022-10-25",
-				color: "#6d80de",
-			},
-		],
-	});
+  const calendarEl = document.getElementById("dayGrid");
 
-	calendar.render();
+  // Theme colors
+  const colors = {
+    blue: "#338dd7",
+    cyan: "#35c2fe",
+    orange: "#ff9446",
+    green: "#26c77b",
+    yellow: "#f3c83a",
+    purple: "#8067dc",
+    red: "#ff5a5a"
+  };
+
+  // Get current date
+  const currentDate = new Date();
+
+  const calendar = new FullCalendar.Calendar(calendarEl, {
+    headerToolbar: {
+      left: "prev,next today",
+      center: "title",
+      right: "dayGridMonth,dayGridWeek,dayGridDay"
+    },
+    initialDate: currentDate, // Use current date
+    initialView: 'dayGridMonth',
+    navLinks: true,
+    editable: true,
+    dayMaxEvents: true,
+    height: 'auto',
+    themeSystem: 'bootstrap5',
+    buttonText: {
+      today: 'Today',
+      month: 'Month',
+      week: 'Week',
+      day: 'Day'
+    },
+    events: [
+      { title: "All Day Event", start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 1), color: colors.orange },
+      { title: "Long Event", start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 7), end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 10), color: colors.blue },
+      { groupId: 999, title: "Birthday", start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 9, 16, 0), color: colors.cyan },
+      { groupId: 999, title: "Birthday", start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 16, 16, 0), color: colors.yellow },
+      { title: "Conference", start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 11), end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 13), color: colors.orange },
+      { title: "Meeting", start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 14, 10, 30), end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 14, 12, 30), color: colors.purple },
+      { title: "Lunch", start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 16, 12, 0), color: colors.green },
+      { title: "Meeting", start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 18, 14, 30), color: colors.cyan },
+      { title: "Interview", start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 21, 17, 30), color: colors.yellow },
+      { title: "Meeting", start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 22, 20, 0), color: colors.blue },
+      { title: "Birthday", start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 13, 7, 0), color: colors.green },
+      { title: "Click for Google", url: "http://google.com/", start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 28), color: colors.cyan },
+      { title: "Interview", start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 20), color: colors.green },
+      { title: "Product Launch", start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 29), color: colors.green },
+      { title: "Leave", start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 25), color: colors.yellow },
+    ],
+    // Modern styling
+    eventTimeFormat: {
+      hour: '2-digit',
+      minute: '2-digit',
+      meridiem: false
+    },
+    eventDidMount: function (info) {
+      // Add hover effect
+      info.el.style.transition = 'transform 0.2s, box-shadow 0.2s';
+      info.el.addEventListener('mouseover', function () {
+        info.el.style.transform = 'scale(1.02)';
+        info.el.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+        info.el.style.zIndex = '999';
+      });
+      info.el.addEventListener('mouseout', function () {
+        info.el.style.transform = 'scale(1)';
+        info.el.style.boxShadow = 'none';
+        info.el.style.zIndex = '';
+      });
+    }
+  });
+
+  calendar.render();
 });

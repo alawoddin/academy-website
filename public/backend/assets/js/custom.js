@@ -1,134 +1,119 @@
-$.sidebarMenu = function (menu) {
-	var animationSpeed = 300;
+(function ($) {
+  $.sidebarMenu = function (menu) {
+    const animationSpeed = 300;
 
-	$(menu).on("click", "li a", function (e) {
-		var $this = $(this);
-		var checkElement = $this.next();
+    $(menu).on("click", "li a", function (e) {
+      const $this = $(this);
+      const checkElement = $this.next();
 
-		if (checkElement.is(".treeview-menu") && checkElement.is(":visible")) {
-			checkElement.slideUp(animationSpeed, function () {
-				checkElement.removeClass("menu-open");
-			});
-			checkElement.parent("li").removeClass("active");
-		}
+      if (checkElement.is(".treeview-menu")) {
+        e.preventDefault();
 
-		//If the menu is not visible
-		else if (
-			checkElement.is(".treeview-menu") &&
-			!checkElement.is(":visible")
-		) {
-			//Get the parent menu
-			var parent = $this.parents("ul").first();
-			//Close all open menus within the parent
-			var ul = parent.find("ul:visible").slideUp(animationSpeed);
-			//Remove the menu-open class from the parent
-			ul.removeClass("menu-open");
-			//Get the parent li
-			var parent_li = $this.parent("li");
+        if (checkElement.is(":visible")) {
+          checkElement.slideUp(animationSpeed, () => {
+            checkElement.removeClass("menu-open");
+          });
+          checkElement.parent("li").removeClass("active");
+        } else {
+          const parent = $this.parents("ul").first();
+          const visibleMenus = parent.find("ul:visible").slideUp(animationSpeed);
+          visibleMenus.removeClass("menu-open");
 
-			//Open the target menu and add the menu-open class
-			checkElement.slideDown(animationSpeed, function () {
-				//Add the class active to the parent li
-				checkElement.addClass("menu-open");
-				parent.find("li.active").removeClass("active");
-				parent_li.addClass("active");
-			});
-		}
-		//if this isn't a link, prevent the page from being redirected
-		if (checkElement.is(".treeview-menu")) {
-			e.preventDefault();
-		}
-	});
-};
-$.sidebarMenu($(".sidebar-menu"));
+          const parentLi = $this.parent("li");
+          checkElement.slideDown(animationSpeed, () => {
+            checkElement.addClass("menu-open");
+            parent.find("li.active").removeClass("active");
+            parentLi.addClass("active");
+          });
+        }
+      }
+    });
+  };
 
-// Custom Sidebar JS
-jQuery(function ($) {
-	//toggle sidebar
-	$("#toggle-sidebar").on("click", function () {
-		$(".page-wrapper").toggleClass("toggled");
-	});
+  // Initialize sidebar menu
+  $.sidebarMenu($(".sidebar-menu"));
 
-	// Pin sidebar on click
-	$("#pin-sidebar").on("click", function () {
-		if ($(".page-wrapper").hasClass("pinned")) {
-			// unpin sidebar when hovered
-			$(".page-wrapper").removeClass("pinned");
-			$("#sidebar").unbind("hover");
-		} else {
-			$(".page-wrapper").addClass("pinned");
-			$("#sidebar").hover(
-				function () {
-					console.log("mouseenter");
-					$(".page-wrapper").addClass("sidebar-hovered");
-				},
-				function () {
-					console.log("mouseout");
-					$(".page-wrapper").removeClass("sidebar-hovered");
-				}
-			);
-		}
-	});
+  $(function () {
+    // Toggle sidebar
+    $(".toggle-sidebar").on("click", function () {
+      $(".page-wrapper").toggleClass("toggled");
+    });
 
-	// Pinned sidebar
-	$(function () {
-		$(".page-wrapper").hasClass("pinned");
-		$("#sidebar").hover(
-			function () {
-				console.log("mouseenter");
-				$(".page-wrapper").addClass("sidebar-hovered");
-			},
-			function () {
-				console.log("mouseout");
-				$(".page-wrapper").removeClass("sidebar-hovered");
-			}
-		);
-	});
+    // Pin sidebar
+    $(".pin-sidebar").on("click", function () {
+      const pageWrapper = $(".page-wrapper");
+      const sidebar = $("#sidebar");
 
-	// Toggle sidebar overlay
-	$("#overlay").on("click", function () {
-		$(".page-wrapper").toggleClass("toggled");
-	});
+      if (pageWrapper.hasClass("pinned")) {
+        pageWrapper.removeClass("pinned");
+        sidebar.off("hover");
+      } else {
+        pageWrapper.addClass("pinned");
+        sidebar.hover(
+          () => pageWrapper.addClass("sidebar-hovered"),
+          () => pageWrapper.removeClass("sidebar-hovered")
+        );
+      }
+    });
 
-	// Added by Srinu
-	$(function () {
-		// When the window is resized,
-		$(window).resize(function () {
-			// When the width and height meet your specific requirements or lower
-			if ($(window).width() <= 768) {
-				$(".page-wrapper").removeClass("pinned");
-			}
-		});
-		// When the window is resized,
-		$(window).resize(function () {
-			// When the width and height meet your specific requirements or lower
-			if ($(window).width() >= 768) {
-				$(".page-wrapper").removeClass("toggled");
-			}
-		});
-	});
-});
+    // Toggle overlay
+    $("#overlay").on("click", function () {
+      $(".page-wrapper").toggleClass("toggled");
+    });
 
-/***********
-***********
-***********
-	Bootstrap JS 
-***********
-***********
-***********/
+    // Window resize handlers
+    $(window).on("resize", function () {
+      const pageWrapper = $(".page-wrapper");
+      if ($(window).width() <= 768) {
+        pageWrapper.removeClass("pinned");
+      } else if ($(window).width() > 768) {
+        pageWrapper.removeClass("toggled");
+      }
+    });
 
-// Tooltip
-var tooltipTriggerList = [].slice.call(
-	document.querySelectorAll('[data-bs-toggle="tooltip"]')
-);
-var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-	return new bootstrap.Tooltip(tooltipTriggerEl);
-});
+    // Card loader
+    $(".card-loader").fadeOut(2000);
 
-// Popover
-var popoverTriggerList = [].slice.call(
-	document.querySelectorAll('[data-bs-toggle="popover"]')
-);
-var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-	return new bootstrap.Popover(popoverTriggerEl);
-});
+    // Display current month
+    const monthNames = [
+      "January", "February", "March", "April",
+      "May", "June", "July", "August",
+      "September", "October", "November", "December"
+    ];
+    $(".monthDisplay").text(`In ${monthNames[new Date().getMonth()]}`);
+
+    // Toggle buttons
+    $(".toggle-btns .btn, .toggle-btn-group .btn").on("click", function () {
+      const group = $(this).closest(".toggle-btns, .toggle-btn-group");
+      group.find(".btn").removeClass("btn-primary").addClass("btn-outline-primary");
+      $(this).addClass("btn-primary").removeClass("btn-outline-primary");
+    });
+
+    // Fullscreen card toggle
+    const toggleCardFullscreen = (cardId, toggleButtonId, fullscreenClass) => {
+      const toggleButton = document.getElementById(toggleButtonId);
+      const card = document.getElementById(cardId);
+
+      if (toggleButton && card) {
+        toggleButton.addEventListener("click", () => {
+          card.classList.toggle(fullscreenClass);
+        });
+      }
+    };
+
+    toggleCardFullscreen("cardFullscreen", "toggleCardFullscreen", "card-fullscreen");
+
+    // Bootstrap tooltips and popovers
+    document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));
+    document.querySelectorAll('[data-bs-toggle="popover"]').forEach(el => new bootstrap.Popover(el));
+
+    // Toast example
+    const toastTrigger = document.getElementById("downloadDataToast");
+    const toastLiveExample = document.getElementById("downloadData");
+
+    if (toastTrigger) {
+      const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
+      toastTrigger.addEventListener("click", () => toastBootstrap.show());
+    }
+  });
+})(jQuery);

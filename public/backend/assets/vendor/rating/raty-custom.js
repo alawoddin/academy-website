@@ -20,11 +20,4 @@ $(function () {
 	$(".rateC").raty({ score: 3 });
 	$(".rateD").raty({ score: 2 });
 	$(".rateE").raty({ score: 1 });
-
-	$(".readonly0").raty({ readOnly: true, score: 0 });
-	$(".readonly1").raty({ readOnly: true, score: 1 });
-	$(".readonly2").raty({ readOnly: true, score: 2 });
-	$(".readonly3").raty({ readOnly: true, score: 3 });
-	$(".readonly4").raty({ readOnly: true, score: 4 });
-	$(".readonly5").raty({ readOnly: true, score: 5 });
 });
