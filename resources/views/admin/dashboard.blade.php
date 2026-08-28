@@ -83,30 +83,30 @@
 			************ JavaScript Files *************
 		************* -->
     <!-- Required jQuery first, then Bootstrap Bundle JS -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/moment.min.js"></script>
+    <script src="{{ asset('backend/assets/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/js/moment.min.js') }}"></script>
 
     <!-- *************
 			************ Vendor Js Files *************
 		************* -->
 
     <!-- Overlay Scroll JS -->
-    <script src="assets/vendor/overlay-scroll/jquery.overlayScrollbars.min.js"></script>
-    <script src="assets/vendor/overlay-scroll/custom-scrollbar.js"></script>
+    <script src="{{ asset('backend/assets/vendor/overlay-scroll/jquery.overlayScrollbars.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/vendor/overlay-scroll/custom-scrollbar.js') }}"></script>
 
     <!-- Apex Charts -->
-    <script src="assets/vendor/apex/apexcharts.min.js"></script>
-    <script src="assets/vendor/apex/custom/home/conversions.js"></script>
-    <script src="assets/vendor/apex/custom/home/income.js"></script>
-    <script src="assets/vendor/apex/custom/home/visits-conversions.js"></script>
+    <script src="{{ asset('backend/assets/vendor/apex/apexcharts.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/vendor/apex/custom/home/conversions.js') }}"></script>
+    <script src="{{ asset('backend/assets/vendor/apex/custom/home/income.js') }}"></script>
+    <script src="{{ asset('backend/assets/vendor/apex/custom/home/visits-conversions.js') }}"></script>
 
     <!-- Rating -->
-    <script src="assets/vendor/rating/raty.js"></script>
-    <script src="assets/vendor/rating/raty-custom.js"></script>
+    <script src="{{ asset('backend/assets/vendor/rating/raty.js') }}"></script>
+    <script src="{{ asset('backend/assets/vendor/rating/raty-custom.js') }}"></script>
 
     <!-- Custom JS files -->
-    <script src="assets/js/custom.js"></script>
+    <script src="{{ asset('backend/assets/js/custom.js') }}"></script>
   </body>
 
 
