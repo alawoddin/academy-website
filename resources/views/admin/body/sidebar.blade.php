@@ -392,7 +392,7 @@
 
           <!-- Sidebar settings starts -->
           <div class="sidebar-settings gap-1 d-lg-flex d-none">
-            <a href="profile.html" class="settings-icon" data-bs-toggle="tooltip" data-bs-placement="top"
+            <a href="{{ route('admin.change.password') }}" class="settings-icon" data-bs-toggle="tooltip" data-bs-placement="top"
               title="Profile">
               <i class="bi bi-person"></i>
             </a>
