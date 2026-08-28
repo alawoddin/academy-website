@@ -1,951 +1,1499 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme=dark>
 
+  
+<!-- Mirrored from bootstrapget.com/demos/sporty-admin-dashboard/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 01 Feb 2026 16:17:08 GMT -->
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Educate Html 5 Template">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sporty - Bootstrap Admin Dashboard</title>
 
-  <title>Khedmat |Education & LMS</title>
+    <!-- Meta -->
+    <meta name="description" content="Marketplace for Bootstrap Admin Dashboards">
+    <meta name="author" content="Bootstrap Gallery">
+    <link rel="canonical" href="https://www.bootstrap.gallery/">
+    <meta property="og:url" content="https://www.bootstrap.gallery/">
+    <meta property="og:title" content="Admin Templates - Dashboard Templates | Bootstrap Gallery">
+    <meta property="og:description" content="Marketplace for Bootstrap Admin Dashboards">
+    <meta property="og:type" content="Website">
+    <meta property="og:site_name" content="Bootstrap Gallery">
+    <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.svg') }}">
 
- 
-    <!-- Favicon -->
-  <link rel="shortcut icon" type="image/x-icon" href="{{asset('backend/assets/media/favicon.png')}}">
+    <!-- *************
+			************ CSS Files *************
+		************* -->
+    {{-- {{ asset('backend/') }} --}}
+    <link rel="stylesheet" href="{{ asset('backend/assets/fonts/bootstrap/bootstrap-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('backend/assets/css/animate.css') }}">
+    <link rel="stylesheet" href="{{ asset('backend/assets/css/main.min.css') }}">
 
-  <!-- All CSS files -->
-  <link rel="stylesheet" href="{{asset('backend/assets/vendor/bootstrap/css/bootstrap.min.css')}}">
-  <link rel="stylesheet" href="{{asset('backend/assets/vendor/fontawesome/font-awesome.css')}}">
-  <link rel="stylesheet" href="{{asset('backend/assets/vendor/slickslider/slick.css')}}">
-  <link rel="stylesheet" href="{{asset('backend/assets/vendor/jquery-magnific-popup/jquery.magnific-popup.css')}}">
-  <link rel="stylesheet" href="{{asset('backend/assets/vendor/animate/animate.min.css')}}">
-  <link rel="stylesheet" href="{{asset('backend/assets/css/app.css')}}">
+    <!-- *************
+			************ Vendor Css Files *************
+		************ -->
 
+    <!-- Scrollbar CSS -->
+    <link rel="stylesheet" href="assets/vendor/overlay-scroll/OverlayScrollbars.min.css">
 
+  </head>
 
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
+  <body>
 
+    <!-- Page wrapper starts -->
+    <div class="page-wrapper">
 
+      <!-- App header starts -->
+      <div class="app-header d-flex align-items-center">
 
-
-</head>
-
-
-<body >
-
-   
-   
-    <!-- Brands Area End -->
-
-    <!-- Courses Category Area Start -->
-    <section class="py-60 ">
-      <div class="container">
-        <div class="section-title mb-48">
-          <div class="heading">
-            <h6 class="color-primary mb-8">–––– Course Categories</h6>
-            <h2>Begin Your Learning,<br> Something For <span class="fm-sec">Everyone</span></h2>
-          </div>
-          <a href="courses.html" class="educate-btn d-md-block d-none"><span class="educate-btn__curve"></span>View
-            All</a>
+        <!-- Pin Sidebar starts -->
+        <div class="pin-sidebar me-2">
+          <button type="button" class="btn btn-primary rounded-2">
+            <i class="bi bi-list"></i>
+          </button>
         </div>
-        <div class="row">
-          <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="150ms">
-            <div class="course__category__card_1 mb-24">
-              <div class="course__category__card_text">
-                <a href="courses.html" class="course__category__card_title h4 mb-16">Cooking & Culinary</a>
-                <p class="mb-40">Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam tempus.</p>
-                <ul class="category__info p-0 mb-8">
-                  <li><i class="fas fa-star"></i>5</li>
-                  <li><i class="fal fa-graduation-cap"></i>10 Teachers</li>
-                  <li><i class="fal fa-clock"></i>60+</li>
-                </ul>
-              </div>
-              <img src="assets/media/courses/categories/c-1.png" alt="" class="image">
-            </div>
-          </div>
-          <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="300ms">
-            <div class="course__category__card_1 mb-24">
-              <div class="course__category__card_text">
-                <a href="courses.html" class="course__category__card_title h4 mb-16">Economic & Finances</a>
-                <p class="mb-40">Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam tempus.</p>
-                <ul class="category__info p-0 mb-8">
-                  <li><i class="fas fa-star"></i>5</li>
-                  <li><i class="fal fa-graduation-cap"></i>10 Teachers</li>
-                  <li><i class="fal fa-clock"></i>60+</li>
-                </ul>
-              </div>
-              <img src="assets/media/courses/categories/c-2.png" alt="" class="image">
-            </div>
-          </div>
-          <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="450ms">
-            <div class="course__category__card_1 mb-24">
-              <div class="course__category__card_text">
-                <a href="courses.html" class="course__category__card_title h4 mb-16">Creative Arts</a>
-                <p class="mb-40">Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam tempus.</p>
-                <ul class="category__info p-0 mb-8">
-                  <li><i class="fas fa-star"></i>5</li>
-                  <li><i class="fal fa-graduation-cap"></i>10 Teachers</li>
-                  <li><i class="fal fa-clock"></i>60+</li>
-                </ul>
-              </div>
-              <img src="assets/media/courses/categories/c-4.png" alt="" class="image">
-            </div>
-          </div>
-          <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="600ms">
-            <div class="course__category__card_1 mb-24 mb-xl-0">
-              <div class="course__category__card_text">
-                <a href="courses.html" class="course__category__card_title h4 mb-16">Graphic Design</a>
-                <p class="mb-40">Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam tempus.</p>
-                <ul class="category__info p-0 mb-8">
-                  <li><i class="fas fa-star"></i>5</li>
-                  <li><i class="fal fa-graduation-cap"></i>10 Teachers</li>
-                  <li><i class="fal fa-clock"></i>60+</li>
-                </ul>
-              </div>
-              <img src="assets/media/courses/categories/c-3.png" alt="" class="image">
-            </div>
-          </div>
-          <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="750ms">
-            <div class="course__category__card_1 mb-24 mb-xl-0">
-              <div class="course__category__card_text">
-                <a href="courses.html" class="course__category__card_title h4 mb-16">Artificial Intelligence</a>
-                <p class="mb-40">Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam tempus.</p>
-                <ul class="category__info p-0 mb-8">
-                  <li><i class="fas fa-star"></i>5</li>
-                  <li><i class="fal fa-graduation-cap"></i>10 Teachers</li>
-                  <li><i class="fal fa-clock"></i>60+</li>
-                </ul>
-              </div>
-              <img src="assets/media/courses/categories/c-5.png" alt="" class="image">
-            </div>
-          </div>
-          <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="900ms">
-            <div class="course__category__card_1 mb-24 mb-xl-0">
-              <div class="course__category__card_text">
-                <a href="courses.html" class="course__category__card_title h4 mb-16">Computer Sciences</a>
-                <p class="mb-40">Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam tempus.</p>
-                <ul class="category__info p-0 mb-8">
-                  <li><i class="fas fa-star"></i>5</li>
-                  <li><i class="fal fa-graduation-cap"></i>10 Teachers</li>
-                  <li><i class="fal fa-clock"></i>60+</li>
-                </ul>
-              </div>
-              <img src="assets/media/courses/categories/c-6.png" alt="" class="image">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Courses Category Area End -->
+        <!-- Pin Sidebar ends -->
 
-    <!-- Courses Area Start -->
-    <section class="courses-1 py-60">
-      <div class="container">
-        <div class="section-title mb-48">
-          <div class="heading">
-            <h6 class="color-primary mb-8">–––– Popular Courses</h6>
-            <h2>Courses Presented To <br> You By <span class="fm-sec">Experts</span></h2>
-          </div>
-          <a href="courses.html" class="educate-btn d-md-block d-none"><span class="educate-btn__curve"></span>View
-            All</a>
+        <!-- Mobile Sidebar starts -->
+        <div class="toggle-sidebar me-2">
+          <button type="button" class="btn btn-primary rounded-2">
+            <i class="bi bi-list"></i>
+          </button>
         </div>
-      </div>
-      <div class="courses-slider">
-        <!-- Slide Item  -->
-        <div class="course__card mb-24">
-          <div class="course__card__icon">
-            <img src="assets/media/icons/ps.png" alt="">
-          </div>
-          <div class="course__card__content">
-            <div class="left__block">
-              <img src="assets/media/courses/tag-1.png" alt="" class="course_tag">
-              <h4 class="mb-4p"><a href="course-detail.html">Photoshop Course</a></h4>
-              <p class="h6 mb-24">Graphics Design</p>
-              <ul class="course_info p-0 mb-32">
-                <li><i class="fal fa-presentation"></i>45 Videos</li>
-                <li><i class="fal fa-clock"></i>05+ Hours</li>
-              </ul>
-              <div class="author_card">
-                <img src="assets/media/a2.png" style="height: 74px; width: 74px;" alt="" class="author_img">
-                <div class="author_text_block">
-                  <a href="team-detail.html" class="h6 mb-4p">Alawoddin Khedmat</a>
-                  <p>Adobe Embassador</p>
-                </div>
-              </div>
-            </div>
-            <div class="right__block">
-              <div class="price_block mb-16">
-                <div class="price_vector">
-                  <img src="assets/media/shapes/vector-group.png" alt="">
-                </div>
-                <span class="h3 color-white">$45</span>
-              </div>
-              <a href="course-detail.html" class="educate-btn sm mx-xl-auto me-2"><span
-                  class="educate-btn__curve"></span>Buy Now</a>
-            </div>
-            <img src="assets/media/shapes/vector-1.png" alt="" class="bottom_vector">
-          </div>
-        </div>
-        <!-- Slide item  -->
-        <div class="course__card mb-24">
-          <div class="course__card__icon">
-            <img src="assets/media/icons/ai.png" alt="">
-          </div>
-          <div class="course__card__content">
-            <div class="left__block">
-              <img src="assets/media/courses/tag-2.png" alt="" class="course_tag">
-              <h4 class="mb-4p"><a href="course-detail.html">Artificial Intelligence</a></h4>
-              <p class="h6 mb-24">Graphics Design</p>
-              <ul class="course_info p-0 mb-32">
-                <li><i class="fal fa-presentation"></i>45 Videos</li>
-                <li><i class="fal fa-clock"></i>05+ Hours</li>
-              </ul>
-              <div class="author_card">
-                <img src="assets/media/courses/authors/a-2.png" alt="" class="author_img">
-                <div class="author_text_block">
-                  <a href="team-detail.html" class="h6 mb-4p">Ethan Wilson</a>
-                  <p>AI Expert</p>
-                </div>
-              </div>
-            </div>
-            <div class="right__block">
-              <div class="price_block mb-16">
-                <div class="price_vector">
-                  <img src="assets/media/shapes/vector-group.png" alt="">
-                </div>
-                <span class="h3 color-white">$40</span>
-              </div>
-              <a href="course-detail.html" class="educate-btn sm mx-xl-auto me-2"><span
-                  class="educate-btn__curve"></span>Buy Now</a>
-            </div>
-            <img src="assets/media/shapes/vector-1.png" alt="" class="bottom_vector">
-          </div>
-        </div>
-        <!-- Slide item  -->
-        <div class="course__card mb-24">
-          <div class="course__card__icon">
-            <img src="assets/media/icons/desktop.png" alt="">
-          </div>
-          <div class="course__card__content">
-            <div class="left__block">
-              <img src="assets/media/courses/tag-1.png" alt="" class="course_tag">
-              <h4 class="mb-4p"><a href="course-detail.html">Web Design Course</a></h4>
-              <p class="h6 mb-24">Graphics Design</p>
-              <ul class="course_info p-0 mb-32">
-                <li><i class="fal fa-presentation"></i>45 Videos</li>
-                <li><i class="fal fa-clock"></i>05+ Hours</li>
-              </ul>
-              <div class="author_card">
-                <img src="assets/media/courses/authors/a-3.png" alt="" class="author_img">
-                <div class="author_text_block">
-                  <a href="team-detail.html" class="h6 mb-4p">Ava Johnson</a>
-                  <p>Web Designer</p>
-                </div>
-              </div>
-            </div>
-            <div class="right__block">
-              <div class="price_block mb-16">
-                <div class="price_vector">
-                  <img src="assets/media/shapes/vector-group.png" alt="">
-                </div>
-                <span class="h3 color-white">$45</span>
-              </div>
-              <a href="course-detail.html" class="educate-btn sm mx-xl-auto me-2"><span
-                  class="educate-btn__curve"></span>Buy Now</a>
-            </div>
-            <img src="assets/media/shapes/vector-1.png" alt="" class="bottom_vector">
-          </div>
-        </div>
-        <!-- Slide item  -->
-        <div class="course__card mb-24">
-          <div class="course__card__icon">
-            <img src="assets/media/icons/figma.png" alt="">
-          </div>
-          <div class="course__card__content">
-            <div class="left__block">
-              <img src="assets/media/courses/tag-2.png" alt="" class="course_tag">
-              <h4 class="mb-4p"><a href="course-detail.html">Figma Course</a></h4>
-              <p class="h6 mb-24">Graphics Design</p>
-              <ul class="course_info p-0 mb-32">
-                <li><i class="fal fa-presentation"></i>45 Videos</li>
-                <li><i class="fal fa-clock"></i>05+ Hours</li>
-              </ul>
-              <div class="author_card">
-                <img src="assets/media/courses/authors/a-4.png" alt="" class="author_img">
-                <div class="author_text_block">
-                  <a href="team-detail.html" class="h6 mb-4p">Emma Mitchell</a>
-                  <p>Ui Engineer</p>
-                </div>
-              </div>
-            </div>
-            <div class="right__block">
-              <div class="price_block mb-16">
-                <div class="price_vector">
-                  <img src="assets/media/shapes/vector-group.png" alt="">
-                </div>
-                <span class="h3 color-white">$45</span>
-              </div>
-              <a href="course-detail.html" class="educate-btn sm mx-xl-auto me-2"><span
-                  class="educate-btn__curve"></span>Buy Now</a>
-            </div>
-            <img src="assets/media/shapes/vector-1.png" alt="" class="bottom_vector">
-          </div>
-        </div>
-        <!-- Slide item  -->
-        <div class="course__card mb-24">
-          <div class="course__card__icon">
-            <img src="assets/media/icons/ai2.png" alt="">
-          </div>
-          <div class="course__card__content">
-            <div class="left__block">
-              <img src="assets/media/courses/tag-1.png" alt="" class="course_tag">
-              <h4 class="mb-4p"><a href="course-detail.html">Illustrator Course</a></h4>
-              <p class="h6 mb-24">Graphics Design</p>
-              <ul class="course_info p-0 mb-32">
-                <li><i class="fal fa-presentation"></i>45 Videos</li>
-                <li><i class="fal fa-clock"></i>05+ Hours</li>
-              </ul>
-              <div class="author_card">
-                <img src="assets/media/courses/authors/a-5.png" alt="" class="author_img">
-                <div class="author_text_block">
-                  <a href="team-detail.html" class="h6 mb-4p">Benny Martin</a>
-                  <p>Adobe Embassador</p>
-                </div>
-              </div>
-            </div>
-            <div class="right__block">
-              <div class="price_block mb-16">
-                <div class="price_vector">
-                  <img src="assets/media/shapes/vector-group.png" alt="">
-                </div>
-                <span class="h3 color-white">$45</span>
-              </div>
-              <a href="course-detail.html" class="educate-btn sm mx-xl-auto me-2"><span
-                  class="educate-btn__curve"></span>Buy Now</a>
-            </div>
-            <img src="assets/media/shapes/vector-1.png" alt="" class="bottom_vector">
-          </div>
-        </div>
-        <!-- Slide item  -->
-        <div class="course__card mb-24">
-          <div class="course__card__icon">
-            <img src="assets/media/icons/ai3.png" alt="">
-          </div>
-          <div class="course__card__content">
-            <div class="left__block">
-              <img src="assets/media/courses/tag-2.png" alt="" class="course_tag">
-              <h4 class="mb-4p"><a href="course-detail.html">After Effects Course</a></h4>
-              <p class="h6 mb-24">Graphics Design</p>
-              <ul class="course_info p-0 mb-32">
-                <li><i class="fal fa-presentation"></i>45 Videos</li>
-                <li><i class="fal fa-clock"></i>05+ Hours</li>
-              </ul>
-              <div class="author_card">
-                <img src="assets/media/courses/authors/a-6.png" alt="" class="author_img">
-                <div class="author_text_block">
-                  <a href="team-detail.html" class="h6 mb-4p">Miller Noah</a>
-                  <p>Senior Designer</p>
-                </div>
-              </div>
-            </div>
-            <div class="right__block">
-              <div class="price_block mb-16">
-                <div class="price_vector">
-                  <img src="assets/media/shapes/vector-group.png" alt="">
-                </div>
-                <span class="h3 color-white">$45</span>
-              </div>
-              <a href="course-detail.html" class="educate-btn sm mx-xl-auto me-2"><span
-                  class="educate-btn__curve"></span>Buy Now</a>
-            </div>
-            <img src="assets/media/shapes/vector-1.png" alt="" class="bottom_vector">
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Courses Area End -->
+        <!-- Mobile Sidebar ends -->
 
-    <!-- Team Area Start -->
-    <section class="team py-60">
-      <img src="assets/media/shapes/dots-1.png" alt="" class="dots">
-      <img src="assets/media/icons/3dtag.png" alt="" class="tag">
-      <div class="row align-items-center">
-        <div class="col-xl-5">
-          <div class="team_one__content mb-64 mb-xl-0">
-            <div class="heading mb-16">
-              <h6 class="color-primary mb-8">–––– Our Teachers</h6>
-              <h2>Meet the Dedicated <br> Educators Shaping<br> Your <span class="fm-sec">Future.</span></h2>
-            </div>
-            <p class="mb-24">Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam tempus. Volutpat
-              tortor tincidunt egestas sit risus donec.</p>
-            <a href="team.html" class="educate-btn"><span class="educate-btn__curve"></span>View All</a>
-          </div>
-        </div>
-        <div class="col-xl-7">
-          <div class="team-slider py-60 ms-2 ms-xl-0">
-            <div class="team__card mb-24">
-              <div class="team__img_block">
-                <img src="assets/media/team/Card.png" alt="" class="team_img">
-                <div class="team__content_block">
-                  <div class="team__text_block">
-                    <h5 class="mb-8"><a href="team-detail.html">Angel Whites</a></h5>
-                    <ul class="team__info unstyled mb-16">
-                      <li><i class="fas fa-star"></i>5</li>
-                      <li><i class="fal fa-graduation-cap"></i>Economics</li>
-                      <li><i class="fal fa-clock"></i>60+</li>
-                    </ul>
-                    <p class="team_info_text mb-24">Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam
-                      tempus. </p>
-                    <a href="team-detail.html" class="educate-btn mx-auto"><span class="educate-btn__curve"></span>View
-                      Detail</a>
-                    <img src="assets/media/shapes/feture-bg-shape.png" alt="" class="text_block_bg_shape">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="team__card mb-24">
-              <div class="team__img_block">
-                <img src="assets/media/team/Card-2.png" alt="" class="team_img">
-                <div class="team__content_block">
-                  <div class="team__text_block">
-                    <h5 class="mb-8"><a href="team-detail.html">Mike Noah </a></h5>
-                    <ul class="team__info unstyled mb-16">
-                      <li><i class="fas fa-star"></i>5</li>
-                      <li><i class="fal fa-graduation-cap"></i>Developer</li>
-                      <li><i class="fal fa-clock"></i>60+</li>
-                    </ul>
-                    <p class="team_info_text mb-24">Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam
-                      tempus. </p>
-                    <a href="team-detail.html" class="educate-btn mx-auto"><span class="educate-btn__curve"></span>View
-                      Detail</a>
-                    <img src="assets/media/shapes/feture-bg-shape.png" alt="" class="text_block_bg_shape">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="team__card mb-24">
-              <div class="team__img_block">
-                <img src="assets/media/team/Card-3.png" alt="" class="team_img">
-                <div class="team__content_block">
-                  <div class="team__text_block">
-                    <h5 class="mb-8"><a href="team-detail.html">Sophia Parker</a></h5>
-                    <ul class="team__info unstyled mb-16">
-                      <li><i class="fas fa-star"></i>5</li>
-                      <li><i class="fal fa-graduation-cap"></i>Ui Engineer</li>
-                      <li><i class="fal fa-clock"></i>60+</li>
-                    </ul>
-                    <p class="team_info_text mb-24">Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam
-                      tempus. </p>
-                    <a href="team-detail.html" class="educate-btn mx-auto"><span class="educate-btn__curve"></span>View
-                      Detail</a>
-                    <img src="assets/media/shapes/feture-bg-shape.png" alt="" class="text_block_bg_shape">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="team__card mb-24">
-              <div class="team__img_block">
-                <img src="assets/media/team/Card-4.png" alt="" class="team_img">
-                <div class="team__content_block">
-                  <div class="team__text_block">
-                    <h5 class="mb-8"><a href="team-detail.html">Mia Thompson</a></h5>
-                    <ul class="team__info unstyled mb-16">
-                      <li><i class="fas fa-star"></i>5</li>
-                      <li><i class="fal fa-graduation-cap"></i>Literature</li>
-                      <li><i class="fal fa-clock"></i>60+</li>
-                    </ul>
-                    <p class="team_info_text mb-24">Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam
-                      tempus. </p>
-                    <a href="team-detail.html" class="educate-btn mx-auto"><span class="educate-btn__curve"></span>View
-                      Detail</a>
-                    <img src="assets/media/shapes/feture-bg-shape.png" alt="" class="text_block_bg_shape">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="team__card mb-24">
-              <div class="team__img_block">
-                <img src="assets/media/team/Card-5.png" alt="" class="team_img">
-                <div class="team__content_block">
-                  <div class="team__text_block">
-                    <h5 class="mb-8"><a href="team-detail.html">Mia Thompson</a></h5>
-                    <ul class="team__info unstyled mb-16">
-                      <li><i class="fas fa-star"></i>5</li>
-                      <li><i class="fal fa-graduation-cap"></i>Literature</li>
-                      <li><i class="fal fa-clock"></i>60+</li>
-                    </ul>
-                    <p class="team_info_text mb-24">Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam
-                      tempus. </p>
-                    <a href="team-detail.html" class="educate-btn mx-auto"><span class="educate-btn__curve"></span>View
-                      Detail</a>
-                    <img src="assets/media/shapes/feture-bg-shape.png" alt="" class="text_block_bg_shape">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Team Area End -->
+        <!-- App brand starts -->
+        <div class="app-brand d-flex align-items-center p-2">
 
-    <!-- Discount Banner Area Start -->
-    <section class="discount_banner">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-xl-6 col-lg-5">
-            <div class="banner_text_block">
-              <div class="title_block mb-16">
-                <h2 class="title">Get a
-                  <span class="fm-sec">30% Discount!
-                    <img src="assets/media/shapes/line-vector.png" alt="" class="line_shape">
-                    <img src="assets/media/shapes/mic-speaker.png" alt="" class="mic_speaker">
-                  </span>
-                </h2>
-              </div>
-              <h4 class="mb-12">Create Your Free Account Today! </h4>
-              <p class="mb-24">Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam tempus. Volutpat
-                tortor tincidunt egestas sit risus donec.</p>
-              <a href="register.html" class="educate-btn"><span class="educate-btn__curve"></span>Join Now</a>
-            </div>
-          </div>
-          <div class="col-xl-6 col-lg-7">
-            <div class="discount_countdown">
-              <div class="dial">
-                <ul class="top-remain">
-                  <li class=" remain-count">02</li>
-                  <li class=" remain-count">01</li>
-                  <li class=" remain-count">00</li>
-                </ul>
-                <ul class="top-coming">
-                  <li>02</li>
-                  <li>01</li>
-                  <li>00</li>
-                </ul>
-              </div>
-              <img src="assets/media/shapes/paint-shape.png" alt="" class="paint_shape">
-              <ul class="countdown unstyled">
-                <li>
-                  <h2>365</h2>
-                  <h6>Days</h6>
-                </li>
-                <li>
-                  <h2>24</h2>
-                  <h6>Hrs</h6>
-                </li>
-                <li>
-                  <h2>60</h2>
-                  <h6>Min</h6>
-                </li>
-                <li>
-                  <h2><span>60</span></h2>
-                  <h6>Sec</h6>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Discount Banner Area End -->
+          <!-- Default screen starts -->
+          <a href="index-2.html" class="d-lg-flex d-none">
+            <img src="assets/images/logo.svg" class="logo" alt="Bootstrap Gallery">
+          </a>
+          <!-- Default screen end -->
 
-    <!-- Testimonials Area Start -->
-    <section class="testimonials py-60">
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-5">
-            <div class="testimonials_text_block">
-              <img src="assets/media/shapes/quote3d.png" alt="" class="quote_icon">
-              <h6 class="color-primary mb-8">–––– Testimonials</h6>
-              <h2 class="mb-16">Student’s Stories! Some Awesome Comments By Our <span class="fm-sec">Students!</span>
-              </h2>
-              <p>Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam tempus. Volutpat tortor tincidunt
-                egestas sit risus donec.</p>
-              <img src="assets/media/shapes/vector-2.png" alt="" class="vector_hol">
-              <img src="assets/media/shapes/dots-1.png" alt="" class="dots_group">
-            </div>
+          <!-- Logo sm starts -->
+          <a href="index-2.html" class="d-lg-none">
+            <img src="assets/images/logo-sm.svg" class="logo-sm" alt="Bootstrap Gallery">
+          </a>
+          <!-- Logo sm end -->
+
+        </div>
+        <!-- App brand ends -->
+
+        <!-- App header actions starts -->
+        <div class="header-actions">
+
+          <!-- Search container starts -->
+          <div class="search-container d-lg-block d-none me-3">
+            <input type="text" class="form-control" id="searchAny" placeholder="Search">
+            <i class="bi bi-search"></i>
           </div>
-          <div class="col-xl-7 col-lg-10 offset-xl-0 offset-lg-1">
-            <div class="testimonials_slider_1_block">
-              <img src="assets/media/shapes/bg-elements-1.png" alt="" class="bg_elements">
-              <div class="testimonials_slider">
-                <div class="card-block">
-                  <div class="testimonial_card">
-                    <div class="testimonial_card_img_block">
-                      <img src="assets/media/users/Image.png" alt="" class="user_img">
-                      <div class="quote_block"></div>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78 64" fill="none" class="quote_mark">
-                        <path
-                          d="M55.8684 63.0894C52.6269 63.0894 49.6698 62.606 46.997 61.6392C44.3242 60.6156 42.0495 59.2224 40.1729 57.4595C38.2963 55.6397 36.8177 53.4503 35.7372 50.8913C34.7136 48.3322 34.2018 45.4888 34.2018 42.3611C34.2018 39.1197 34.7705 35.736 35.9078 32.2102C37.1021 28.6845 38.8081 25.1302 41.0259 21.5476C43.2438 17.9649 45.9165 14.4391 49.0443 10.9702C52.2288 7.44441 55.8399 4.06079 59.8775 0.819336L69.6872 8.49646C67.8106 10.43 66.1045 12.2782 64.5691 14.0411C63.0905 15.8039 61.7257 17.5668 60.4746 19.3297C59.2236 21.0926 58.0578 22.9124 56.9773 24.789C55.9537 26.6657 55.0154 28.656 54.1623 30.7601L77.3643 42.3611C77.3643 45.432 76.7672 48.2469 75.573 50.806C74.4356 53.365 72.9002 55.5544 70.9667 57.3742C69.0332 59.1939 66.7585 60.6156 64.1426 61.6392C61.5267 62.606 58.7686 63.0894 55.8684 63.0894ZM22.1666 63.0894C18.9251 63.0894 15.968 62.606 13.2952 61.6392C10.6224 60.6156 8.34773 59.2224 6.4711 57.4595C4.59447 55.6397 3.11591 53.4503 2.03543 50.8913C1.01181 48.3322 0.5 45.4888 0.5 42.3611C0.5 39.1197 1.06868 35.736 2.20603 32.2102C3.40025 28.6845 5.10628 25.1302 7.32411 21.5476C9.54195 17.9649 12.2147 14.4391 15.3424 10.9702C18.527 7.44441 22.1381 4.06079 26.1757 0.819336L35.9854 8.49646C34.1088 10.43 32.4027 12.2782 30.8673 14.0411C29.3887 15.8039 28.0239 17.5668 26.7728 19.3297C25.5217 21.0926 24.356 22.9124 23.2755 24.789C22.2519 26.6657 21.3135 28.656 20.4605 30.7601L43.6625 42.3611C43.6625 45.432 43.0654 48.2469 41.8712 50.806C40.7338 53.365 39.1984 55.5544 37.2649 57.3742C35.3314 59.1939 33.0567 60.6156 30.4408 61.6392C27.8249 62.606 25.0668 63.0894 22.1666 63.0894Z" />
-                      </svg>
-                    </div>
-                    <div class="testimonial_card_content_block">
-                      <div class="testimonial">
-                        <h4 class="mb-16">Jophie Alen</h4>
-                        <span class="mb-16"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
-                        <p class="review_text">Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam
-                          tempus. Volutpat tortor tincidunt egestas sit risus donec.</p>
+          <!-- Search container ends -->
+
+          <!-- Actions block starts -->
+          <div class="d-lg-flex d-none gap-3 actions-block">
+            <div class="dropdown">
+              <a class="dropdown-toggle action-icon" href="#!" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <i class="bi bi-cart2 lh-1"></i>
+                <span class="count-label">9</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-end dropdown-300">
+                <div class="dropdown-header fw-semibold">Orders</div>
+                <div class="scroll250">
+                  <div class="d-grid gap-3 p-3">
+                    <div class="order-item border-bottom pb-3">
+                      <div class="d-flex justify-content-between align-items-center mb-1">
+                        <span class="badge border border-primary text-primary rounded-pill">Purchase</span>
+                        <small class="text-muted">Today, 06:30pm</small>
                       </div>
-                      <img src="assets/media/shapes/bg-elements-2.png" alt="" class="bottom_shape">
+                      <p class="fw-medium mb-1">Wireless Headphones - $120</p>
+                      <p class="small text-muted m-0">Order #34522 • Processing</p>
                     </div>
-                  </div>
-                </div>
-                <div class="card-block">
-                  <div class="testimonial_card">
-                    <div class="testimonial_card_img_block">
-                      <img src="assets/media/users/Image-1.png" alt="" class="user_img">
-                      <div class="quote_block"></div>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78 64" fill="none" class="quote_mark">
-                        <path
-                          d="M55.8684 63.0894C52.6269 63.0894 49.6698 62.606 46.997 61.6392C44.3242 60.6156 42.0495 59.2224 40.1729 57.4595C38.2963 55.6397 36.8177 53.4503 35.7372 50.8913C34.7136 48.3322 34.2018 45.4888 34.2018 42.3611C34.2018 39.1197 34.7705 35.736 35.9078 32.2102C37.1021 28.6845 38.8081 25.1302 41.0259 21.5476C43.2438 17.9649 45.9165 14.4391 49.0443 10.9702C52.2288 7.44441 55.8399 4.06079 59.8775 0.819336L69.6872 8.49646C67.8106 10.43 66.1045 12.2782 64.5691 14.0411C63.0905 15.8039 61.7257 17.5668 60.4746 19.3297C59.2236 21.0926 58.0578 22.9124 56.9773 24.789C55.9537 26.6657 55.0154 28.656 54.1623 30.7601L77.3643 42.3611C77.3643 45.432 76.7672 48.2469 75.573 50.806C74.4356 53.365 72.9002 55.5544 70.9667 57.3742C69.0332 59.1939 66.7585 60.6156 64.1426 61.6392C61.5267 62.606 58.7686 63.0894 55.8684 63.0894ZM22.1666 63.0894C18.9251 63.0894 15.968 62.606 13.2952 61.6392C10.6224 60.6156 8.34773 59.2224 6.4711 57.4595C4.59447 55.6397 3.11591 53.4503 2.03543 50.8913C1.01181 48.3322 0.5 45.4888 0.5 42.3611C0.5 39.1197 1.06868 35.736 2.20603 32.2102C3.40025 28.6845 5.10628 25.1302 7.32411 21.5476C9.54195 17.9649 12.2147 14.4391 15.3424 10.9702C18.527 7.44441 22.1381 4.06079 26.1757 0.819336L35.9854 8.49646C34.1088 10.43 32.4027 12.2782 30.8673 14.0411C29.3887 15.8039 28.0239 17.5668 26.7728 19.3297C25.5217 21.0926 24.356 22.9124 23.2755 24.789C22.2519 26.6657 21.3135 28.656 20.4605 30.7601L43.6625 42.3611C43.6625 45.432 43.0654 48.2469 41.8712 50.806C40.7338 53.365 39.1984 55.5544 37.2649 57.3742C35.3314 59.1939 33.0567 60.6156 30.4408 61.6392C27.8249 62.606 25.0668 63.0894 22.1666 63.0894Z" />
-                      </svg>
-                    </div>
-                    <div class="testimonial_card_content_block">
-                      <div class="testimonial">
-                        <h4 class="mb-16">Angel Whites</h4>
-                        <span class="mb-16"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
-                        <p class="review_text">Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam
-                          tempus. Volutpat tortor tincidunt egestas sit risus donec.</p>
+
+                    <div class="order-item border-bottom pb-3">
+                      <div class="d-flex justify-content-between align-items-center mb-1">
+                        <span class="badge bg-primary rounded-pill">Account</span>
+                        <small class="text-muted">Today, 03:00pm</small>
                       </div>
-                      <img src="assets/media/shapes/bg-elements-2.png" alt="" class="bottom_shape">
+                      <p class="fw-medium mb-1">$180 deducted from your account</p>
+                      <p class="small text-muted m-0">Transaction #95622 • Completed</p>
+                    </div>
 
-                    </div>
-                  </div>
-                </div>
-                <div class="card-block">
-                  <div class="testimonial_card">
-                    <div class="testimonial_card_img_block">
-                      <img src="assets/media/users/Image.png" alt="" class="user_img">
-                      <div class="quote_block"></div>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78 64" fill="none" class="quote_mark">
-                        <path
-                          d="M55.8684 63.0894C52.6269 63.0894 49.6698 62.606 46.997 61.6392C44.3242 60.6156 42.0495 59.2224 40.1729 57.4595C38.2963 55.6397 36.8177 53.4503 35.7372 50.8913C34.7136 48.3322 34.2018 45.4888 34.2018 42.3611C34.2018 39.1197 34.7705 35.736 35.9078 32.2102C37.1021 28.6845 38.8081 25.1302 41.0259 21.5476C43.2438 17.9649 45.9165 14.4391 49.0443 10.9702C52.2288 7.44441 55.8399 4.06079 59.8775 0.819336L69.6872 8.49646C67.8106 10.43 66.1045 12.2782 64.5691 14.0411C63.0905 15.8039 61.7257 17.5668 60.4746 19.3297C59.2236 21.0926 58.0578 22.9124 56.9773 24.789C55.9537 26.6657 55.0154 28.656 54.1623 30.7601L77.3643 42.3611C77.3643 45.432 76.7672 48.2469 75.573 50.806C74.4356 53.365 72.9002 55.5544 70.9667 57.3742C69.0332 59.1939 66.7585 60.6156 64.1426 61.6392C61.5267 62.606 58.7686 63.0894 55.8684 63.0894ZM22.1666 63.0894C18.9251 63.0894 15.968 62.606 13.2952 61.6392C10.6224 60.6156 8.34773 59.2224 6.4711 57.4595C4.59447 55.6397 3.11591 53.4503 2.03543 50.8913C1.01181 48.3322 0.5 45.4888 0.5 42.3611C0.5 39.1197 1.06868 35.736 2.20603 32.2102C3.40025 28.6845 5.10628 25.1302 7.32411 21.5476C9.54195 17.9649 12.2147 14.4391 15.3424 10.9702C18.527 7.44441 22.1381 4.06079 26.1757 0.819336L35.9854 8.49646C34.1088 10.43 32.4027 12.2782 30.8673 14.0411C29.3887 15.8039 28.0239 17.5668 26.7728 19.3297C25.5217 21.0926 24.356 22.9124 23.2755 24.789C22.2519 26.6657 21.3135 28.656 20.4605 30.7601L43.6625 42.3611C43.6625 45.432 43.0654 48.2469 41.8712 50.806C40.7338 53.365 39.1984 55.5544 37.2649 57.3742C35.3314 59.1939 33.0567 60.6156 30.4408 61.6392C27.8249 62.606 25.0668 63.0894 22.1666 63.0894Z" />
-                      </svg>
-                    </div>
-                    <div class="testimonial_card_content_block">
-                      <div class="testimonial">
-                        <h4 class="mb-16">Jophie Alen</h4>
-                        <span class="mb-16"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
-                        <p class="review_text">Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam
-                          tempus. Volutpat tortor tincidunt egestas sit risus donec.</p>
+                    <div class="order-item border-bottom pb-3">
+                      <div class="d-flex justify-content-between align-items-center mb-1">
+                        <span class="badge bg-success rounded-pill">Team</span>
+                        <small class="text-muted">Today, 03:15pm</small>
                       </div>
-                      <img src="assets/media/shapes/bg-elements-2.png" alt="" class="bottom_shape">
+                      <p class="fw-medium mb-1">Daniel joined the team</p>
+                      <p class="small text-muted m-0">Sales Department • New member</p>
+                    </div>
 
+                    <div class="order-item border-bottom pb-3">
+                      <div class="d-flex justify-content-between align-items-center mb-1">
+                        <span class="badge bg-info rounded-pill">Orders</span>
+                        <small class="text-muted">Today, 03:30pm</small>
+                      </div>
+                      <p class="fw-medium mb-1">Smart Watch - $249</p>
+                      <p class="small text-muted m-0">Order #34527 • Shipped</p>
+                    </div>
+
+                    <div class="order-item">
+                      <div class="d-flex justify-content-between align-items-center mb-1">
+                        <span class="badge bg-warning text-dark rounded-pill">New</span>
+                        <small class="text-muted">Today, 03:45pm</small>
+                      </div>
+                      <p class="fw-medium mb-1">Bluetooth Speaker - $85</p>
+                      <p class="small text-muted m-0">Order #34531 • Payment received</p>
                     </div>
                   </div>
                 </div>
+                <div class="d-grid m-3">
+                  <a href="javascript:void(0)" class="btn btn-primary">View all</a>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Testimonials Area End -->
-
-    <!-- Blogs Area Start -->
-    <section class="py-60 ">
-      <div class="container">
-        <div class="section-title mb-48">
-          <div class="heading">
-            <h6 class="color-primary mb-8">–––– Blogs</h6>
-            <h2>Latest News By<br> Talented <span class="fm-sec">Authors!</span></h2>
-          </div>
-          <a href="blog-grid.html" class="educate-btn d-md-block d-none"><span class="educate-btn__curve"></span>View
-            All</a>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-6">
-            <div class="blog_card mb-24 mb-xl-0">
-              <div class="blog_card_img_block">
-                <img src="assets/media/blog/b-1.png" alt="">
-                <p class="date">9 May 2024</p>
-              </div>
-              <div class="blog_card_text_block">
-                <h5 class="mb-8"><a class="blog_title" href="blog-detail.html">Remote Learning Tips: Thrive in Online
-                    Classes</a></h5>
-                <p class="mb-24">Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam tempus...</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="author">
-                    <img src="assets/media/users/u-1.png" alt="">
-                    <h6 class="dark-gray">Michal Clark</h6>
+            <div class="dropdown">
+              <a class="dropdown-toggle action-icon" href="#!" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <i class="bi bi-exclamation-triangle lh-1"></i>
+                <span class="count-label">5</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-end dropdown-300">
+                <div class="dropdown-header fw-semibold">Errors</div>
+                <div class="scroll250">
+                  <div class="d-grid gap-2 m-3">
+                    <div class="border px-3 py-2 rounded-2">
+                      <p class="mb-1"><span class="bi bi-circle-fill text-primary me-2"></span>Solved critical error
+                      </p>
+                      <p class="small m-0">Today, 07:30pm</p>
+                    </div>
+                    <div class="border px-3 py-2 rounded-2">
+                      <p class="mb-1"><span class="bi bi-circle-fill text-primary me-2"></span>Bug fix</p>
+                      <p class="small m-0">Today, 07:45pm</p>
+                    </div>
+                    <div class="border px-3 py-2 rounded-2">
+                      <p class="mb-1"><span class="bi bi-circle-fill text-primary me-2"></span>Production issue</p>
+                      <p class="small m-0">Today, 8:00pm</p>
+                    </div>
+                    <div class="border px-3 py-2 rounded-2">
+                      <p class="mb-1"><span class="bi bi-circle-fill text-primary me-2"></span>New ticket</p>
+                      <p class="small m-0">Today, 09:15pm</p>
+                    </div>
+                    <div class="border px-3 py-2 rounded-2">
+                      <p class="mb-1"><span class="bi bi-circle-fill text-primary me-2"></span>UI fix</p>
+                      <p class="small m-0">Today, 09:45pm</p>
+                    </div>
+                    <div class="border px-3 py-2 rounded-2">
+                      <p class="mb-1"><span class="bi bi-circle-fill text-primary me-2"></span>Signup issue</p>
+                      <p class="small m-0">Today, 10:45pm</p>
+                    </div>
                   </div>
-                  <a href="blog-detail.html" class="h6 color-primary educate_link_btn">Read More<i
-                      class="far fa-chevron-right"></i></a>
+                </div>
+                <div class="d-grid m-3">
+                  <a href="javascript:void(0)" class="btn btn-primary">View all</a>
+                </div>
+              </div>
+            </div>
+            <div class="dropdown">
+              <a class="dropdown-toggle action-icon" href="#!" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <i class="bi bi-receipt lh-1"></i>
+                <span class="count-label animate__animated animate__swing animate__infinite">6</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-end dropdown-300">
+                <div class="dropdown-header fw-semibold">Invoices</div>
+                <div class="scroll250">
+                  <div class="d-grid gap-2 p-3">
+                    <a href="#!">
+                      <div class="d-flex align-items-center py-2">
+                        <img src="assets/images/user1.png" class="img-3x me-3 rounded-5" alt="User Avatar">
+                        <div class="m-0">
+                          <h4 class="mb-2 text-success">$450.00</h4>
+                          <p class="mb-1">Payment received from **NovaCore Systems**.</p>
+                          <p class="m-0">
+                            Invoice #99885 <span class="badge bg-success ms-2">Paid</span>
+                          </p>
+                        </div>
+                      </div>
+                    </a>
+
+                    <a href="#!">
+                      <div class="d-flex align-items-center py-2">
+                        <img src="assets/images/user2.png" class="img-3x me-3 rounded-5" alt="User Avatar">
+                        <div class="m-0">
+                          <h4 class="mb-2 text-success">$290.00</h4>
+                          <p class="mb-1">Payment processed from **PixelStack Studios**.</p>
+                          <p class="m-0">
+                            Invoice #99887 <span class="badge bg-success ms-2">Paid</span>
+                          </p>
+                        </div>
+                      </div>
+                    </a>
+
+                    <a href="#!">
+                      <div class="d-flex align-items-center py-2">
+                        <img src="assets/images/user3.png" class="img-3x me-3 rounded-5" alt="User Avatar">
+                        <div class="m-0">
+                          <h4 class="mb-2 text-warning">$330.00</h4>
+                          <p class="mb-1">**Orion Labs** payment request submitted.</p>
+                          <p class="m-0">
+                            Invoice #99888 <span class="badge bg-warning ms-2">Pending</span>
+                          </p>
+                        </div>
+                      </div>
+                    </a>
+
+                    <a href="#!">
+                      <div class="d-flex align-items-center py-2">
+                        <img src="assets/images/user4.png" class="img-3x me-3 rounded-5" alt="User Avatar">
+                        <div class="m-0">
+                          <h4 class="mb-2 text-danger">$380.00</h4>
+                          <p class="mb-1">Payment failed from **Zenith Technologies**.</p>
+                          <p class="m-0">
+                            Invoice #99889 <span class="badge bg-danger ms-2">Failed</span>
+                          </p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+
+                </div>
+                <div class="d-grid m-3">
+                  <a href="javascript:void(0)" class="btn btn-primary">View all</a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="blog_card mb-24 mb-xl-0">
-              <div class="blog_card_img_block">
-                <img src="assets/media/blog/b-2.png" alt="">
-                <p class="date">9 May 2024</p>
-              </div>
-              <div class="blog_card_text_block">
-                <h5 class="mb-8"><a class="blog_title" href="blog-detail.html">The Power of Lifelong Learning: Why It
-                    Matters?</a></h5>
-                <p class="mb-24">Lorem ipsum dolor sit amet consectetur. Non convallis sed id...</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="author">
-                    <img src="assets/media/users/u-2.png" alt="">
-                    <h6 class="dark-gray">Jeremy Jhon</h6>
-                  </div>
-                  <a href="blog-detail.html" class="h6 color-primary educate_link_btn">Read More<i
-                      class="far fa-chevron-right"></i></a>
+          <!-- Actions block ends -->
+
+          <!-- Settings start -->
+          <div class="dropdown ms-3">
+            <a id="userSettings" class="dropdown-toggle d-flex align-items-center py-1 avatar-box" href="#!"
+              role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="assets/images/user3.png" class="rounded-circle img-3x" alt="Bootstrap Gallery">
+              <span class="status online"></span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-end shadow-lg p-3">
+              <div class="user-header d-flex align-items-center mb-3">
+                <img src="assets/images/user3.png" class="rounded-circle img-3x me-2" alt="Modern Admin Dashboard">
+                <div>
+                  <h6 class="mb-0 fw-semibold">Olivia Johnson</h6>
+                  <small class="text-muted">Administrator</small>
                 </div>
               </div>
+              <a class="dropdown-item d-flex align-items-center py-2 border mb-1" href="profile.html">
+                <i class="bi bi-person-circle me-2 text-primary"></i>
+                <span>My Profile</span>
+              </a>
+              <a class="dropdown-item d-flex align-items-center py-2 border mb-1" href="settings.html">
+                <i class="bi bi-gear-fill me-2 text-primary"></i>
+                <span>Account Settings</span>
+              </a>
+              <a class="dropdown-item d-flex align-items-center justify-content-between py-2 border mb-1"
+                href="tasks.html">
+                <div><i class="bi bi-list-check me-2 text-primary"></i>My Tasks</div>
+                <span class="badge bg-primary rounded-pill">5</span>
+              </a>
+              <a class="dropdown-item d-flex align-items-center py-2 border" href="reset-password.html">
+                <i class="bi bi-shield-lock me-2 text-primary"></i>
+                <span>Reset Password</span>
+              </a>
+              <div class="d-grid mt-2">
+                <a href="login.html" class="btn btn-primary d-flex align-items-center justify-content-center">
+                  <i class="bi bi-box-arrow-right me-2"></i>Logout
+                </a>
+              </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="blog_card">
-              <div class="blog_card_img_block">
-                <img src="assets/media/blog/b-3.png" alt="">
-                <p class="date">9 May 2024</p>
-              </div>
-              <div class="blog_card_text_block">
-                <h5 class="mb-8"><a class="blog_title" href="blog-detail.html">The Art of Effective Note-Taking:
-                    Strategies for Students</a></h5>
-                <p class="mb-24">Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam...</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="author">
-                    <img src="assets/media/users/u-3.png" alt="">
-                    <h6 class="dark-gray">Yuki Kabuto</h6>
-                  </div>
-                  <a href="blog-detail.html" class="h6 color-primary educate_link_btn">Read More<i
-                      class="far fa-chevron-right"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Blogs Area End -->
+          <!-- Settings end -->
 
-    <!-- Contact Banner Area Start -->
-    <section class="py-60 ">
-      <div class="container">
-        <div class="contact_banner">
-          <h2 class="mb-8 color-white">Ask Any Questions <br><span class="fm-sec">You Want!</span></h2>
-          <p class="mb-16 color-white">Contact on this number for any Questions!</p>
-          <div class="mx-auto">
-            <a href="tel:123456789" class="h5 phone_number">+93 788077685</a>
-          </div>
-          <div class="icons">
-            <img src="assets/media/shapes/dots-1.png" alt="" class="element-1">
-            <img src="assets/media/shapes/vector-3.png" alt="" class="element-2">
-            <img src="assets/media/shapes/paint.png" alt="" class="element-3">
-            <img src="assets/media/shapes/vector-4.png" alt="" class="element-5">
-            <img src="assets/media/shapes/dots-1.png" alt="" class="element-4">
-            <img src="assets/media/shapes/tag.png" alt="" class="element-6">
-            <img src="assets/media/shapes/errow.png" alt="" class="element-7">
-            <img src="assets/media/shapes/circle-lines.png" alt="" class="element-8">
-            <img src="assets/media/shapes/mic-speaker.png" alt="" class="element-9">
-          </div>
         </div>
-      </div>
-    </section>
-    <!-- Contact Banner Area End -->
+        <!-- App header actions ends -->
 
-    <!-- Footer Area Start -->
-    <footer>
-      <div class="footer_main py-60">
-        <img src="assets/media/shapes/vector-7.png" alt="" class="vector_shape">
-        <img src="assets/media/shapes/dots-1.png" alt="" class="dots">
-        <div class="container">
-          <div class="row">
-            <div class="col-xl-3 ">
-              <div class="footer_widget">
-                <a href="https://uiparadox.co.uk/templates/educate/index.html" class="mb-8"><img src="assets/media/logo.png" alt=""></a>
-                <p class="description_text">Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam tempus.
-                  Volutpat tortor tincidunt egestas sit risus donec.</p>
-              </div>
-            </div>
-            <div class="col-xl-2 col-lg-3 col-sm-6">
-              <div class="footer_widget">
-                <h5 class="medium-black mb-16">Quick Links</h5>
-                <ul class="unstyled list">
-                  <li><a href="#"><i class="fad fa-chevron-right"></i>Courses</a></li>
-                  <li><a href="#"><i class="fad fa-chevron-right"></i>Join a Career</a></li>
-                  <li><a href="#"><i class="fad fa-chevron-right"></i>Upcoming Events</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-xl-2 col-lg-3 col-sm-6">
-              <div class="footer_widget">
-                <h5 class="medium-black mb-16">Explore</h5>
-                <ul class="unstyled list">
-                  <li><a href="about.html"><i class="fad fa-chevron-right"></i>About Us</a></li>
-                  <li><a href="gallery.html"><i class="fad fa-chevron-right"></i>Gallery</a></li>
-                  <li><a href="team-detail.html"><i class="fad fa-chevron-right"></i>Teacher’s Detail</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-xl-2 col-lg-3 col-sm-6">
-              <div class="footer_widget">
-                <h5 class="medium-black mb-16">Information</h5>
-                <ul class="unstyled list">
-                  <li><a href="login.html"><i class="fad fa-chevron-right"></i>Login</a></li>
-                  <li><a href="register.html"><i class="fad fa-chevron-right"></i>Register</a></li>
-                  <li><a href="contact.html"><i class="fad fa-chevron-right"></i>Contact Us</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-              <div class="footer_widget">
-                <h5 class="medium-black mb-16">Contact Us</h5>
-                <ul class="unstyled list">
-                  <li class="mb-16"><i class="fal fa-map-marker-alt"></i>Pul-e-Surkh, Kabul, Afghanistan</li>
-                  <li class="mb-16"><a href="mailto:info@example.com"><i
-                        class="fal fa-envelope"></i>tawanatechnology.com</a></li>
-                  <li><a href="tel:123456789"><i class="fal fa-phone-alt"></i>+93 788077685</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="bottom-row">
-            <ul class="unstyled social_icons_list">
-              <li>
-                <a href="#">
-                  <img src="assets/media/icons/brands/Instagram.png" alt="">
+      </div>
+      <!-- App header ends -->
+
+      <!-- Main container starts -->
+      <div class="main-container">
+
+        <!-- Sidebar wrapper starts -->
+        <nav id="sidebar" class="sidebar-wrapper">
+
+          <!-- Sidebar menu starts -->
+          <div class="sidebarMenuScroll">
+            <ul class="sidebar-menu">
+              <li class="sidebar-title">
+                <h6 class="m-0 text-truncate fw-bold small">Dashboards</h6>
+              </li>
+              <li class="current-page">
+                <a href="index-2.html">
+                  <i class="bi bi-pie-chart"></i>
+                  <span class="menu-text">Analytics</span>
                 </a>
               </li>
               <li>
-                <a href="#">
-                  <img src="assets/media/icons/brands/Facebook.png" alt="">
+                <a href="crm.html">
+                  <i class="bi bi-hdd-rack"></i>
+                  <span class="menu-text">CRM</span>
                 </a>
               </li>
               <li>
-                <a href="#">
-                  <img src="assets/media/icons/brands/Twitter.png" alt="">
+                <a href="podcast.html">
+                  <i class="bi bi-optical-audio"></i>
+                  <span class="menu-text">Podcast</span>
                 </a>
               </li>
               <li>
-                <a href="#">
-                  <img src="assets/media/icons/brands/Linkedin.png" alt="">
+                <a href="wizard.html">
+                  <i class="bi bi-dpad"></i>
+                  <span class="menu-text">Wizard</span>
+                </a>
+              </li>
+              <li>
+                <a href="widgets.html">
+                  <i class="bi bi-box"></i>
+                  <span class="menu-text">UI Widgets</span>
+                </a>
+              </li>
+              <li class="sidebar-title">
+                <h6 class="m-0 text-truncate fw-bold small">Pages</h6>
+              </li>
+              <li>
+                <a href="customers.html">
+                  <i class="bi bi-people"></i>
+                  <span class="menu-text">Customers</span>
+                </a>
+              </li>
+              <li>
+                <a href="users-list.html">
+                  <i class="bi bi-list-check"></i>
+                  <span class="menu-text">Users List</span>
+                </a>
+              </li>
+              <li>
+                <a href="profile.html">
+                  <i class="bi bi-filter-circle"></i>
+                  <span class="menu-text">User Profile</span>
+                </a>
+              </li>
+              <li>
+                <a href="settings.html">
+                  <i class="bi bi-gear"></i>
+                  <span class="menu-text">Account Settings</span>
+                </a>
+              </li>
+              <li>
+                <a href="orders.html">
+                  <i class="bi bi-shop-window"></i>
+                  <span class="menu-text">Orders</span>
+                </a>
+              </li>
+              <li>
+                <a href="products.html">
+                  <i class="bi bi-terminal-split"></i>
+                  <span class="menu-text">Products</span>
+                </a>
+              </li>
+              <li>
+                <a href="leads.html">
+                  <i class="bi bi-patch-check"></i>
+                  <span class="menu-text">Leads</span>
+                </a>
+              </li>
+              <li>
+                <a href="expenses.html">
+                  <i class="bi bi-arrow-up-right-circle"></i>
+                  <span class="menu-text">Expenses</span>
+                </a>
+              </li>
+              <li>
+                <a href="subscriptions.html">
+                  <i class="bi bi-mouse3"></i>
+                  <span class="menu-text">Subscribers</span>
+                </a>
+              </li>
+              <li>
+                <a href="tasks.html">
+                  <i class="bi bi-clipboard-check"></i>
+                  <span class="menu-text">Tasks</span>
+                </a>
+              </li>
+              <li class="treeview">
+                <a href="#!">
+                  <i class="bi bi-window-sidebar"></i>
+                  <span class="menu-text">Invoices</span>
+                </a>
+                <ul class="treeview-menu">
+                  <li>
+                    <a href="create-invoice.html">Create Invoice</a>
+                  </li>
+                  <li>
+                    <a href="view-invoice.html">View Invoice</a>
+                  </li>
+                  <li>
+                    <a href="invoice-list.html">Invoice List</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="default.html">
+                  <i class="bi bi-layout-sidebar"></i>
+                  <span class="menu-text">Default Page</span>
+                </a>
+              </li>
+              <li>
+                <a href="support.html">
+                  <i class="bi bi-chat-text"></i>
+                  <span class="menu-text">Support</span>
+                </a>
+              </li>
+              <li>
+                <a href="calendar.html">
+                  <i class="bi bi-calendar2"></i>
+                  <span class="menu-text">Calendar</span>
+                </a>
+              </li>
+              <li>
+                <a href="contacts.html">
+                  <i class="bi bi-buildings"></i>
+                  <span class="menu-text">Contacts</span>
+                </a>
+              </li>
+              <li>
+                <a href="faq.html">
+                  <i class="bi bi-chat"></i>
+                  <span class="menu-text">Faq's</span>
+                </a>
+              </li>
+              <li>
+                <a href="contact-us.html">
+                  <i class="bi bi-phone-vibrate"></i>
+                  <span class="menu-text">Contact Us</span>
+                </a>
+              </li>
+              <li class="sidebar-title">
+                <h6 class="m-0 text-truncate fw-bold small">UI Kit</h6>
+              </li>
+              <li class="treeview">
+                <a href="#!">
+                  <i class="bi bi-boxes"></i>
+                  <span class="menu-text">UI Elements</span>
+                </a>
+                <ul class="treeview-menu">
+                  <li>
+                    <a href="accordions.html">Accordions</a>
+                  </li>
+                  <li>
+                    <a href="alerts.html">Alerts</a>
+                  </li>
+                  <li>
+                    <a href="avatars.html">Avatars</a>
+                  </li>
+                  <li>
+                    <a href="buttons.html">Buttons</a>
+                  </li>
+                  <li>
+                    <a href="badges.html">Badges</a>
+                  </li>
+                  <li>
+                    <a href="cards.html">Cards</a>
+                  </li>
+                  <li>
+                    <a href="carousel.html">Carousel</a>
+                  </li>
+                  <li>
+                    <a href="dropdowns.html">Dropdowns</a>
+                  </li>
+                  <li>
+                    <a href="icons.html">Icons</a>
+                  </li>
+                  <li>
+                    <a href="list-items.html">List Items</a>
+                  </li>
+                  <li>
+                    <a href="modals.html">Modals</a>
+                  </li>
+                  <li>
+                    <a href="offcanvas.html">Offcanvas</a>
+                  </li>
+                  <li>
+                    <a href="progress.html">Progress Bars</a>
+                  </li>
+                  <li>
+                    <a href="popovers.html">Popovers</a>
+                  </li>
+                  <li>
+                    <a href="placeholders.html">Placeholders</a>
+                  </li>
+                  <li>
+                    <a href="ribbons.html">Ribbons</a>
+                  </li>
+                  <li>
+                    <a href="tabs.html">Tabs</a>
+                  </li>
+                  <li>
+                    <a href="tooltips.html">Tooltips</a>
+                  </li>
+                  <li>
+                    <a href="typography.html">Typography</a>
+                  </li>
+                  <li>
+                    <a href="spinners.html">Spinners</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="sidebar-title">
+                <h6 class="m-0 text-truncate fw-bold small">Forms & Tables</h6>
+              </li>
+              <li class="treeview">
+                <a href="#!">
+                  <i class="bi bi-ui-checks-grid"></i>
+                  <span class="menu-text">Forms</span>
+                </a>
+                <ul class="treeview-menu">
+                  <li>
+                    <a href="form-inputs.html">Form Inputs</a>
+                  </li>
+                  <li>
+                    <a href="form-input-groups.html">Input Groups</a>
+                  </li>
+                  <li>
+                    <a href="form-select-dropdowns.html">Select Dropdowns</a>
+                  </li>
+                  <li>
+                    <a href="form-checkbox-radio.html">Checkbox &amp; Radio</a>
+                  </li>
+                  <li>
+                    <a href="form-file-input.html">File Input</a>
+                  </li>
+                  <li>
+                    <a href="form-validations.html">Validations</a>
+                  </li>
+                  <li>
+                    <a href="date-time-pickers.html">Date Time Pickers</a>
+                  </li>
+                  <li>
+                    <a href="form-layouts.html">Form Layouts</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="tables.html">
+                  <i class="bi bi-border-all"></i>
+                  <span class="menu-text">Tables</span>
+                </a>
+              </li>
+              <li>
+                <a href="datatables.html">
+                  <i class="bi bi-border-inner"></i>
+                  <span class="menu-text">Data Tables</span>
+                </a>
+              </li>
+              <li class="sidebar-title">
+                <h6 class="m-0 text-truncate fw-bold small">Grapgs and Maps</h6>
+              </li>
+              <li class="treeview">
+                <a href="#!">
+                  <i class="bi bi-bar-chart"></i>
+                  <span class="menu-text">Graphs</span>
+                </a>
+                <ul class="treeview-menu">
+                  <li>
+                    <a href="apex.html">Apex</a>
+                  </li>
+                  <li>
+                    <a href="morris.html">Morris</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="maps.html">
+                  <i class="bi bi-pin-map"></i>
+                  <span class="menu-text">Maps</span>
+                </a>
+              </li>
+              <li class="sidebar-title">
+                <h6 class="m-0 text-truncate fw-bold small">Authentication</h6>
+              </li>
+              <li class="treeview">
+                <a href="#!">
+                  <i class="bi bi-upc-scan"></i>
+                  <span class="menu-text">Login/Signup</span>
+                </a>
+                <ul class="treeview-menu">
+                  <li>
+                    <a href="login.html">Login</a>
+                  </li>
+                  <li>
+                    <a href="signup.html">Signup</a>
+                  </li>
+                  <li>
+                    <a href="forgot-password.html">Forgot Password</a>
+                  </li>
+                  <li>
+                    <a href="reset-password.html">Reset Password</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="page-not-found.html">
+                  <i class="bi bi-exclamation-triangle"></i>
+                  <span class="menu-text">404</span>
+                </a>
+              </li>
+              <li>
+                <a href="comingsoon.html">
+                  <i class="bi bi-exclamation-octagon"></i>
+                  <span class="menu-text">Coming Soon</span>
+                </a>
+              </li>
+              <li class="treeview">
+                <a href="#!">
+                  <i class="bi bi-code-square"></i>
+                  <span class="menu-text">Menu Level</span>
+                </a>
+                <ul class="treeview-menu">
+                  <li>
+                    <a href="#!">Level One Link</a>
+                  </li>
+                  <li>
+                    <a href="#!">
+                      Level One Menu
+                      <i class="bi bi-chevron-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                      <li>
+                        <a href="#!">Level Two Link</a>
+                      </li>
+                      <li>
+                        <a href="#!">Level Two Menu
+                          <i class="bi bi-chevron-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                          <li>
+                            <a href="#!">Level Three</a>
+                          </li>
+                          <li>
+                            <a href="#!">Level Three</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#!">Level One Link</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#!">
+                  <i class="bi bi-arrow-left-right"></i>
+                  <span class="menu-text">Badge Fill</span>
+                  <span class="badge bg-primary ms-2">3</span>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <i class="bi bi-ticket-perforated"></i>
+                  <span class="menu-text">Badge Outline</span>
+                  <span class="badge border border-primary text-primary ms-2">Tag</span>
+                </a>
+              </li>
+              <li>
+                <a href="#!" class="disabled">
+                  <i class="bi bi-stars"></i>
+                  <span class="menu-text">Disabled Link</span>
                 </a>
               </li>
             </ul>
-            <div class="newsletter_block">
-              <h5>Newsletter</h5>
-              <form class="newsletter">
-                <input type="email" class="form-control" required placeholder="Your email">
-                <button type="submit" class="educate-btn sm"><span class="educate-btn__curve"></span>Subscribe</button>
-              </form>
-            </div>
           </div>
+          <!-- Sidebar menu ends -->
+
+          <!-- Sidebar settings starts -->
+          <div class="sidebar-settings gap-1 d-lg-flex d-none">
+            <a href="profile.html" class="settings-icon" data-bs-toggle="tooltip" data-bs-placement="top"
+              title="Profile">
+              <i class="bi bi-person"></i>
+            </a>
+            <a href="settings.html" class="settings-icon" data-bs-toggle="tooltip" data-bs-placement="top"
+              title="Settings">
+              <i class="bi bi-gear"></i>
+            </a>
+            <a href="widgets.html" class="settings-icon" data-bs-toggle="tooltip" data-bs-placement="top"
+              title="Widgets">
+              <i class="bi bi-box"></i>
+            </a>
+            <a href="contact-us.html" class="settings-icon" data-bs-toggle="tooltip" data-bs-placement="top"
+              title="Contact Us">
+              <i class="bi bi-phone-vibrate"></i>
+            </a>
+            <a href="login.html" class="settings-icon" data-bs-toggle="tooltip" data-bs-placement="top" title="Logout">
+              <i class="bi bi-power"></i>
+            </a>
+          </div>
+          <!-- Sidebar settings ends -->
+
+        </nav>
+        <!-- Sidebar wrapper ends -->
+
+        <!-- App container starts -->
+        <div class="app-container">
+
+          <!-- App hero header starts -->
+          <div class="app-hero-header d-flex align-items-center">
+
+            <!-- Breadcrumb starts -->
+            <h3 class="m-0">Analytics</h3>
+            <!-- Breadcrumb ends -->
+
+            <!-- Sales stats starts -->
+            <div class="ms-auto d-lg-flex d-none flex-row">
+              <div class="d-flex flex-row gap-1 p-1 border border-primary rounded-5 grd-primary-light">
+                <a href="#" class="icon-box icon-btn rounded-5 grd-primary-light border-0" data-bs-toggle="tooltip"
+                  data-bs-placement="bottom" title="Share">
+                  <i class="bi bi-share"></i>
+                </a>
+                <a href="#" class="icon-box icon-btn rounded-5 grd-primary-light border-0" data-bs-toggle="tooltip"
+                  data-bs-placement="bottom" title="Print">
+                  <i class="bi bi-printer"></i>
+                </a>
+                <a href="#" class="icon-box icon-btn rounded-5 grd-primary-light border-0" id="downloadDataToast"
+                  data-bs-toggle="tooltip" data-bs-placement="bottom" title="Download">
+                  <i class="bi bi-download"></i>
+                </a>
+              </div>
+            </div>
+            <!-- Sales stats ends -->
+
+          </div>
+          <!-- App Hero header ends -->
+
+          <!-- App body starts -->
+          <div class="app-body">
+
+            <!-- Row start -->
+            <div class="row gx-4">
+              <div class="col-xl-3 col-sm-6 col-12">
+
+                <!-- Card starts -->
+                <div class="card mb-4">
+                  <div class="card-body">
+                    <div class="m-0">
+                      <div class="fw-semibold mb-2">Total Orders</div>
+                      <div class="position-relative">
+                        <h2>690</h2>
+                        <div class="badge bg-primary-subtle text-primary">+20% compared
+                          to last week.</div>
+                        <i class="bi bi-cart2 display-6 text-primary position-absolute end-0 top-0 mt-n4"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card ends -->
+
+              </div>
+              <div class="col-xl-3 col-sm-6 col-12">
+
+                <!-- Card starts -->
+                <div class="card mb-4">
+                  <div class="card-body">
+                    <div class="m-0">
+                      <div class="fw-semibold mb-2">Total Sales</div>
+                      <div class="position-relative">
+                        <h2>$600</h2>
+                        <div class="badge bg-primary-subtle text-primary">+28% compared to
+                          last week</div>
+                        <i class="bi bi-bar-chart display-6 text-primary position-absolute end-0 top-0 mt-n4"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card ends -->
+
+              </div>
+              <div class="col-xl-3 col-sm-6 col-12">
+
+                <!-- Card starts -->
+                <div class="card mb-4">
+                  <div class="card-body">
+                    <div class="m-0">
+                      <div class="fw-semibold mb-2">Total Profit</div>
+                      <div class="position-relative">
+                        <h2>$800</h2>
+                        <div class="badge bg-primary-subtle text-primary">+36% compared to
+                          last week</div>
+                        <i class="bi bi-percent display-6 text-primary position-absolute end-0 top-0 mt-n4"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card ends -->
+
+              </div>
+              <div class="col-xl-3 col-sm-6 col-12">
+
+                <!-- Card starts -->
+                <div class="card mb-4 card-bg">
+                  <div class="card-body">
+                    <div class="m-0">
+                      <div class="fw-semibold mb-2">Total Revenue</div>
+                      <div class="position-relative">
+                        <h2>$900</h2>
+                        <div class="badge bg-primary-subtle text-primary">+36% compared to last week</div>
+                        <i class="bi bi-buildings display-6 text-primary position-absolute end-0 top-0 mt-n4"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card ends -->
+
+              </div>
+            </div>
+            <!-- Row end -->
+
+            <!-- Row start -->
+            <div class="row gx-4">
+              <div class="col-xl-4 col-md-6 col-12">
+                <div class="card mb-4">
+                  <div class="card-body d-flex align-items-center">
+                    <div class="icon-box md rounded-circle bg-primary text-white me-3">
+                      <i class="bi bi-people"></i>
+                    </div>
+                    <div>
+                      <div class="fw-semibold mb-1">Active Users</div>
+                      <h4>1,250</h4>
+                      <span class="badge bg-success-subtle text-success">+8% this week</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-4 col-md-6 col-12">
+                <div class="card mb-4">
+                  <div class="card-body d-flex align-items-center">
+                    <div class="icon-box md rounded-circle bg-warning text-white me-3">
+                      <i class="bi bi-currency-dollar"></i>
+                    </div>
+                    <div>
+                      <div class="fw-semibold mb-1">New Sales</div>
+                      <h4>$4,300</h4>
+                      <span class="badge bg-warning-subtle text-warning">+12% this week</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-4 col-md-12 col-12">
+                <div class="card mb-4">
+                  <div class="card-body d-flex align-items-center">
+                    <div class="icon-box md rounded-circle bg-success text-white me-3">
+                      <i class="bi bi-graph-up-arrow"></i>
+                    </div>
+                    <div>
+                      <div class="fw-semibold mb-1">Growth Rate</div>
+                      <h4>3.5%</h4>
+                      <span class="badge bg-success-subtle text-success">Stable</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Row end -->
+
+            <!-- Row start -->
+            <div class="row gx-4">
+              <div class="col-xl-4 col-md-6 col-12">
+                <div class="card mb-4">
+                  <div class="card-body d-flex align-items-center">
+                    <div class="icon-box md rounded-circle bg-info text-white me-3">
+                      <i class="bi bi-activity"></i>
+                    </div>
+                    <div>
+                      <div class="fw-semibold mb-1">Active Sessions</div>
+                      <h4>320</h4>
+                      <span class="badge bg-info-subtle text-info">+5% this week</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-4 col-md-6 col-12">
+                <div class="card mb-4">
+                  <div class="card-body d-flex align-items-center">
+                    <div class="icon-box md rounded-circle bg-danger text-white me-3">
+                      <i class="bi bi-bell"></i>
+                    </div>
+                    <div>
+                      <div class="fw-semibold mb-1">Notifications</div>
+                      <h4>27</h4>
+                      <span class="badge bg-danger-subtle text-danger">+2 new</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-4 col-md-12 col-12">
+                <div class="card mb-4">
+                  <div class="card-body d-flex align-items-center">
+                    <div class="icon-box md rounded-circle bg-secondary text-white me-3">
+                      <i class="bi bi-clock-history"></i>
+                    </div>
+                    <div>
+                      <div class="fw-semibold mb-1">Avg. Response Time</div>
+                      <h4>1.2s</h4>
+                      <span class="badge bg-secondary-subtle text-secondary">Improved</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Row end -->
+
+            <!-- Row start -->
+            <div class="row gx-4">
+              <div class="col-xl-12">
+                <div class="card mb-4">
+                  <div class="card-header">
+                    <h5 class="card-title">Visitors</h5>
+                  </div>
+                  <div class="card-body">
+                    <div class="graph-body-xl overflow-hidden">
+                      <div id="visits-conversions"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Row end -->
+
+            <!-- Row start -->
+            <div class="row gx-4">
+              <div class="col-xxl-8 col-sm-12 col-12">
+                <div class="card mb-4" id="cardFullscreen">
+                  <div class="card-header">
+                    <h5 class="card-title">Earnings</h5>
+                  </div>
+                  <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between">
+                      <div class="">
+                        <div class="d-flex align-items-center">
+                          <div class="fs-2 fw-semibold">$8900</div>
+                          <div class="d-flex ms-2">
+                            <div>20.9%</div>
+                            <i class="bi bi-arrow-up-right text-success ms-1"></i>
+                          </div>
+                        </div>
+                        <span
+                          class="monthDisplay badge bg-primary-subtle text-primary border border-primary small"></span>
+                      </div>
+                      <div class="d-flex gap-1">
+                        <div class="toggle-btns">
+                          <button type="button" class="btn btn-primary btn-sm">This Week</button>
+                          <button type="button" class="btn btn-outline-primary btn-sm">Last Week</button>
+                        </div>
+                        <button type="button" class="btn btn-outline-primary btn-sm" id="toggleCardFullscreen"
+                          data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="tooltip-danger"
+                          data-bs-title="Fullscreen">
+                          <i class="bi bi-arrows-fullscreen"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="tooltip"
+                          data-bs-placement="top" data-bs-custom-class="tooltip-danger" data-bs-title="Download">
+                          <i class="bi bi-download"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="tooltip"
+                          data-bs-placement="top" data-bs-custom-class="tooltip-danger" data-bs-title="Options">
+                          <i class="bi bi-three-dots"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="overflow-hidden">
+                      <div id="income"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xxl-4 col-sm-12 col-12">
+                <div class="card mb-4">
+                  <div class="card-header">
+                    <h5 class="card-title">Social</h5>
+                    <div class="position-absolute top-0 end-0  mt-2 me-3">
+                      <div class="d-flex align-items-center gap-1">
+                        <div class="fs-2 fw-semibold">960</div>
+                        <div class="d-flex">
+                          <div>33.6%</div>
+                          <i class="bi bi-arrow-up-right text-success ms-2"></i>
+                        </div>
+                      </div>
+                      <span
+                        class="monthDisplay badge bg-primary-subtle text-primary border border-primary small"></span>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="overflow-hidden auto-align-graph">
+                      <div id="conversions"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mb-4 bg-primary available-balance-card">
+                  <div class="card-body">
+                    <div class="balance-card-body p-2 rounded-2">
+                      <div class="d-flex justify-content-between mb-3">
+                        <div>
+                          <h6 class="text-white">Available Balance</h6>
+                          <h5 class="m-0 text-white">$98600.00</h5>
+                        </div>
+                        <div class="icon-box md rounded-circle bg-primary">
+                          <i class="bi bi-arrow-left-right"></i>
+                        </div>
+                      </div>
+                      <div class="d-grid">
+                        <button type="button" class="btn btn-black btn-sm">Add Money</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Row end -->
+
+            <!-- Row start -->
+            <div class="row gx-4">
+              <div class="col-sm-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h5 class="card-title m-0">Orders</h5>
+                    <div class="ms-auto d-flex gap-2">
+
+                      <!-- Search Patient Starts -->
+                      <div class="search-container dark d-xl-block d-none">
+                        <input type="text" class="form-control border" id="searchPatient" placeholder="Search">
+                        <i class="bi bi-search"></i>
+                      </div>
+                      <!-- Search Patient Ends -->
+
+                      <!-- Button Group Starts -->
+                      <div class="ms-2 toggle-btn-group">
+                        <button type="button" class="btn btn-primary">
+                          <i class="bi bi-filter-circle"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline-primary">
+                          <i class="bi bi-border-all"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline-primary">
+                          <i class="bi bi-calendar2-event"></i>
+                        </button>
+                      </div>
+                      <!-- Button Group Ends -->
+
+                    </div>
+                  </div>
+                  <div class="card-body">
+
+                    <!-- Product grod starts -->
+                    <div class="d-grid gap-2">
+                      <!-- Product #1 -->
+                      <div class="card">
+                        <div class="border-light rounded-2 p-2">
+                          <div class="d-flex align-items-center flex-wrap gap-4">
+                            <img src="assets/images/user.png" class="img-3x rounded-5 border border-primary border-2"
+                              alt="Admin Dashboards">
+                            <div class="d-flex flex-column">
+                              <div class="text-primary">
+                                User Name
+                              </div>
+                              <div class="fw-semibold">Jordan</div>
+                            </div>
+                            <div class="d-flex flex-column mw-90">
+                              <div class="text-primary">
+                                Product ID
+                              </div>
+                              <div>#APT009</div>
+                            </div>
+                            <div class="d-flex flex-column mw-120">
+                              <div class="text-primary">
+                                Purchase Date
+                              </div>
+                              <div>20/08/2025</div>
+                            </div>
+                            <div class="d-flex flex-column mw-90">
+                              <div class="text-primary">
+                                Status
+                              </div>
+                              <div>Delivered</div>
+                            </div>
+                            <div class="d-flex flex-column">
+                              <div class="text-primary">
+                                Mobile
+                              </div>
+                              <div>9876543210</div>
+                            </div>
+                            <div class="d-flex flex-column">
+                              <div class="text-primary">
+                                Email
+                              </div>
+                              <div>testing@info.com</div>
+                            </div>
+                            <div class="d-flex flex-column">
+                              <div class="text-primary">
+                                Payment
+                              </div>
+                              <div>Paid</div>
+                            </div>
+                            <div class="ms-auto d-flex align-items-center gap-2">
+                              <div class="d-flex gap-2">
+                                <a href="#!" class="icon-box xs icon-box-hover rounded-5">
+                                  <i class="bi bi-check-circle text-primary"></i>
+                                </a>
+                                <a href="#!" class="icon-box xs icon-box-hover rounded-5">
+                                  <i class="bi bi-x-circle text-primary"></i>
+                                </a>
+                              </div>
+                              <div class="fw-semibold text-primary">
+                                <a href="javascript:void(0)" class="btn-soft-primary py-2 px-3 rounded-5">
+                                  Details
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Product #2 -->
+                      <div class="card">
+                        <div class="border-light rounded-2 p-2">
+                          <div class="d-flex align-items-center flex-wrap gap-4">
+                            <img src="assets/images/user1.png" class="img-3x rounded-5 border border-primary border-2"
+                              alt="Admin Dashboards">
+                            <div class="d-flex flex-column">
+                              <div class="text-primary">
+                                User Name
+                              </div>
+                              <div class="fw-semibold">Hilton</div>
+                            </div>
+                            <div class="d-flex flex-column mw-90">
+                              <div class="text-primary">
+                                Product ID
+                              </div>
+                              <div>#APT083</div>
+                            </div>
+                            <div class="d-flex flex-column mw-120">
+                              <div class="text-primary">
+                                Purchase Date
+                              </div>
+                              <div>30/08/2025</div>
+                            </div>
+                            <div class="d-flex flex-column mw-90">
+                              <div class="text-primary">
+                                Status
+                              </div>
+                              <div>Approved</div>
+                            </div>
+                            <div class="d-flex flex-column">
+                              <div class="text-primary">
+                                Mobile
+                              </div>
+                              <div>9876543210</div>
+                            </div>
+                            <div class="d-flex flex-column">
+                              <div class="text-primary">
+                                Email
+                              </div>
+                              <div>testing@info.com</div>
+                            </div>
+                            <div class="d-flex flex-column">
+                              <div class="text-primary">
+                                Payment
+                              </div>
+                              <div>Paid</div>
+                            </div>
+                            <div class="ms-auto d-flex align-items-center gap-2">
+                              <div class="d-flex gap-2">
+                                <a href="#!" class="icon-box xs icon-box-hover rounded-5">
+                                  <i class="bi bi-check-circle text-primary"></i>
+                                </a>
+                                <a href="#!" class="icon-box xs icon-box-hover rounded-5">
+                                  <i class="bi bi-x-circle text-primary"></i>
+                                </a>
+                              </div>
+                              <div class="fw-semibold text-primary">
+                                <a href="javascript:void(0)" class="btn-soft-primary py-2 px-3 rounded-5">
+                                  Details
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Product #3 -->
+                      <div class="card">
+                        <div class="border-light rounded-2 p-2">
+                          <div class="d-flex align-items-center flex-wrap gap-4">
+                            <img src="assets/images/user2.png" class="img-3x rounded-5 border border-primary border-2"
+                              alt="Admin Dashboards">
+                            <div class="d-flex flex-column">
+                              <div class="text-primary">
+                                User Name
+                              </div>
+                              <div class="fw-semibold">David</div>
+                            </div>
+                            <div class="d-flex flex-column mw-90">
+                              <div class="text-primary">
+                                Product ID
+                              </div>
+                              <div>#APT066</div>
+                            </div>
+                            <div class="d-flex flex-column mw-120">
+                              <div class="text-primary">
+                                Purchase Date
+                              </div>
+                              <div>30/08/2025</div>
+                            </div>
+                            <div class="d-flex flex-column mw-90">
+                              <div class="text-primary">
+                                Status
+                              </div>
+                              <div>Processing</div>
+                            </div>
+                            <div class="d-flex flex-column">
+                              <div class="text-primary">
+                                Mobile
+                              </div>
+                              <div>9876543210</div>
+                            </div>
+                            <div class="d-flex flex-column">
+                              <div class="text-primary">
+                                Email
+                              </div>
+                              <div>testing@info.com</div>
+                            </div>
+                            <div class="d-flex flex-column">
+                              <div class="text-primary">
+                                Payment
+                              </div>
+                              <div>Pending</div>
+                            </div>
+                            <div class="ms-auto d-flex align-items-center gap-2">
+                              <div class="d-flex gap-2">
+                                <a href="#!" class="icon-box xs icon-box-hover rounded-5">
+                                  <i class="bi bi-check-circle text-primary"></i>
+                                </a>
+                                <a href="#!" class="icon-box xs icon-box-hover rounded-5">
+                                  <i class="bi bi-x-circle text-primary"></i>
+                                </a>
+                              </div>
+                              <div class="fw-semibold text-primary">
+                                <a href="javascript:void(0)" class="btn-soft-primary py-2 px-3 rounded-5">
+                                  Details
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Product #4 -->
+                      <div class="card">
+                        <div class="border-light rounded-2 p-2">
+                          <div class="d-flex align-items-center flex-wrap gap-4">
+                            <img src="assets/images/user3.png" class="img-3x rounded-5 border border-primary border-2"
+                              alt="Admin Dashboards">
+                            <div class="d-flex flex-column">
+                              <div class="text-primary">
+                                User Name
+                              </div>
+                              <div class="fw-semibold">Karyn</div>
+                            </div>
+                            <div class="d-flex flex-column mw-90">
+                              <div class="text-primary">
+                                Product ID
+                              </div>
+                              <div>#APT032</div>
+                            </div>
+                            <div class="d-flex flex-column mw-120">
+                              <div class="text-primary">
+                                Purchase Date
+                              </div>
+                              <div>22/08/2025</div>
+                            </div>
+                            <div class="d-flex flex-column mw-90">
+                              <div class="text-primary">
+                                Status
+                              </div>
+                              <div>Processing</div>
+                            </div>
+                            <div class="d-flex flex-column">
+                              <div class="text-primary">
+                                Mobile
+                              </div>
+                              <div>9876543210</div>
+                            </div>
+                            <div class="d-flex flex-column">
+                              <div class="text-primary">
+                                Email
+                              </div>
+                              <div>testing@info.com</div>
+                            </div>
+                            <div class="d-flex flex-column">
+                              <div class="text-primary">
+                                Payment
+                              </div>
+                              <div>Pending</div>
+                            </div>
+                            <div class="ms-auto d-flex align-items-center gap-2">
+                              <div class="d-flex gap-2">
+                                <a href="#!" class="icon-box xs icon-box-hover rounded-5">
+                                  <i class="bi bi-check-circle text-primary"></i>
+                                </a>
+                                <a href="#!" class="icon-box xs icon-box-hover rounded-5">
+                                  <i class="bi bi-x-circle text-primary"></i>
+                                </a>
+                              </div>
+                              <div class="fw-semibold text-primary">
+                                <a href="javascript:void(0)" class="btn-soft-primary py-2 px-3 rounded-5">
+                                  Details
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Product #5 -->
+                      <div class="card">
+                        <div class="border-light rounded-2 p-2">
+                          <div class="d-flex align-items-center flex-wrap gap-4">
+                            <img src="assets/images/user4.png" class="img-3x rounded-5 border border-primary border-2"
+                              alt="Admin Dashboards">
+                            <div class="d-flex flex-column">
+                              <div class="text-primary">
+                                User Name
+                              </div>
+                              <div class="fw-semibold">Chris</div>
+                            </div>
+                            <div class="d-flex flex-column mw-90">
+                              <div class="text-primary">
+                                Product ID
+                              </div>
+                              <div>#APT048</div>
+                            </div>
+                            <div class="d-flex flex-column mw-120">
+                              <div class="text-primary">
+                                Purchase Date
+                              </div>
+                              <div>30/08/2025</div>
+                            </div>
+                            <div class="d-flex flex-column mw-90">
+                              <div class="text-primary">
+                                Status
+                              </div>
+                              <div>Processing</div>
+                            </div>
+                            <div class="d-flex flex-column">
+                              <div class="text-primary">
+                                Mobile
+                              </div>
+                              <div>9876543210</div>
+                            </div>
+                            <div class="d-flex flex-column">
+                              <div class="text-primary">
+                                Email
+                              </div>
+                              <div>testing@info.com</div>
+                            </div>
+                            <div class="d-flex flex-column">
+                              <div class="text-primary">
+                                Payment
+                              </div>
+                              <div>Pending</div>
+                            </div>
+                            <div class="ms-auto d-flex align-items-center gap-2">
+                              <div class="d-flex gap-2">
+                                <a href="#!" class="icon-box xs icon-box-hover rounded-5">
+                                  <i class="bi bi-check-circle text-primary"></i>
+                                </a>
+                                <a href="#!" class="icon-box xs icon-box-hover rounded-5">
+                                  <i class="bi bi-x-circle text-primary"></i>
+                                </a>
+                              </div>
+                              <div class="fw-semibold text-primary">
+                                <a href="javascript:void(0)" class="btn-soft-primary py-2 px-3 rounded-5">
+                                  Details
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                    <!-- Product grod ends -->
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Row end -->
+
+            <!-- Toast message for download data example starts -->
+            <div class="toast-container position-fixed bottom-0 end-0 p-3 mt-5">
+              <div id="downloadData" class="toast text-bg-primary border-0" role="alert" aria-live="assertive"
+                aria-atomic="true">
+                <div class="toast-header">
+                  <strong class="me-auto">Downloading</strong>
+                  <small>Just now</small>
+                  <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                  Data successfully downloading.
+                </div>
+              </div>
+            </div>
+            <!-- Toast message for download data example ends -->
+
+          </div>
+          <!-- App body ends -->
+
+          <!-- App footer starts -->
+          <div class="app-footer">
+            <span class="small">© Bootstrap Gallery 2025</span>
+          </div>
+          <!-- App footer ends -->
+
         </div>
-      </div>
-      <div class="copyright_row">
-        <p>©2025 Educate All Rights Reserved.</p>
-      </div>
-    </footer>
-    <!-- Footer Area End -->
+        <!-- App container ends -->
 
-  </div>
+      </div>
+      <!-- Main container ends -->
 
-  <!-- Mobile Menu Start -->
-  <div class="mobile-nav__wrapper">
-    <div class="mobile-nav__overlay mobile-nav__toggler"></div>
-    <div class="mobile-nav__content">
-      <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
-      <div class="logo-box">
-        <a href="https://uiparadox.co.uk/templates/educate/index.html" aria-label="logo image"><img src="assets/media/logo-light.png" alt="educate"></a>
-      </div>
-      <div class="mobile-nav__container"></div>
-      <ul class="mobile-nav__contact list-unstyled">
-        <li>
-          <i class="fas fa-envelope"></i>
-          <a href="mailto:example@company.com">example@company.com</a>
-        </li>
-        <li>
-          <i class="fa fa-phone-alt"></i>
-          <a href="tel:+12345678">+123 (4567) -890</a>
-        </li>
-      </ul>
-      <div class="mobile-nav__social">
-             
-        <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.pinterest.com/"><i class="fab fa-pinterest-p"></i></a>
-        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
-      </div>
     </div>
-  </div>
-  <!-- Mobile Menu End -->
+    <!-- Page wrapper ends -->
 
-  <div class="search-popup">
-    <div class="search-popup__overlay search-toggler"></div>
-    <div class="search-popup__content">
-      <form role="search" method="get" class="search-popup__form" action="https://uiparadox.co.uk/templates/educate/index.html">
-        <input type="text" id="search" placeholder="Search Here...">
-        <button type="submit"><i class="fal fa-search"></i></button>
-      </form>
-    </div>
-  </div>
-  <!-- search-popup -->
+    <!-- *************
+			************ JavaScript Files *************
+		************* -->
+    <!-- Required jQuery first, then Bootstrap Bundle JS -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/moment.min.js"></script>
 
-  <!-- back-to-top-start -->
-  <a href="#" class="scroll-top">
-    <svg class="scroll-top__circle" width="100%" height="100%" viewBox="-1 -1 102 102">
-      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-    </svg>
-  </a>
-  <!-- back-to-top-end -->
+    <!-- *************
+			************ Vendor Js Files *************
+		************* -->
 
-  
+    <!-- Overlay Scroll JS -->
+    <script src="assets/vendor/overlay-scroll/jquery.overlayScrollbars.min.js"></script>
+    <script src="assets/vendor/overlay-scroll/custom-scrollbar.js"></script>
 
+    <!-- Apex Charts -->
+    <script src="assets/vendor/apex/apexcharts.min.js"></script>
+    <script src="assets/vendor/apex/custom/home/conversions.js"></script>
+    <script src="assets/vendor/apex/custom/home/income.js"></script>
+    <script src="assets/vendor/apex/custom/home/visits-conversions.js"></script>
 
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Rating -->
+    <script src="assets/vendor/rating/raty.js"></script>
+    <script src="assets/vendor/rating/raty-custom.js"></script>
 
-      
-    {{-- <script src="{{ asset('backend/assets/js/bundle.js') }}"></script>
-    <script src="{{ asset('backend/assets/js/scripts.js') }}"></script> --}}
-
-    <!-- Jquery Js -->
-  <script src="{{asset('backend/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-  <script src="{{asset('backend/assets/vendor/jquery/jquery-3.6.3.min.js')}}"></script>
-  <script src="{{asset('backend/assets/vendor/jquery-appear/jquery-appear.js')}}"></script>
-  <script src="{{asset('backend/assets/vendor/jquery-validator/jquery-validator.js')}}"></script>
-  <script src="{{asset('backend/assets/vendor/countdown/jquery.countdown.min.js')}}"></script>
-  <script src="{{asset('backend/assets/vendor/jquery-magnific-popup/jquery.magnific-popup.min.js')}}"></script>
-  <script src="{{asset('backend/assets/vendor/slickslider/slick.min.js')}}"></script>
-  <script src="{{asset('backend/assets/vendor/tilt/tilt.jquery.js')}}"></script>
-  <script src="{{asset('backend/assets/vendor/wow/wow.js')}}"></script>
-
-  <!-- Site Scripts -->
-  <script src="{{asset('backend/assets/js/app.js')}}"></script>
+    <!-- Custom JS files -->
+    <script src="assets/js/custom.js"></script>
+  </body>
 
 
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-
-<script>
- @if(Session::has('message'))
- var type = "{{ Session::get('alert-type','info') }}"
- switch(type){
-    case 'info':
-    toastr.info(" {{ Session::get('message') }} ");
-    break;
-
-    case 'success':
-    toastr.success(" {{ Session::get('message') }} ");
-    break;
-
-    case 'warning':
-    toastr.warning(" {{ Session::get('message') }} ");
-    break;
-
-    case 'error':
-    toastr.error(" {{ Session::get('message') }} ");
-    break; 
- }
- @endif 
-</script>
-
-
-
-</body>
-
+<!-- Mirrored from bootstrapget.com/demos/sporty-admin-dashboard/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 01 Feb 2026 16:17:58 GMT -->
 </html>
