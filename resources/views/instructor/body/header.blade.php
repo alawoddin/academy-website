@@ -20,14 +20,14 @@
         <div class="app-brand d-flex align-items-center p-2">
 
           <!-- Default screen starts -->
-          <a href="index-2.html" class="d-lg-flex d-none">
-            <img src="assets/images/logo.svg" class="logo" alt="Bootstrap Gallery">
+          <a href="{{ route('instructor.dashboard') }}" class="d-lg-flex d-none">
+            <img src="{{ asset('backend/assets/images/logo.svg') }}" class="logo" alt="Khedmat">
           </a>
           <!-- Default screen end -->
 
           <!-- Logo sm starts -->
-          <a href="index-2.html" class="d-lg-none">
-            <img src="assets/images/logo-sm.svg" class="logo-sm" alt="Bootstrap Gallery">
+          <a href="{{ route('instructor.dashboard') }}" class="d-lg-none">
+            <img src="{{ asset('backend/assets/images/logo-sm.svg') }}" class="logo-sm" alt="Khedmat">
           </a>
           <!-- Logo sm end -->
 
@@ -222,15 +222,20 @@
           <!-- Actions block ends -->
 
           <!-- Settings start -->
+          @php
+            $instructorAvatar = (!empty(auth()->user()->photo) && file_exists(public_path('upload/instructor_images/'.auth()->user()->photo)))
+                ? asset('upload/instructor_images/'.auth()->user()->photo)
+                : asset('backend/assets/images/user3.png');
+          @endphp
           <div class="dropdown ms-3">
             <a id="userSettings" class="dropdown-toggle d-flex align-items-center py-1 avatar-box" href="#!"
               role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="assets/images/user3.png" class="rounded-circle img-3x" alt="Bootstrap Gallery">
+              <img src="{{ $instructorAvatar }}" class="rounded-circle img-3x" alt="Instructor">
               <span class="status online"></span>
             </a>
             <div class="dropdown-menu dropdown-menu-end shadow-lg p-3">
               <div class="user-header d-flex align-items-center mb-3">
-                <img src="assets/images/user3.png" class="rounded-circle img-3x me-2" alt="Modern Admin Dashboard">
+                <img src="{{ $instructorAvatar }}" class="rounded-circle img-3x me-2" alt="Instructor">
                 <div>
                   <h6 class="mb-0 fw-semibold">{{ auth()->user()->name }}</h6>
                   <small class="text-muted">Instructor</small>

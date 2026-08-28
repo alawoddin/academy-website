@@ -34,9 +34,17 @@ class InstructorController extends Controller
 
     public function InstructorProfileStore(Request $request)
     {
-        $id = Auth::user()->id;
-        $data = User::find($id);
+        $id = Auth::id();
 
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255|unique:users,email,'.$id,
+            'phone' => 'nullable|string|max:50',
+            'address' => 'nullable|string|max:255',
+            'photo' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+        ]);
+
+        $data = User::findOrFail($id);
         $data->name = $request->name;
         $data->email = $request->email;
         $data->phone = $request->phone;
@@ -45,9 +53,14 @@ class InstructorController extends Controller
         $oldPhotoPath = $data->photo;
 
         if ($request->hasFile('photo')) {
+            $destination = public_path('upload/instructor_images');
+            if (! is_dir($destination)) {
+                mkdir($destination, 0755, true);
+            }
+
             $file = $request->file('photo');
             $filename = time().'.'.$file->getClientOriginalExtension();
-            $file->move(public_path('upload/instructor_images'), $filename);
+            $file->move($destination, $filename);
             $data->photo = $filename;
 
             if ($oldPhotoPath && $oldPhotoPath !== $filename) {
@@ -62,7 +75,7 @@ class InstructorController extends Controller
             'alert-type' => 'success'
         );
 
-        return redirect()->back()->with($notification);
+        return redirect()->route('instructor.profile')->with($notification);
     }
 
     private function deleteOldImage(string $oldPhotoPath): void
@@ -99,7 +112,9 @@ class InstructorController extends Controller
             'password' => Hash::make($request->new_password)
         ]);
 
-        Auth::logout();
+        Auth::guard('web')->logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
 
         $notification = array(
             'message' => 'Password Updated Successfully',

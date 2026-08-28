@@ -1,118 +1,73 @@
 @extends('instructor.dashboard')
 @section('instructor')
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-<div class="nk-content-inner">
-<div class="nk-content-body">
-    <div class="nk-block-head nk-page-head">
-        <div class="nk-block-head-between">
-            <div class="nk-block-head-content">
-                <h2 class="display-6">Personal Profile </h2>
-                 
-            </div>
-        </div>
-    </div><!-- .nk-page-head -->
-    <div class="nk-block">
-        <div class="nk-block-head nk-block-head-sm">
-            <div class="nk-block-head-content">
-               
-            </div>
-        </div><!-- .nk-block-head -->
-        <div class="card shadown-none">
-            <div class="card-body">
-     
-      <form action="{{ route('instructor.profile.store') }}" method="post" enctype="multipart/form-data">
-        @csrf           
-     <div class="row g-3 gx-gs">
-                    
-    <div class="col-md-6">
-        <div class="form-group">
-            <label for="exampleFormControlInputText1" class="form-label">Name </label>
-            <div class="form-control-wrap">
-                <input type="text" name="name" class="form-control" value="{{ $profileData->name }}"  >
-            </div>
-        </div>
-    </div>
-
-     <div class="col-md-6">
-        <div class="form-group">
-            <label for="exampleFormControlInputText1" class="form-label">Email </label>
-            <div class="form-control-wrap">
-                <input type="email" name="email" class="form-control" value="{{ $profileData->email }}"  >
-            </div>
-        </div>
-    </div>
-
-
-    <div class="col-md-6">
-        <div class="form-group">
-            <label for="exampleFormControlInputText1" class="form-label">Phone </label>
-            <div class="form-control-wrap">
-                <input type="text" name="phone" class="form-control" value="{{ $profileData->phone }}"  >
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-6">
-        <div class="form-group">
-            <label for="exampleFormControlInputText1" class="form-label">Address </label>
-            <div class="form-control-wrap">
-                <input type="text" name="address" class="form-control" value="{{ $profileData->address }}"  >
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-6">
-        <div class="form-group">
-            <label for="exampleFormControlInputText1" class="form-label">Profile Image </label>
-            <div class="form-control-wrap">
-                <input type="file" name="photo" class="form-control" id="image" >
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-6">
-        <div class="form-group">
-            <label for="exampleFormControlInputText1" class="form-label">  </label>
-            <div class="form-control-wrap">
-                 <img id="showImage" src="{{ (!empty($profileData->photo)) ? url('upload/instructor_images/'.$profileData->photo) : url('upload/no_image.jpg') }}" class="rounded-circle avatar-xl img-thumbnail float-start" style="width: 80px; height:80px;">
-            </div>
-        </div>
-    </div>
-               
-    <div class="col-lg-12 col-xl-12">
-<button type="submit" class="btn btn-secondary">Save Changes</button> 
-    </div>
-            
-                    
-    </div>
-    </form> 
-
-
-
-            </div><!-- .card-body -->
-        </div><!-- .card -->
-    </div><!-- .nk-block -->
-     
-
-
-</div>
+<div class="app-hero-header d-flex align-items-center">
+    <h3 class="m-0">My Profile</h3>
 </div>
 
+<div class="app-body">
+    @if (session('message'))
+        <div class="alert alert-{{ session('alert-type') === 'error' ? 'danger' : 'success' }} mb-4">
+            {{ session('message') }}
+        </div>
+    @endif
 
-<script type="text/javascript">
-    $(document).ready(function(){
-        $('#image').change(function(e){
-            var reader = new FileReader();
-            reader.onload = function(e){
-                $('#showImage').attr('src',e.target.result);
-            }
-            reader.readAsDataURL(e.target.files['0']);
-        })
-    })
+    <div class="row gx-4">
+        <div class="col-xl-8 col-12">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="card-title">Update Profile</h5>
+                </div>
+                <div class="card-body">
+                    <form action="{{ route('instructor.profile.store') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Name</label>
+                                <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name', $profileData->name) }}" required>
+                                @error('name')<span class="text-danger">{{ $message }}</span>@enderror
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Email</label>
+                                <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email', $profileData->email) }}" required>
+                                @error('email')<span class="text-danger">{{ $message }}</span>@enderror
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Phone</label>
+                                <input type="text" name="phone" class="form-control" value="{{ old('phone', $profileData->phone) }}">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Address</label>
+                                <input type="text" name="address" class="form-control" value="{{ old('address', $profileData->address) }}">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Profile Image</label>
+                                <input type="file" name="photo" id="image" class="form-control @error('photo') is-invalid @enderror" accept="image/*">
+                                @error('photo')<span class="text-danger">{{ $message }}</span>@enderror
+                            </div>
+                            <div class="col-md-6 d-flex align-items-end">
+                                <img id="showImage"
+                                     src="{{ (!empty($profileData->photo)) ? asset('upload/instructor_images/'.$profileData->photo) : asset('backend/assets/images/user3.png') }}"
+                                     class="rounded-circle"
+                                     style="width: 80px; height:80px; object-fit: cover;"
+                                     alt="Profile">
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
+<script>
+    document.getElementById('image')?.addEventListener('change', function (e) {
+        const file = e.target.files[0];
+        if (!file) return;
+        document.getElementById('showImage').src = URL.createObjectURL(file);
+    });
 </script>
-
-
-
 @endsection

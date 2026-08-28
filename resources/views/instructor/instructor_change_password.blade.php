@@ -1,87 +1,49 @@
 @extends('instructor.dashboard')
 @section('instructor')
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-<div class="nk-content-inner">
-<div class="nk-content-body">
-    <div class="nk-block-head nk-page-head">
-        <div class="nk-block-head-between">
-            <div class="nk-block-head-content">
-                <h2 class="display-6">Change Password  </h2>
-                 
-            </div>
-        </div>
-    </div><!-- .nk-page-head -->
-    <div class="nk-block">
-        <div class="nk-block-head nk-block-head-sm">
-            <div class="nk-block-head-content">
-               
-            </div>
-        </div><!-- .nk-block-head -->
-        <div class="card shadown-none">
-            <div class="card-body">
-     
-      <form action="{{ route('instructor.password.update') }}" method="post" enctype="multipart/form-data">
-        @csrf   
-
-     <div class="row g-3 gx-gs">
-                    
-    <div class="col-md-6">
-        <div class="form-group">
-            <label for="exampleFormControlInputText1" class="form-label">Old Password </label>
-            <div class="form-control-wrap">
-                <input type="password" name="old_password" id="old_password" class="form-control @error('old_password') is-invalid @enderror " placeholder="Old Password"  >
-                @error('old_password')
-                    <span class="text-danger">{{ $message }}</span>
-                @enderror
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-6">
-        <div class="form-group">
-            <label for="exampleFormControlInputText1" class="form-label">New Password </label>
-            <div class="form-control-wrap">
-                <input type="password" name="new_password" id="new_password" class="form-control @error('new_password') is-invalid @enderror " placeholder="New Password"  >
-                @error('new_password')
-                    <span class="text-danger">{{ $message }}</span>
-                @enderror
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-6">
-        <div class="form-group">
-            <label for="exampleFormControlInputText1" class="form-label">Confirm Password </label>
-            <div class="form-control-wrap">
-                <input type="password" name="new_password_confirmation" id="new_password_confirmation" class="form-control" placeholder="New Password Confirmation"  > 
-            </div>
-        </div>
-    </div> 
-  
-               
-    <div class="col-lg-12 col-xl-12">
-<button type="submit" class="btn btn-secondary">Save Changes</button> 
-    </div>
-            
-                    
-    </div>
-    </form> 
-
-
-
-            </div><!-- .card-body -->
-        </div><!-- .card -->
-    </div><!-- .nk-block -->
-     
-
-
-</div>
+<div class="app-hero-header d-flex align-items-center">
+    <h3 class="m-0">Change Password</h3>
 </div>
 
+<div class="app-body">
+    @if (session('message'))
+        <div class="alert alert-{{ session('alert-type') === 'error' ? 'danger' : 'success' }} mb-4">
+            {{ session('message') }}
+        </div>
+    @endif
 
- 
-
-
-
+    <div class="row gx-4">
+        <div class="col-xl-8 col-12">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="card-title">Update Password</h5>
+                </div>
+                <div class="card-body">
+                    <form action="{{ route('instructor.password.update') }}" method="POST">
+                        @csrf
+                        <div class="row g-3">
+                            <div class="col-md-12">
+                                <label class="form-label">Old Password</label>
+                                <input type="password" name="old_password" class="form-control @error('old_password') is-invalid @enderror" required>
+                                @error('old_password')<span class="text-danger">{{ $message }}</span>@enderror
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">New Password</label>
+                                <input type="password" name="new_password" class="form-control @error('new_password') is-invalid @enderror" required>
+                                @error('new_password')<span class="text-danger">{{ $message }}</span>@enderror
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Confirm Password</label>
+                                <input type="password" name="new_password_confirmation" class="form-control" required>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection

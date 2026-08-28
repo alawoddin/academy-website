@@ -7,7 +7,7 @@
                 <h6 class="m-0 text-truncate fw-bold small">Dashboards</h6>
               </li>
               <li class="current-page">
-                <a href="index-2.html">
+                <a href="{{ route('instructor.dashboard') }}">
                   <i class="bi bi-pie-chart"></i>
                   <span class="menu-text">Analytics</span>
                 </a>
@@ -52,13 +52,13 @@
                 </a>
               </li>
               <li>
-                <a href="profile.html">
+                <a href="{{ route('instructor.profile') }}">
                   <i class="bi bi-filter-circle"></i>
                   <span class="menu-text">User Profile</span>
                 </a>
               </li>
               <li>
-                <a href="settings.html">
+                <a href="{{ route('instructor.change.password') }}">
                   <i class="bi bi-gear"></i>
                   <span class="menu-text">Account Settings</span>
                 </a>
@@ -312,7 +312,7 @@
                     <a href="forgot-password.html">Forgot Password</a>
                   </li>
                   <li>
-                    <a href="reset-password.html">Reset Password</a>
+                    <a href="{{ route('instructor.change.password') }}">Reset Password</a>
                   </li>
                 </ul>
               </li>
@@ -392,11 +392,11 @@
 
           <!-- Sidebar settings starts -->
           <div class="sidebar-settings gap-1 d-lg-flex d-none">
-            <a href="profile.html" class="settings-icon" data-bs-toggle="tooltip" data-bs-placement="top"
+            <a href="{{ route('instructor.profile') }}" class="settings-icon" data-bs-toggle="tooltip" data-bs-placement="top"
               title="Profile">
               <i class="bi bi-person"></i>
             </a>
-            <a href="settings.html" class="settings-icon" data-bs-toggle="tooltip" data-bs-placement="top"
+            <a href="{{ route('instructor.change.password') }}" class="settings-icon" data-bs-toggle="tooltip" data-bs-placement="top"
               title="Settings">
               <i class="bi bi-gear"></i>
             </a>
@@ -408,7 +408,7 @@
               title="Contact Us">
               <i class="bi bi-phone-vibrate"></i>
             </a>
-            <a href="login.html" class="settings-icon" data-bs-toggle="tooltip" data-bs-placement="top" title="Logout">
+            <a href="{{ route('instructor.logout') }}" class="settings-icon" data-bs-toggle="tooltip" data-bs-placement="top" title="Logout">
               <i class="bi bi-power"></i>
             </a>
           </div>
