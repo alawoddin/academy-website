@@ -1,6 +1,11 @@
 @extends('admin.dashboard')
 @section('admin')
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+
+
 @php
     $adminAvatar = (!empty($profileData->photo) && file_exists(public_path('upload/admin_images/'.$profileData->photo)))
         ? asset('upload/admin_images/'.$profileData->photo)
@@ -92,11 +97,21 @@
                                 <input type="text" name="address" class="form-control" value="{{ old('address', $profileData->address) }}">
                             </div>
                         </div>
+                        
+
                         <div class="mb-3">
                             <label class="form-label">Profile Image</label>
                             <input type="file" name="photo" id="image" class="form-control @error('photo') is-invalid @enderror" accept="image/*">
                             @error('photo')<span class="text-danger">{{ $message }}</span>@enderror
                         </div>
+
+                          <div class="mb-3">
+                              <label for="validationDefault02" class="form-label"> </label>
+                                    <img id="showImage" src="{{ url('upload/no_image.jpg') }}"
+                                        class="rounded-circle avatar-xl img-thumbnail float-start" alt="image profile">
+                        </div>
+
+
                         <div class="d-flex justify-content-end">
                             <button type="submit" class="btn btn-primary">Save Changes</button>
                         </div>
@@ -107,14 +122,19 @@
     </div>
 </div>
 
-<script>
-    document.getElementById('pickPhotoBtn')?.addEventListener('click', function () {
-        document.getElementById('image')?.click();
-    });
-    document.getElementById('image')?.addEventListener('change', function (e) {
-        const file = e.target.files[0];
-        if (!file) return;
-        document.getElementById('showImage').src = URL.createObjectURL(file);
-    });
-</script>
+
+ <script type="text/javascript">
+        $(document).ready(function() {
+            $('#image').change(function(e) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#showImage').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(e.target.files['0']);
+            })
+        })
+    </script>
+
+
+
 @endsection
