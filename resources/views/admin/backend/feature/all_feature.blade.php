@@ -79,36 +79,8 @@
                                                         class="bi bi-trash"></i></button>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td scope="row">2</td>
-                                            <td>#ORD-2459</td>
-                                            <td>Michael Brown</td>
-                                            <td>24/08/2025</td>
-                                            <td>$234.00</td>
-                                            <td>
-                                                <button type="button" class="btn btn-sm btn-primary"><i
-                                                        class="bi bi-eye"></i></button>
-                                                <button type="button" class="btn btn-sm btn-warning"><i
-                                                        class="bi bi-pencil"></i></button>
-                                                <button type="button" class="btn btn-sm btn-danger"><i
-                                                        class="bi bi-trash"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td scope="row">3</td>
-                                            <td>#ORD-2460</td>
-                                            <td>Jessica Davis</td>
-                                            <td>25/08/2025</td>
-                                            <td>$532.00</td>
-                                            <td>
-                                                <button type="button" class="btn btn-sm btn-primary"><i
-                                                        class="bi bi-eye"></i></button>
-                                                <button type="button" class="btn btn-sm btn-warning"><i
-                                                        class="bi bi-pencil"></i></button>
-                                                <button type="button" class="btn btn-sm btn-danger"><i
-                                                        class="bi bi-trash"></i></button>
-                                            </td>
-                                        </tr>
+                                     
+                                   
                                     </tbody>
                                 </table>
                             </div>
