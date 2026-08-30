@@ -7,7 +7,7 @@
                 <h6 class="m-0 text-truncate fw-bold small">Dashboards</h6>
               </li>
               <li class="current-page">
-                <a href="index-2.html">
+                <a href="{{ route('all.feature') }}">
                   <i class="bi bi-pie-chart"></i>
                   <span class="menu-text">Analytics</span>
                 </a>
