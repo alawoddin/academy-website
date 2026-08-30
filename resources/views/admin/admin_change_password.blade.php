@@ -23,7 +23,7 @@
                 <div class="card-body">
                     <div class="d-flex flex-column flex-md-row align-items-center flex-wrap">
                         <div class="position-relative me-md-4 mb-3 mb-md-0">
-                            <img id="showImage" src="{{ $adminAvatar }}" class="rounded-circle img-7x" alt="Profile Image" style="object-fit: cover;">
+                            <img  src="{{ $adminAvatar }}" class="rounded-circle img-7x" alt="Profile Image" style="object-fit: cover;">
                             <button type="button" class="btn btn-icon btn-primary position-absolute bottom-0 end-0 rounded-circle" id="pickPhotoBtn">
                                 <i class="bi bi-camera-fill"></i>
                             </button>
@@ -108,7 +108,7 @@
                           <div class="mb-3">
                               <label for="validationDefault02" class="form-label"> </label>
                                     <img id="showImage" src="{{ url('upload/no_image.jpg') }}"
-                                        class="rounded-circle avatar-xl img-thumbnail float-start" alt="image profile">
+                                        class="rounded-circle  img-thumbnail float-start" style="width: 100px; height: 100px;" alt="image profile">
                         </div>
 
 

@@ -1,6 +1,10 @@
 @extends('admin.dashboard')
 @section('admin')
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+
 @php
     $adminAvatar = (!empty($profileData->photo) && file_exists(public_path('upload/admin_images/'.$profileData->photo)))
         ? asset('upload/admin_images/'.$profileData->photo)
@@ -18,7 +22,7 @@
                 <div class="card-body">
                     <div class="d-flex flex-column flex-md-row align-items-center flex-wrap">
                         <div class="position-relative me-md-4 mb-3 mb-md-0">
-                            <img id="showImage" src="{{ $adminAvatar }}" class="rounded-circle img-7x" alt="Profile Image" style="object-fit: cover;">
+                            <img  src="{{ $adminAvatar }}" class="rounded-circle img-7x" alt="Profile Image" style="object-fit: cover;">
                             <button type="button" class="btn btn-icon btn-primary position-absolute bottom-0 end-0 rounded-circle" id="pickPhotoBtn">
                                 <i class="bi bi-camera-fill"></i>
                             </button>
@@ -97,6 +101,13 @@
                             <input type="file" name="photo" id="image" class="form-control @error('photo') is-invalid @enderror" accept="image/*">
                             @error('photo')<span class="text-danger">{{ $message }}</span>@enderror
                         </div>
+
+                         <div class="mb-3">
+                              <label for="validationDefault02" class="form-label"> </label>
+                                    <img id="showImage" src="{{ url('upload/no_image.jpg') }}"
+                                        class="rounded-circle img-thumbnail float-start" style="width: 100px; height: 100px;"  alt="image profile">
+                        </div>
+
                         <div class="d-flex justify-content-end">
                             <button type="submit" class="btn btn-primary">Save Changes</button>
                         </div>
@@ -107,14 +118,15 @@
     </div>
 </div>
 
-<script>
-    document.getElementById('pickPhotoBtn')?.addEventListener('click', function () {
-        document.getElementById('image')?.click();
-    });
-    document.getElementById('image')?.addEventListener('change', function (e) {
-        const file = e.target.files[0];
-        if (!file) return;
-        document.getElementById('showImage').src = URL.createObjectURL(file);
-    });
-</script>
+ <script type="text/javascript">
+        $(document).ready(function() {
+            $('#image').change(function(e) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#showImage').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(e.target.files['0']);
+            })
+        })
+    </script>
 @endsection
