@@ -90,4 +90,16 @@ class FeatureController extends Controller
 
         return redirect()->route('all.feature')->with($notification);
     }
+
+    public function DeleteFeature($id) {
+        $feature = Feature::findOrFail($id);
+        $feature->delete();
+
+        $notification = [
+            'message' => 'Feature Deleted Successfully',
+            'alert-type' => 'success'
+        ];
+
+        return redirect()->route('all.feature')->with($notification);
+    }
 }

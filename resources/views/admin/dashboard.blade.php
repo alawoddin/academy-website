@@ -19,6 +19,8 @@
     <meta property="og:site_name" content="Bootstrap Gallery">
     <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.svg') }}">
 
+    
+
     <!-- *************
 			************ CSS Files *************
 		************* -->
@@ -26,6 +28,10 @@
     <link rel="stylesheet" href="{{ asset('backend/assets/fonts/bootstrap/bootstrap-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/assets/css/animate.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/assets/css/main.min.css') }}">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+
+
 
     <!-- *************
 			************ Vendor Css Files *************
@@ -107,6 +113,38 @@
 
     <!-- Custom JS files -->
     <script src="{{ asset('backend/assets/js/custom.js') }}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="{{ asset('backend/assets/js/code.js') }}"></script>
+
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <script>
+        @if (Session::has('message'))
+            var type = "{{ Session::get('alert-type', 'info') }}"
+            switch (type) {
+                case 'info':
+                    toastr.info(" {{ Session::get('message') }} ");
+                    break;
+
+                case 'success':
+                    toastr.success(" {{ Session::get('message') }} ");
+                    break;
+
+                case 'warning':
+                    toastr.warning(" {{ Session::get('message') }} ");
+                    break;
+
+                case 'error':
+                    toastr.error(" {{ Session::get('message') }} ");
+                    break;
+            }
+        @endif
+    </script>
+
+
+
+
   </body>
 
 

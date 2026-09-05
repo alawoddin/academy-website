@@ -61,8 +61,8 @@
                                                 </button>
                                                 <a class="btn btn-sm btn-warning" href="{{ route('edit.feature', $item->id) }}"><i
                                                         class="bi bi-pencil"></i></a>
-                                                <button type="button" class="btn btn-sm btn-danger"><i
-                                                        class="bi bi-trash"></i></button>
+                                                <a class="btn btn-sm btn-danger" id="delete" href="{{ route('delete.feature', $item->id) }}"><i
+                                                        class="bi bi-trash"></i></a>
                                             </td>
                                         </tr>
                                         @endforeach
