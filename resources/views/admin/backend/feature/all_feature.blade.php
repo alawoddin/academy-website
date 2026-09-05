@@ -11,22 +11,7 @@
 
             <!-- Sales stats starts -->
             <div class="ms-auto d-lg-flex d-none flex-row">
-                <div class="d-flex flex-row gap-1 p-1 border border-primary rounded-5 grd-primary-light">
-                    <a href="#" class="icon-box icon-btn rounded-5 grd-primary-light border-0" data-bs-toggle="tooltip"
-                        data-bs-placement="bottom" aria-label="Share" data-bs-original-title="Share">
-                        <i class="bi bi-share"></i>
-                    </a>
-                    <a href="#" class="icon-box icon-btn rounded-5 grd-primary-light border-0"
-                        data-bs-toggle="tooltip" data-bs-placement="bottom" aria-label="Print"
-                        data-bs-original-title="Print">
-                        <i class="bi bi-printer"></i>
-                    </a>
-                    <a href="#" class="icon-box icon-btn rounded-5 grd-primary-light border-0" id="downloadDataToast"
-                        data-bs-toggle="tooltip" data-bs-placement="bottom" aria-label="Download"
-                        data-bs-original-title="Download">
-                        <i class="bi bi-download"></i>
-                    </a>
-                </div>
+               <!-- Add Button --> <a href="{{ route('feature.create') }}" class="btn btn-primary ms-auto"> <i class="bi bi-plus-lg"></i> Add Feature </a>
             </div>
             <!-- Sales stats ends -->
 
@@ -56,20 +41,21 @@
                                     <thead>
                                         <tr>
                                             <th scope="col">#</th>
-                                            <th scope="col">Order ID</th>
-                                            <th scope="col">Customer</th>
-                                            <th scope="col">Date</th>
-                                            <th scope="col">Amount</th>
+                                            <th scope="col">Feature Icon</th>
+                                            <th scope="col">Feature Content</th>
+                                            <th scope="col">Feature Info</th>
+                                            <th scope="col">Feature Image</th>
                                             <th scope="col">Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td scope="row">1</td>
-                                            <td>#ORD-2458</td>
-                                            <td>Emily Wilson</td>
-                                            <td>24/08/2025</td>
-                                            <td>$124.00</td>
+                                        @foreach ($alldata as $item )
+                                              <tr>
+                                            <td scope="row">{{key->id}}</td>
+                                            <td>{{$item->featureicon}}</td>
+                                            <td>{{$item->featurecontent}}</td>
+                                            <td>{{$item->featureinfo}}</td>
+                                            <td>{{$item->feturebg}}</td>
                                             <td>
                                                 <button type="button" class="btn btn-sm btn-primary"><i
                                                         class="bi bi-eye"></i></button>
@@ -79,6 +65,8 @@
                                                         class="bi bi-trash"></i></button>
                                             </td>
                                         </tr>
+                                        @endforeach
+                                      
                                      
                                    
                                     </tbody>
