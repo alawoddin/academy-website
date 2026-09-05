@@ -22,8 +22,8 @@ class FeatureController extends Controller
 
     public function StoreFeature(Request $request) {
         
-     if ($request->file('image')) {
-        $image = $request->file('image');
+     if ($request->file('feturebg')) {
+        $image = $request->file('feturebg');
         $manager = new ImageManager(new Driver());
         $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
         $img = $manager->read($image);
@@ -48,7 +48,5 @@ class FeatureController extends Controller
 
     return redirect()->route('all.feature')->with($notification);
 
-
-        
     }
 }

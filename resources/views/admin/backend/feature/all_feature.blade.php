@@ -36,7 +36,7 @@
                             <h5 class="card-title">Bordered Table</h5>
                         </div>
                         <div class="card-body">
-                            <div class="table-outer">
+                            <div class="table-responsive">
                                 <table class="table table-bordered m-0">
                                     <thead>
                                         <tr>
@@ -49,16 +49,16 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($alldata as $item )
+                                        @foreach ($alldata as $key => $item )
                                               <tr>
-                                            <td scope="row">{{key->id}}</td>
+                                            <td>{{ $key + 1 }}</td>
                                             <td>{{$item->featureicon}}</td>
                                             <td>{{$item->featurecontent}}</td>
                                             <td>{{$item->featureinfo}}</td>
-                                            <td>{{$item->feturebg}}</td>
+                                            <td> <img src="{{ asset($item->feturebg) }}" style="width: 70px; height:40px">
+                                            </td>
                                             <td>
-                                                <button type="button" class="btn btn-sm btn-primary"><i
-                                                        class="bi bi-eye"></i></button>
+                                                </button>
                                                 <button type="button" class="btn btn-sm btn-warning"><i
                                                         class="bi bi-pencil"></i></button>
                                                 <button type="button" class="btn btn-sm btn-danger"><i
