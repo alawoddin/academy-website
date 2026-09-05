@@ -13,4 +13,8 @@ class FeatureController extends Controller
 
         return view('admin.backend.feature.all_feature' , compact('alldata'));
     }
+
+    public function AddFeature() {
+        return view('admin.backend.feature.add_feature');
+    }
 }

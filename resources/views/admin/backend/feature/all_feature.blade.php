@@ -11,7 +11,7 @@
 
             <!-- Sales stats starts -->
             <div class="ms-auto d-lg-flex d-none flex-row">
-               <!-- Add Button --> <a href="{{ route('feature.create') }}" class="btn btn-primary ms-auto"> <i class="bi bi-plus-lg"></i> Add Feature </a>
+               <!-- Add Button --> <a href="{{ route('add.feature') }}" class="btn btn-primary ms-auto"> <i class="bi bi-plus-lg"></i> Add Feature </a>
             </div>
             <!-- Sales stats ends -->
 
