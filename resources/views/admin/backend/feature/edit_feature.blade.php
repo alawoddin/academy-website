@@ -21,11 +21,11 @@
 
                     <div class="card-body">
 
-                        <form action="}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('update.feature') }}" method="POST" enctype="multipart/form-data">
 
                             @csrf
 
-                            {{-- <input type="hidden" name="id" value="{{ $feature->id }}"> --}}
+                            <input type="hidden" name="id" value="{{ $feature->id }}">
 
                             <!-- Feature Icon + Content -->
                             <div class="row mb-3">

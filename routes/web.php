@@ -122,7 +122,7 @@ Route::controller(FeatureController::class)->group(function() {
     Route::get('/add/feature' , 'AddFeature')->name('add.feature');
     Route::post('/store/feature' , 'StoreFeature')->name('store.feature');
     Route::get('/edit/feature/{id}' , 'EditFeature')->name('edit.feature');
-    // Route::post('/update/brand' , 'UpdateBrand')->name('update.brand');
+    Route::post('/update/feature' , 'UpdateFeature')->name('update.feature');
     // Route::get('/delete/brand/{id}' , 'DeletBrand')->name('delete.brand');
 
 });

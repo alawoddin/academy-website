@@ -54,4 +54,40 @@ class FeatureController extends Controller
         $feature = Feature::findOrFail($id);
         return view('admin.backend.feature.edit_feature', compact('feature'));
     }
+
+    public function UpdateFeature(Request $request) {
+        $feature_id = $request->id;
+        $feature = Feature::findOrFail($feature_id);
+
+        if ($request->file('feturebg')) {
+            $image = $request->file('feturebg');
+            $manager = new ImageManager(new Driver());
+            $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+            $img = $manager->read($image);
+            $img->resize(300,64)->save(public_path('upload/feature/'.$name_gen));
+            $save_url = 'upload/feature/'.$name_gen;
+
+            // Update Feature
+            $feature->update([
+                'featureicon'  => $request->featureicon,
+                'featurecontent' => $request->featurecontent,
+                'featureinfo' => $request->featureinfo,
+                'feturebg' => $save_url
+            ]);
+        } else {
+            // Update Feature without changing the image
+            $feature->update([
+                'featureicon'  => $request->featureicon,
+                'featurecontent' => $request->featurecontent,
+                'featureinfo' => $request->featureinfo,
+            ]);
+        }
+
+        $notification = [
+            'message' => 'Feature Updated Successfully',
+            'alert-type' => 'success'
+        ];
+
+        return redirect()->route('all.feature')->with($notification);
+    }
 }
