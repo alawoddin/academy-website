@@ -49,4 +49,9 @@ class FeatureController extends Controller
     return redirect()->route('all.feature')->with($notification);
 
     }
+
+    public function EditFeature($id) {
+        $feature = Feature::findOrFail($id);
+        return view('admin.backend.feature.edit_feature', compact('feature'));
+    }
 }

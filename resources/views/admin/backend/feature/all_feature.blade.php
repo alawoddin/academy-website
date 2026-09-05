@@ -59,8 +59,8 @@
                                             </td>
                                             <td>
                                                 </button>
-                                                <button type="button" class="btn btn-sm btn-warning"><i
-                                                        class="bi bi-pencil"></i></button>
+                                                <a class="btn btn-sm btn-warning" href="{{ route('edit.feature', $item->id) }}"><i
+                                                        class="bi bi-pencil"></i></a>
                                                 <button type="button" class="btn btn-sm btn-danger"><i
                                                         class="bi bi-trash"></i></button>
                                             </td>
