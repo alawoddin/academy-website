@@ -120,7 +120,7 @@ Route::post('/password/update', [AdminController::class, 'AdminPasswordUpdate'])
 Route::controller(FeatureController::class)->group(function() {
     Route::get('all/feature' , 'AllFeature')->name('all.feature');
     Route::get('/add/feature' , 'AddFeature')->name('add.feature');
-    // Route::post('/store/brand' , 'StoreBrand')->name('store.brand');
+    Route::post('/store/feature' , 'StoreFeature')->name('store.feature');
     // Route::get('/edit/brand/{id}' , 'EditBrand')->name('edit.brand');
     // Route::post('/update/brand' , 'UpdateBrand')->name('update.brand');
     // Route::get('/delete/brand/{id}' , 'DeletBrand')->name('delete.brand');
