@@ -55,12 +55,16 @@
                   <div class="col-md-6 mb-16">
                     <select name="course" class="form-control p_lg" required>
                       <option value="" disabled selected>Select Course</option>
-                      <option value="photoshop">Photoshop Course</option>
-                      <option value="artificial-intelligence">Artificial Intelligence</option>
-                      <option value="web-design">Web Design Course</option>
-                      <option value="figma">Figma Course</option>
-                      <option value="illustrator">Illustrator Course</option>
-                      <option value="after-effects">After Effects Course</option>
+                      @forelse ($courses as $course)
+                        <option value="{{ $course->title }}">{{ $course->title }}</option>
+                      @empty
+                        <option value="photoshop">Photoshop Course</option>
+                        <option value="artificial-intelligence">Artificial Intelligence</option>
+                        <option value="web-design">Web Design Course</option>
+                        <option value="figma">Figma Course</option>
+                        <option value="illustrator">Illustrator Course</option>
+                        <option value="after-effects">After Effects Course</option>
+                      @endforelse
                     </select>
                   </div>
                   <div class="col-12 mb-24">

@@ -1,10 +1,10 @@
 <section class="py-60" id="contact">
       <div class="container">
         <div class="contact_banner">
-          <h2 class="mb-8 color-white">Ask Any Questions <br><span class="fm-sec">You Want!</span></h2>
-          <p class="mb-16 color-white">Contact on this number for any Questions!</p>
+          <h2 class="mb-8 color-white">{!! $contact?->title ?? 'Ask Any Questions <br><span class="fm-sec">You Want!</span>' !!}</h2>
+          <p class="mb-16 color-white">{{ $contact?->text ?? 'Contact on this number for any Questions!' }}</p>
           <div class="mx-auto">
-            <a href="tel:+93788077685" class="h5 phone_number">+93 788077685</a>
+            <a href="tel:{{ preg_replace('/\s+/', '', $contact?->phone ?? '+93788077685') }}" class="h5 phone_number">{{ $contact?->phone ?? '+93 788077685' }}</a>
           </div>
           <div class="icons">
             <img src="{{ asset('frontend/assets/media/shapes/dots-1.png') }}" alt="" class="element-1">

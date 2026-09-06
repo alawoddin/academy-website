@@ -9,6 +9,28 @@
             All</a>
         </div>
         <div class="row">
+          @forelse ($blogs as $item)
+          <div class="col-lg-4 col-md-6">
+            <div class="blog_card mb-24 mb-xl-0">
+              <div class="blog_card_img_block">
+                <img src="{{ $item->image ? asset($item->image) : asset('frontend/assets/media/blog/b-1.png') }}" alt="{{ $item->title }}">
+                <p class="date">{{ $item->date }}</p>
+              </div>
+              <div class="blog_card_text_block">
+                <h5 class="mb-8"><a class="blog_title" href="{{ url('/') }}#blogs">{{ $item->title }}</a></h5>
+                <p class="mb-24">{{ $item->description }}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="author">
+                    <img src="{{ $item->author_image ? asset($item->author_image) : asset('frontend/assets/media/users/u-1.png') }}" alt="{{ $item->author_name }}">
+                    <h6 class="dark-gray">{{ $item->author_name }}</h6>
+                  </div>
+                  <a href="{{ url('/') }}#blogs" class="h6 color-primary educate_link_btn">Read More<i
+                      class="far fa-chevron-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          @empty
           <div class="col-lg-4 col-md-6">
             <div class="blog_card mb-24 mb-xl-0">
               <div class="blog_card_img_block">
@@ -30,48 +52,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="blog_card mb-24 mb-xl-0">
-              <div class="blog_card_img_block">
-                <img src="{{ asset('frontend/assets/media/blog/b-2.png') }}" alt="Lifelong Learning">
-                <p class="date">9 May 2024</p>
-              </div>
-              <div class="blog_card_text_block">
-                <h5 class="mb-8"><a class="blog_title" href="{{ url('/') }}#blogs">The Power of Lifelong Learning: Why It
-                    Matters?</a></h5>
-                <p class="mb-24">Lorem ipsum dolor sit amet consectetur. Non convallis sed id...</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="author">
-                    <img src="{{ asset('frontend/assets/media/users/u-2.png') }}" alt="Jeremy Jhon">
-                    <h6 class="dark-gray">Jeremy Jhon</h6>
-                  </div>
-                  <a href="{{ url('/') }}#blogs" class="h6 color-primary educate_link_btn">Read More<i
-                      class="far fa-chevron-right"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="blog_card">
-              <div class="blog_card_img_block">
-                <img src="{{ asset('frontend/assets/media/blog/b-3.png') }}" alt="Effective Note-Taking">
-                <p class="date">9 May 2024</p>
-              </div>
-              <div class="blog_card_text_block">
-                <h5 class="mb-8"><a class="blog_title" href="{{ url('/') }}#blogs">The Art of Effective Note-Taking:
-                    Strategies for Students</a></h5>
-                <p class="mb-24">Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam...</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="author">
-                    <img src="{{ asset('frontend/assets/media/users/u-3.png') }}" alt="Yuki Kabuto">
-                    <h6 class="dark-gray">Yuki Kabuto</h6>
-                  </div>
-                  <a href="{{ url('/') }}#blogs" class="h6 color-primary educate_link_btn">Read More<i
-                      class="far fa-chevron-right"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
+          @endforelse
         </div>
       </div>
     </section>

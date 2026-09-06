@@ -4,17 +4,12 @@
           <div class="col-xl-6 col-lg-5">
             <div class="banner_text_block">
               <div class="title_block mb-16">
-                <h2 class="title">Get a
-                  <span class="fm-sec">30% Discount!
-                    <img src="{{ asset('frontend/assets/media/shapes/line-vector.png') }}" alt="" class="line_shape">
-                    <img src="{{ asset('frontend/assets/media/shapes/mic-speaker.png') }}" alt="" class="mic_speaker">
-                  </span>
+                <h2 class="title">{!! $discount?->title ?? 'Get a <span class="fm-sec">30% Discount!</span>' !!}
                 </h2>
               </div>
-              <h4 class="mb-12">Create Your Free Account Today! </h4>
-              <p class="mb-24">Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam tempus. Volutpat
-                tortor tincidunt egestas sit risus donec.</p>
-              <a href="{{ route('register') }}" class="educate-btn"><span class="educate-btn__curve"></span>Join Now</a>
+              <h4 class="mb-12">{{ $discount?->subtitle ?? 'Create Your Free Account Today!' }}</h4>
+              <p class="mb-24">{{ $discount?->description ?? 'Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam tempus. Volutpat tortor tincidunt egestas sit risus donec.' }}</p>
+              <a href="{{ route('register') }}" class="educate-btn"><span class="educate-btn__curve"></span>{{ $discount?->button_text ?? 'Join Now' }}</a>
             </div>
           </div>
           <div class="col-xl-6 col-lg-7">

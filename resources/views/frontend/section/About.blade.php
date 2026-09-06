@@ -1,22 +1,30 @@
-
 <section class="py-60" id="about">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-6 mb-48 mb-lg-0">
             <div class="heading mb-16">
-              <h6 class="color-primary mb-8">–––– About Us</h6>
-              <h2>Cultivating a Digital Learning <span class="fm-sec">Ecosystem.</span></h2>
+              <h6 class="color-primary mb-8">–––– {{ $about?->subtitle ?? 'About Us' }}</h6>
+              <h2>{!! $about?->title ?? 'Cultivating a Digital Learning <span class="fm-sec">Ecosystem.</span>' !!}</h2>
             </div>
-            <p class="mb-32">Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam tempus. Volutpat
-              tortor tincidunt egestas sit risus donec.</p>
+            <p class="mb-32">{{ $about?->description ?? 'Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam tempus. Volutpat tortor tincidunt egestas sit risus donec.' }}</p>
+            @forelse ($aboutCards as $key => $card)
+            <div class="about__card mb-24 wow fadeInLeft" data-wow-delay="{{ ($key + 1) * 200 }}ms">
+              <div class="about__card__icon">
+                <img src="{{ $card->icon ? asset($card->icon) : asset('frontend/assets/media/icons/Clock.png') }}" alt="{{ $card->title }}">
+              </div>
+              <div class="about__card__content">
+                <h5 class="mb-4p">{{ $card->title }}</h5>
+                <p>{{ $card->text }}</p>
+              </div>
+            </div>
+            @empty
             <div class="about__card mb-24 wow fadeInLeft" data-wow-delay="200ms">
               <div class="about__card__icon">
                 <img src="{{ asset('frontend/assets/media/icons/Clock.png') }}" alt="Latest courses">
               </div>
               <div class="about__card__content">
                 <h5 class="mb-4p">Latest Courses</h5>
-                <p>Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam tempus. Volutpat tortor
-                  tincidunt egestas sit risus.</p>
+                <p>Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam tempus. Volutpat tortor tincidunt egestas sit risus.</p>
               </div>
             </div>
             <div class="about__card mb-24 wow fadeInLeft" data-wow-delay="400ms">
@@ -25,10 +33,10 @@
               </div>
               <div class="about__card__content">
                 <h5 class="mb-4p">Online Learning</h5>
-                <p>Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam tempus. Volutpat tortor
-                  tincidunt egestas sit risus.</p>
+                <p>Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam tempus. Volutpat tortor tincidunt egestas sit risus.</p>
               </div>
             </div>
+            @endforelse
             <div class="text-end wow fadeInUp" data-wow-delay="600ms">
               <a href="{{ route('about') }}" class="educate-btn"><span class="educate-btn__curve"></span>Learn More</a>
             </div>
@@ -36,7 +44,7 @@
           <div class="col-lg-6">
             <div class="educate-tilt"
               data-tilt-options='{ "glare": false, "maxGlare": 0, "maxTilt": 2, "speed": 700, "scale": 1 }'>
-              <img src="{{ asset('frontend/assets/media/resources/about-1.png') }}" alt="About Khedmat Academy">
+              <img src="{{ ($about && $about->image) ? asset($about->image) : asset('frontend/assets/media/resources/about-1.png') }}" alt="About Khedmat Academy">
             </div>
           </div>
         </div>
