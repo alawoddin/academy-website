@@ -42,7 +42,7 @@
           <div class="col-lg-6">
             <div class="course__card mb-24">
               <div class="course__card__icon">
-                <img src="{{ \App\Support\Media::url($item->icon, 'frontend/assets/media/icons/ps.png') }}" alt="{{ $item->title }}">
+                <img src="{{ \App\Support\Media::url($item->icon, \App\Models\Course::iconForTitle($item->title)) }}" alt="{{ $item->title }}">
               </div>
               <div class="course__card__content">
                 <div class="left__block">

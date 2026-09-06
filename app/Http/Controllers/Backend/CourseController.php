@@ -45,6 +45,10 @@ class CourseController extends Controller
             }
         }
 
+        if (empty($data['icon'])) {
+            $data['icon'] = Course::iconForTitle($request->title);
+        }
+
         Course::create($data);
 
         $notification = [
@@ -83,6 +87,10 @@ class CourseController extends Controller
             if ($path = Media::store($request->file($field), 'upload/course')) {
                 $data[$field] = $path;
             }
+        }
+
+        if (empty($data['icon'])) {
+            $data['icon'] = Course::iconForTitle($request->title);
         }
 
         $course->update($data);

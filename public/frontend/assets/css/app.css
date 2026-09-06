@@ -4582,6 +4582,11 @@ footer .copyright_row P {
   z-index: 10;
   transition: all 0.5s ease;
 }
+.course__card .course__card__icon img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
 @media only screen and (min-width: 992px) and (max-width: 1400px) {
   .course__card .course__card__icon {
     width: 55px;

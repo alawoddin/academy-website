@@ -46,7 +46,7 @@
                                             <td>{{ Str::limit($item->price, 40) }}</td>
                                             <td>{{ Str::limit($item->author_name, 40) }}</td>
                                             <td>{{ Str::limit($item->author_role, 40) }}</td>
-                                            <td><img src="{{ \App\Support\Media::url($item->icon, 'frontend/assets/media/icons/ps.png') }}" style="width: 70px; height:40px; object-fit:cover"></td>
+                                            <td><img src="{{ \App\Support\Media::url($item->icon, \App\Models\Course::iconForTitle($item->title)) }}" style="width: 70px; height:40px; object-fit:cover"></td>
                                             <td><img src="{{ \App\Support\Media::url($item->tag_image, 'frontend/assets/media/courses/tag-1.png') }}" style="width: 70px; height:40px; object-fit:cover"></td>
                                             <td><img src="{{ \App\Support\Media::url($item->author_image, 'frontend/assets/media/a2.png') }}" style="width: 70px; height:40px; object-fit:cover"></td>
                                             <td>

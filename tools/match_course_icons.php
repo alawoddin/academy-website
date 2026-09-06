@@ -6,6 +6,8 @@ $app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();
 
 use App\Models\Course;
 
-foreach (Course::orderBy('id')->get() as $c) {
-    echo $c->id.' | '.$c->title.' | '.$c->icon."\n";
+foreach (Course::all() as $course) {
+    $icon = Course::iconForTitle($course->title);
+    $course->update(['icon' => $icon]);
+    echo $course->title.' -> '.$icon."\n";
 }
