@@ -46,11 +46,20 @@ class AppServiceProvider extends ServiceProvider
         });
 
         View::composer('frontend.section.Category', function ($view) {
-            $view->with('categories', $this->safeAll(Category::class, 'categories'));
+            $categories = $this->safeQuery(function () {
+                $withCourses = Category::whereHas('courses')->latest()->get();
+
+                return $withCourses->isNotEmpty() ? $withCourses : Category::latest()->get();
+            }, collect());
+            $view->with('categories', $categories);
         });
 
         View::composer('frontend.section.Courses', function ($view) {
-            $view->with('courses', $this->safeAll(Course::class, 'courses'));
+            $view->with('courses', $this->safeQuery(fn () => Course::with('category')->latest()->get(), collect()));
+        });
+
+        View::composer('frontend.section.Enroll', function ($view) {
+            $view->with('courses', $this->safeQuery(fn () => Course::latest()->get(), collect()));
         });
 
         View::composer('frontend.section.Team', function ($view) {
@@ -72,10 +81,6 @@ class AppServiceProvider extends ServiceProvider
         View::composer('frontend.section.Contact', function ($view) {
             $view->with('contact', $this->safeFirst(Contact::class, 'contacts'));
         });
-
-        View::composer('frontend.section.Enroll', function ($view) {
-            $view->with('courses', $this->safeAll(Course::class, 'courses'));
-        });
     }
 
     private function safeFirst(string $model, string $table)
@@ -93,6 +98,15 @@ class AppServiceProvider extends ServiceProvider
             return Schema::hasTable($table) ? $model::latest()->get() : collect();
         } catch (Throwable $e) {
             return collect();
+        }
+    }
+
+    private function safeQuery(callable $callback, $fallback)
+    {
+        try {
+            return $callback();
+        } catch (Throwable $e) {
+            return $fallback;
         }
     }
 }

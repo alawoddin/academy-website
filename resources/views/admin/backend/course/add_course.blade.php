@@ -20,8 +20,17 @@
                                 <input type="text" name="title" class="form-control">
                             </div>
                             <div class="col-md-6 mb-3">
-                                <label class="form-label">Category Name</label>
-                                <input type="text" name="category_name" class="form-control">
+                                <label class="form-label">Category</label>
+                                <select name="category_id" class="form-select">
+                                    <option value="">Select Category</option>
+                                    @foreach ($categories as $category)
+                                        <option value="{{ $category->id }}">{{ $category->title }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Or Add New Category</label>
+                                <input type="text" name="new_category" class="form-control" placeholder="Type a new category name">
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label class="form-label">Videos</label>

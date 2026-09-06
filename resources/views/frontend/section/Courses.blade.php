@@ -13,19 +13,19 @@
         @forelse ($courses as $item)
         <div class="course__card mb-24">
           <div class="course__card__icon">
-            <img src="{{ $item->icon ? asset($item->icon) : asset('frontend/assets/media/icons/ps.png') }}" alt="{{ $item->title }}">
+            <img src="{{ \App\Support\Media::url($item->icon, 'frontend/assets/media/icons/ps.png') }}" alt="{{ $item->title }}">
           </div>
           <div class="course__card__content">
             <div class="left__block">
-              <img src="{{ $item->tag_image ? asset($item->tag_image) : asset('frontend/assets/media/courses/tag-1.png') }}" alt="{{ $item->title }}" class="course_tag">
+              <img src="{{ \App\Support\Media::url($item->tag_image, 'frontend/assets/media/courses/tag-1.png') }}" alt="{{ $item->title }}" class="course_tag">
               <h4 class="mb-4p"><a href="{{ url('/') }}#courses">{{ $item->title }}</a></h4>
-              <p class="h6 mb-24">{{ $item->category_name }}</p>
+              <p class="h6 mb-24">{{ $item->category?->title ?? $item->category_name }}</p>
               <ul class="course_info p-0 mb-32">
                 <li><i class="fal fa-presentation"></i>{{ $item->videos }}</li>
                 <li><i class="fal fa-clock"></i>{{ $item->hours }}</li>
               </ul>
               <div class="author_card">
-                <img src="{{ $item->author_image ? asset($item->author_image) : asset('frontend/assets/media/a2.png') }}" style="height: 74px; width: 74px;" alt="{{ $item->author_name }}" class="author_img">
+                <img src="{{ \App\Support\Media::url($item->author_image, 'frontend/assets/media/a2.png') }}" style="height: 74px; width: 74px;" alt="{{ $item->author_name }}" class="author_img">
                 <div class="author_text_block">
                   <a href="{{ url('/') }}#team" class="h6 mb-4p">{{ $item->author_name }}</a>
                   <p>{{ $item->author_role }}</p>

@@ -4,8 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
-use Intervention\Image\ImageManager;
-use Intervention\Image\Drivers\Gd\Driver;
+use App\Support\Media;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -32,17 +31,8 @@ class CategoryController extends Controller
             'hours' => $request->hours,
         ];
 
-        if ($request->file('image')) {
-            $dir = public_path('upload/category');
-            if (! is_dir($dir)) {
-                mkdir($dir, 0755, true);
-            }
-            $image = $request->file('image');
-            $manager = new ImageManager(new Driver());
-            $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
-            $img = $manager->read($image);
-            $img->scaleDown(width: 1200)->save($dir.'/'.$name_gen);
-            $data['image'] = 'upload/category/'.$name_gen;
+        if ($path = Media::store($request->file('image'), 'upload/category')) {
+            $data['image'] = $path;
         }
         Category::create($data);
 
@@ -73,17 +63,8 @@ class CategoryController extends Controller
             'hours' => $request->hours,
         ];
 
-        if ($request->file('image')) {
-            $dir = public_path('upload/category');
-            if (! is_dir($dir)) {
-                mkdir($dir, 0755, true);
-            }
-            $image = $request->file('image');
-            $manager = new ImageManager(new Driver());
-            $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
-            $img = $manager->read($image);
-            $img->scaleDown(width: 1200)->save($dir.'/'.$name_gen);
-            $data['image'] = 'upload/category/'.$name_gen;
+        if ($path = Media::store($request->file('image'), 'upload/category')) {
+            $data['image'] = $path;
         }
         $category->update($data);
 

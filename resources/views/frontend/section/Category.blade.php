@@ -13,7 +13,7 @@
           <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="{{ ($key + 1) * 150 }}ms">
             <div class="course__category__card_1 mb-24">
               <div class="course__category__card_text">
-                <a href="{{ url('/') }}#courses" class="course__category__card_title h4 mb-16">{{ $item->title }}</a>
+                <a href="{{ route('courses', ['category' => $item->id]) }}" class="course__category__card_title h4 mb-16">{{ $item->title }}</a>
                 <p class="mb-40">{{ $item->description }}</p>
                 <ul class="category__info p-0 mb-8">
                   <li><i class="fas fa-star"></i>{{ $item->rating }}</li>
@@ -21,7 +21,7 @@
                   <li><i class="fal fa-clock"></i>{{ $item->hours }}</li>
                 </ul>
               </div>
-              <img src="{{ $item->image ? asset($item->image) : asset('frontend/assets/media/courses/categories/c-1.png') }}" alt="{{ $item->title }}" class="image">
+              <img src="{{ \App\Support\Media::url($item->image, 'frontend/assets/media/courses/categories/c-1.png') }}" alt="{{ $item->title }}" class="image">
             </div>
           </div>
           @empty

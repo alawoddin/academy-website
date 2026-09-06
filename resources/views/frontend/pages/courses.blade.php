@@ -1,7 +1,6 @@
 @extends('frontend.dashboard')
 @section('frontend')
 
-<!-- Page Title Banner Start -->
     <section class="page_title_banner">
       <div class="container">
         <div class="content">
@@ -17,60 +16,48 @@
         </div>
       </div>
     </section>
-    <!-- Page Title Banner End -->
 
-    <!-- Courses Area Start -->
     <section class="py-60">
       <div class="container">
         <div class="filter_row">
           <div class="left_block">
             <div class="select_filter">
-              <span class="dark-gray">Short by:</span>
-              <select name="select" class="has-nice-select">
-                <option value="1">Newest</option>
-                <option value="2">Oldest</option>
-                <option value="3">Popular</option>
-                <option value="4">A-Z</option>
-              </select>
-            </div>
-            <div class="select_filter">
               <span class="dark-gray">Category:</span>
-              <select name="select" class="has-nice-select">
-                <option value="1">Student Life</option>
-                <option value="2">Creative Arts</option>
-                <option value="3">Graphic Design</option>
-                <option value="4">Economic</option>
-              </select>
+              <form method="GET" action="{{ route('courses') }}">
+                <select name="category" class="form-select" onchange="this.form.submit()">
+                  <option value="">All Categories</option>
+                  @foreach (($categories ?? []) as $category)
+                    <option value="{{ $category->id }}" @selected(request('category') == $category->id)>{{ $category->title }}</option>
+                  @endforeach
+                </select>
+              </form>
             </div>
           </div>
           <div class="right_block">
-            <h6 class="dark-gray">Showing 1-9 of 50 results</h6>
-            <form action="#" class="search_bar">
-              <button type="submit"><i class="fal fa-search"></i></button>
-              <input type="search" class="form-control" placeholder="Search here">
-            </form>
+            <h6 class="dark-gray">Showing {{ ($courses ?? collect())->count() }} courses</h6>
           </div>
         </div>
         <div class="row">
+          @forelse (($courses ?? collect()) as $item)
           <div class="col-lg-6">
             <div class="course__card mb-24">
               <div class="course__card__icon">
-                <img src="{{ asset('frontend/assets/media/icons/ps.png') }}" alt="">
+                <img src="{{ \App\Support\Media::url($item->icon, 'frontend/assets/media/icons/ps.png') }}" alt="{{ $item->title }}">
               </div>
               <div class="course__card__content">
                 <div class="left__block">
-                  <img src="{{ asset('frontend/assets/media/courses/tag-1.png') }}" alt="" class="course_tag">
-                  <h4 class="mb-4p"><a href="{{ route('course.detail') }}">Photoshop Course</a></h4>
-                  <p class="h6 mb-24">Graphics Design</p>
+                  <img src="{{ \App\Support\Media::url($item->tag_image, 'frontend/assets/media/courses/tag-1.png') }}" alt="{{ $item->title }}" class="course_tag">
+                  <h4 class="mb-4p"><a href="{{ route('course.detail') }}">{{ $item->title }}</a></h4>
+                  <p class="h6 mb-24">{{ $item->category?->title ?? $item->category_name }}</p>
                   <ul class="course_info p-0 mb-32">
-                    <li><i class="fal fa-presentation"></i>45 Videos</li>
-                    <li><i class="fal fa-clock"></i>05+ Hours</li>
+                    <li><i class="fal fa-presentation"></i>{{ $item->videos }}</li>
+                    <li><i class="fal fa-clock"></i>{{ $item->hours }}</li>
                   </ul>
                   <div class="author_card">
-                    <img src="{{ asset('frontend/assets/media/courses/authors/a-1.png') }}" alt="" class="author_img">
+                    <img src="{{ \App\Support\Media::url($item->author_image, 'frontend/assets/media/courses/authors/a-1.png') }}" alt="{{ $item->author_name }}" class="author_img">
                     <div class="author_text_block">
-                      <a href="{{ route('team.detail') }}" class="h6 mb-4p">Benny Martin</a>
-                      <p>Adobe Embassador</p>
+                      <a href="{{ route('team.detail') }}" class="h6 mb-4p">{{ $item->author_name }}</a>
+                      <p>{{ $item->author_role }}</p>
                     </div>
                   </div>
                 </div>
@@ -79,7 +66,7 @@
                     <div class="price_vector">
                       <img src="{{ asset('frontend/assets/media/shapes/vector-group.png') }}" alt="">
                     </div>
-                    <span class="h3 color-white">$45</span>
+                    <span class="h3 color-white">{{ $item->price }}</span>
                   </div>
                   <a href="{{ route('course.detail') }}" class="educate-btn sm mx-xl-auto me-2"><span
                       class="educate-btn__curve"></span>Buy Now</a>
@@ -88,198 +75,13 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-6">
-            <div class="course__card mb-24">
-              <div class="course__card__icon">
-                <img src="{{ asset('frontend/assets/media/icons/ai.png') }}" alt="">
-              </div>
-              <div class="course__card__content">
-                <div class="left__block">
-                  <img src="{{ asset('frontend/assets/media/courses/tag-2.png') }}" alt="" class="course_tag">
-                  <h4 class="mb-4p"><a href="{{ route('course.detail') }}">Artificial Intelligence</a></h4>
-                  <p class="h6 mb-24">Graphics Design</p>
-                  <ul class="course_info p-0 mb-32">
-                    <li><i class="fal fa-presentation"></i>45 Videos</li>
-                    <li><i class="fal fa-clock"></i>05+ Hours</li>
-                  </ul>
-                  <div class="author_card">
-                    <img src="{{ asset('frontend/assets/media/courses/authors/a-2.png') }}" alt="" class="author_img">
-                    <div class="author_text_block">
-                      <a href="{{ route('team.detail') }}" class="h6 mb-4p">Ethan Wilson</a>
-                      <p>AI Expert</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="right__block">
-                  <div class="price_block mb-16">
-                    <div class="price_vector">
-                      <img src="{{ asset('frontend/assets/media/shapes/vector-group.png') }}" alt="">
-                    </div>
-                    <span class="h3 color-white">$40</span>
-                  </div>
-                  <a href="{{ route('course.detail') }}" class="educate-btn sm mx-xl-auto me-2"><span
-                      class="educate-btn__curve"></span>Buy Now</a>
-                </div>
-                <img src="{{ asset('frontend/assets/media/shapes/vector-1.png') }}" alt="" class="bottom_vector">
-              </div>
-            </div>
+          @empty
+          <div class="col-12">
+            <p class="text-center">No courses found.</p>
           </div>
-          <div class="col-lg-6">
-            <div class="course__card mb-24">
-              <div class="course__card__icon">
-                <img src="{{ asset('frontend/assets/media/icons/desktop.png') }}" alt="">
-              </div>
-              <div class="course__card__content">
-                <div class="left__block">
-                  <img src="{{ asset('frontend/assets/media/courses/tag-1.png') }}" alt="" class="course_tag">
-                  <h4 class="mb-4p"><a href="{{ route('course.detail') }}">Web Design Course</a></h4>
-                  <p class="h6 mb-24">Graphics Design</p>
-                  <ul class="course_info p-0 mb-32">
-                    <li><i class="fal fa-presentation"></i>45 Videos</li>
-                    <li><i class="fal fa-clock"></i>05+ Hours</li>
-                  </ul>
-                  <div class="author_card">
-                    <img src="{{ asset('frontend/assets/media/courses/authors/a-3.png') }}" alt="" class="author_img">
-                    <div class="author_text_block">
-                      <a href="{{ route('team.detail') }}" class="h6 mb-4p">Ava Johnson</a>
-                      <p>Web Designer</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="right__block">
-                  <div class="price_block mb-16">
-                    <div class="price_vector">
-                      <img src="{{ asset('frontend/assets/media/shapes/vector-group.png') }}" alt="">
-                    </div>
-                    <span class="h3 color-white">$45</span>
-                  </div>
-                  <a href="{{ route('course.detail') }}" class="educate-btn sm mx-xl-auto me-2"><span
-                      class="educate-btn__curve"></span>Buy Now</a>
-                </div>
-                <img src="{{ asset('frontend/assets/media/shapes/vector-1.png') }}" alt="" class="bottom_vector">
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="course__card mb-24">
-              <div class="course__card__icon">
-                <img src="{{ asset('frontend/assets/media/icons/figma.png') }}" alt="">
-              </div>
-              <div class="course__card__content">
-                <div class="left__block">
-                  <img src="{{ asset('frontend/assets/media/courses/tag-2.png') }}" alt="" class="course_tag">
-                  <h4 class="mb-4p"><a href="{{ route('course.detail') }}">Figma Course</a></h4>
-                  <p class="h6 mb-24">Graphics Design</p>
-                  <ul class="course_info p-0 mb-32">
-                    <li><i class="fal fa-presentation"></i>45 Videos</li>
-                    <li><i class="fal fa-clock"></i>05+ Hours</li>
-                  </ul>
-                  <div class="author_card">
-                    <img src="{{ asset('frontend/assets/media/courses/authors/a-4.png') }}" alt="" class="author_img">
-                    <div class="author_text_block">
-                      <a href="{{ route('team.detail') }}" class="h6 mb-4p">Emma Mitchell</a>
-                      <p>Ui Engineer</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="right__block">
-                  <div class="price_block mb-16">
-                    <div class="price_vector">
-                      <img src="{{ asset('frontend/assets/media/shapes/vector-group.png') }}" alt="">
-                    </div>
-                    <span class="h3 color-white">$45</span>
-                  </div>
-                  <a href="{{ route('course.detail') }}" class="educate-btn sm mx-xl-auto me-2"><span
-                      class="educate-btn__curve"></span>Buy Now</a>
-                </div>
-                <img src="{{ asset('frontend/assets/media/shapes/vector-1.png') }}" alt="" class="bottom_vector">
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="course__card mb-24">
-              <div class="course__card__icon">
-                <img src="{{ asset('frontend/assets/media/icons/ai2.png') }}" alt="">
-              </div>
-              <div class="course__card__content">
-                <div class="left__block">
-                  <img src="{{ asset('frontend/assets/media/courses/tag-1.png') }}" alt="" class="course_tag">
-                  <h4 class="mb-4p"><a href="{{ route('course.detail') }}">Illustrator Course</a></h4>
-                  <p class="h6 mb-24">Graphics Design</p>
-                  <ul class="course_info p-0 mb-32">
-                    <li><i class="fal fa-presentation"></i>45 Videos</li>
-                    <li><i class="fal fa-clock"></i>05+ Hours</li>
-                  </ul>
-                  <div class="author_card">
-                    <img src="{{ asset('frontend/assets/media/courses/authors/a-5.png') }}" alt="" class="author_img">
-                    <div class="author_text_block">
-                      <a href="{{ route('team.detail') }}" class="h6 mb-4p">Benny Martin</a>
-                      <p>Adobe Embassador</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="right__block">
-                  <div class="price_block mb-16">
-                    <div class="price_vector">
-                      <img src="{{ asset('frontend/assets/media/shapes/vector-group.png') }}" alt="">
-                    </div>
-                    <span class="h3 color-white">$45</span>
-                  </div>
-                  <a href="{{ route('course.detail') }}" class="educate-btn sm mx-xl-auto me-2"><span
-                      class="educate-btn__curve"></span>Buy Now</a>
-                </div>
-                <img src="{{ asset('frontend/assets/media/shapes/vector-1.png') }}" alt="" class="bottom_vector">
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="course__card mb-24">
-              <div class="course__card__icon">
-                <img src="{{ asset('frontend/assets/media/icons/ai3.png') }}" alt="">
-              </div>
-              <div class="course__card__content">
-                <div class="left__block">
-                  <img src="{{ asset('frontend/assets/media/courses/tag-2.png') }}" alt="" class="course_tag">
-                  <h4 class="mb-4p"><a href="{{ route('course.detail') }}">After Effects Course</a></h4>
-                  <p class="h6 mb-24">Graphics Design</p>
-                  <ul class="course_info p-0 mb-32">
-                    <li><i class="fal fa-presentation"></i>45 Videos</li>
-                    <li><i class="fal fa-clock"></i>05+ Hours</li>
-                  </ul>
-                  <div class="author_card">
-                    <img src="{{ asset('frontend/assets/media/courses/authors/a-6.png') }}" alt="" class="author_img">
-                    <div class="author_text_block">
-                      <a href="{{ route('team.detail') }}" class="h6 mb-4p">Miller Noah</a>
-                      <p>Senior Designer</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="right__block">
-                  <div class="price_block mb-16">
-                    <div class="price_vector">
-                      <img src="{{ asset('frontend/assets/media/shapes/vector-group.png') }}" alt="">
-                    </div>
-                    <span class="h3 color-white">$45</span>
-                  </div>
-                  <a href="{{ route('course.detail') }}" class="educate-btn sm mx-xl-auto me-2"><span
-                      class="educate-btn__curve"></span>Buy Now</a>
-                </div>
-                <img src="{{ asset('frontend/assets/media/shapes/vector-1.png') }}" alt="" class="bottom_vector">
-              </div>
-            </div>
-          </div>
-          <ul class="pagination">
-            <li class="page-item"><a href="#" class="page-link arrow" aria-label="next"><i
-                  class="far fa-chevron-left"></i></a></li>
-            <li class="page-item"><a class="page-link current" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a href="#" class="page-link arrow" aria-label="next"><i
-                  class="far fa-chevron-right"></i></a></li>
-          </ul>
+          @endforelse
         </div>
       </div>
     </section>
-    <!-- Courses Area End -->
 
 @endsection

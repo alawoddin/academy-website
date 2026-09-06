@@ -46,9 +46,9 @@
                                             <td>{{ Str::limit($item->price, 40) }}</td>
                                             <td>{{ Str::limit($item->author_name, 40) }}</td>
                                             <td>{{ Str::limit($item->author_role, 40) }}</td>
-                                            <td>@if($item->icon)<img src="{{ asset($item->icon) }}" style="width: 70px; height:40px; object-fit:cover">@endif</td>
-                                            <td>@if($item->tag_image)<img src="{{ asset($item->tag_image) }}" style="width: 70px; height:40px; object-fit:cover">@endif</td>
-                                            <td>@if($item->author_image)<img src="{{ asset($item->author_image) }}" style="width: 70px; height:40px; object-fit:cover">@endif</td>
+                                            <td><img src="{{ \App\Support\Media::url($item->icon, 'frontend/assets/media/icons/ps.png') }}" style="width: 70px; height:40px; object-fit:cover"></td>
+                                            <td><img src="{{ \App\Support\Media::url($item->tag_image, 'frontend/assets/media/courses/tag-1.png') }}" style="width: 70px; height:40px; object-fit:cover"></td>
+                                            <td><img src="{{ \App\Support\Media::url($item->author_image, 'frontend/assets/media/a2.png') }}" style="width: 70px; height:40px; object-fit:cover"></td>
                                             <td>
                                                 <a class="btn btn-sm btn-warning" href="{{ route('edit.course', $item->id) }}"><i class="bi bi-pencil"></i></a>
                                                 <a class="btn btn-sm btn-danger" id="delete" href="{{ route('delete.course', $item->id) }}"><i class="bi bi-trash"></i></a>

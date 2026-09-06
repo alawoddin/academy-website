@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\Backend\AboutCardController;
 use App\Http\Controllers\Backend\AboutController;
+use App\Models\Category;
+use App\Models\Course;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\BannerController;
 use App\Http\Controllers\Backend\BlogController;
@@ -51,8 +54,19 @@ Route::get('/about', function () {
     return view('frontend.pages.about');
 })->name('about');
 
-Route::get('/courses', function () {
-    return view('frontend.pages.courses');
+Route::get('/courses', function (Request $request) {
+    $query = Course::with('category')->latest();
+    if ($request->filled('category')) {
+        $query->where(function ($q) use ($request) {
+            $q->where('category_id', $request->category)
+                ->orWhere('category_name', $request->category);
+        });
+    }
+
+    return view('frontend.pages.courses', [
+        'courses' => $query->get(),
+        'categories' => Category::orderBy('title')->get(),
+    ]);
 })->name('courses');
 
 Route::get('/course-detail', function () {
