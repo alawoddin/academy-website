@@ -21,7 +21,7 @@
                 <div class="card-block">
                   <div class="testimonial_card">
                     <div class="testimonial_card_img_block">
-                      <img src="{{ $item->image ? asset($item->image) : asset('frontend/assets/media/users/Image.png') }}" alt="{{ $item->name }}" class="user_img">
+                      <img style="width: 300px; height:300px; object-fit: cover;" src="{{ $item->image ? asset($item->image) : asset('frontend/assets/media/users/Image.png') }}" alt="{{ $item->name }}" class="user_img">
                       <div class="quote_block"></div>
                     </div>
                     <div class="testimonial_card_content_block">
