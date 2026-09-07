@@ -46,10 +46,10 @@
               <div class="footer_widget">
                 <h5 class="medium-black mb-16">Contact Us</h5>
                 <ul class="unstyled list">
-                  <li class="mb-16"><i class="fal fa-map-marker-alt"></i>Pul-e-Surkh, Kabul, Afghanistan</li>
-                  <li class="mb-16"><a href="mailto:info@tawanatechnology.com"><i
-                        class="fal fa-envelope"></i>info@tawanatechnology.com</a></li>
-                  <li><a href="tel:+93788077685"><i class="fal fa-phone-alt"></i>+93 788077685</a></li>
+                  <li class="mb-16"><i class="fal fa-map-marker-alt"></i>Kabul, Afghanistan</li>
+                  <li class="mb-16"><a href="mailto:infokhedmat535@gmail.com"><i
+                        class="fal fa-envelope"></i>infokhedmat535@gmail.com</a></li>
+                  <li><a href="tel:+93788077685"><i class="fal fa-phone-alt"></i>+93 0744620492</a></li>
                 </ul>
               </div>
             </div>
