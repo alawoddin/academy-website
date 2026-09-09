@@ -39,7 +39,7 @@
                 </div>
                 <span class="h3 color-white">{{ $item->price }}</span>
               </div>
-              <a href="{{ url('/') }}#enroll" class="educate-btn sm mx-xl-auto me-2"><span
+              <a href="{{ route('course.detail', $item->id) }}" class="educate-btn sm mx-xl-auto me-2"><span
                   class="educate-btn__curve"></span>Buy Now</a>
             </div>
             <img src="{{ asset('frontend/assets/media/shapes/vector-1.png') }}" alt="" class="bottom_vector">

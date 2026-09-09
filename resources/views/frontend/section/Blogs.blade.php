@@ -24,7 +24,7 @@
                     <img style="width: 36px; height: 37px; object-fit: cover;" src="{{ $item->author_image ? asset($item->author_image) : asset('frontend/assets/media/users/u-1.png') }}" alt="{{ $item->author_name }}">
                     <h6 class="dark-gray">{{ $item->author_name }}</h6>
                   </div>
-                  <a href="{{ url('/') }}#blogs" class="h6 color-primary educate_link_btn">Read More<i
+                  <a href="{{ route('blog.detail', $item->id) }}" class="h6 color-primary educate_link_btn">Read More<i
                       class="far fa-chevron-right"></i></a>
                 </div>
               </div>

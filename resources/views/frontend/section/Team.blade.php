@@ -28,7 +28,7 @@
                       <li><i class="fal fa-clock"></i>{{ $item->hours }}</li>
                     </ul>
                     <p class="team_info_text mb-24">{{ $item->description }}</p>
-                    <a href="{{ url('/') }}#contact" class="educate-btn mx-auto"><span class="educate-btn__curve"></span>View
+                    <a href="{{ route('team.detail', $item->id) }}" class="educate-btn mx-auto"><span class="educate-btn__curve"></span>View
                       Detail</a>
                     <img src="{{ asset('frontend/assets/media/shapes/feture-bg-shape.png') }}" alt="" class="text_block_bg_shape">
                   </div>
