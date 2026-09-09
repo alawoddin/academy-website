@@ -82,6 +82,7 @@ class CourseController extends Controller
             'price' => $request->price,
             'author_name' => $request->author_name,
             'author_role' => $request->author_role,
+            'description' => $request->description,
         ];
 
         foreach (['icon', 'tag_image', 'author_image'] as $field) {

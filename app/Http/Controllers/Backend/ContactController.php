@@ -57,6 +57,8 @@ class ContactController extends Controller
             'title' => $request->title,
             'text' => $request->text,
             'phone' => $request->phone,
+            'address' => $request->address,
+            'email' => $request->email,
         ];
 
         $contact->update($data);

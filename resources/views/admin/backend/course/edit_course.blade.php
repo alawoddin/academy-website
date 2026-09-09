@@ -54,6 +54,10 @@
                                 <input type="text" name="author_role" class="form-control" value="{{ $course->author_role }}">
                             </div>
                             <div class="mb-3">
+                                <label class="form-label">Description</label>
+                                <textarea name="description" class="form-control" rows="4">{{ $course->description }}</textarea>
+                            </div>
+                            <div class="mb-3">
                                 <label class="form-label">Icon</label>
                                 <input type="file" name="icon" id="image_icon" class="form-control preview-image">
                             </div>

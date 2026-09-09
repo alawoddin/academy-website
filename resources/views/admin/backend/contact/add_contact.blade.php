@@ -27,6 +27,14 @@
                                 <label class="form-label">Phone</label>
                                 <input type="text" name="phone" class="form-control">
                             </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Address</label>
+                                <input type="text" name="address" class="form-control">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Email</label>
+                                <input type="email" name="email" class="form-control">
+                            </div>
 
                             </div>
                             <div class="d-flex justify-content-end">
