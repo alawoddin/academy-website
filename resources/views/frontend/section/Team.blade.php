@@ -21,7 +21,7 @@
                 <img src="{{ $item->image ? asset($item->image) : asset('frontend/assets/media/team/Card.png') }}" alt="{{ $item->name }}" class="team_img">
                 <div class="team__content_block">
                   <div class="team__text_block">
-                    <h5 class="mb-8"><a href="{{ url('/') }}#team">{{ $item->name }}</a></h5>
+                    <h5 class="mb-8"><a href="{{ route('team.detail', $item->id) }}">{{ $item->name }}</a></h5>
                     <ul class="team__info unstyled mb-16">
                       <li><i class="fas fa-star"></i>{{ $item->rating }}</li>
                       <li><i class="fal fa-graduation-cap"></i>{{ $item->subject }}</li>

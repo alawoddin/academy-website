@@ -47,7 +47,7 @@
               <div class="course__card__content">
                 <div class="left__block">
                   <img src="{{ \App\Support\Media::url($item->tag_image, 'frontend/assets/media/courses/tag-1.png') }}" alt="{{ $item->title }}" class="course_tag">
-                  <h4 class="mb-4p"><a href="{{ route('course.detail') }}">{{ $item->title }}</a></h4>
+                  <h4 class="mb-4p"><a href="{{ route('course.detail', $item->id) }}">{{ $item->title }}</a></h4>
                   <p class="h6 mb-24">{{ $item->category?->title ?? $item->category_name }}</p>
                   <ul class="course_info p-0 mb-32">
                     <li><i class="fal fa-presentation"></i>{{ $item->videos }}</li>
@@ -68,7 +68,7 @@
                     </div>
                     <span class="h3 color-white">{{ $item->price }}</span>
                   </div>
-                  <a href="{{ route('course.detail') }}" class="educate-btn sm mx-xl-auto me-2"><span
+                  <a href="{{ route('course.detail', $item->id) }}" class="educate-btn sm mx-xl-auto me-2"><span
                       class="educate-btn__curve"></span>Buy Now</a>
                 </div>
                 <img src="{{ asset('frontend/assets/media/shapes/vector-1.png') }}" alt="" class="bottom_vector">

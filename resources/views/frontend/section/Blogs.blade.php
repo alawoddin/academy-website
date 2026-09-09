@@ -17,7 +17,7 @@
                 <p class="date">{{ $item->date }}</p>
               </div>
               <div class="blog_card_text_block">
-                <h5 class="mb-8"><a class="blog_title" href="{{ url('/') }}#blogs">{{ $item->title }}</a></h5>
+                <h5 class="mb-8"><a class="blog_title" href="{{ route('blog.detail', $item->id) }}">{{ $item->title }}</a></h5>
                 <p class="mb-24">{{ $item->description }}</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="author">
