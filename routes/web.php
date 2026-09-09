@@ -2,21 +2,25 @@
 
 use App\Http\Controllers\Backend\AboutCardController;
 use App\Http\Controllers\Backend\AboutController;
-use App\Models\Category;
-use App\Models\Course;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\BannerController;
 use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\ContactController;
+use App\Http\Controllers\Backend\ContactMessageController;
 use App\Http\Controllers\Backend\CourseController;
 use App\Http\Controllers\Backend\DiscountController;
+use App\Http\Controllers\Backend\FaqController;
+use App\Http\Controllers\Backend\FaqMessageController;
 use App\Http\Controllers\Backend\FeatureController;
+use App\Http\Controllers\Backend\GalleryController;
 use App\Http\Controllers\Backend\InstructorController;
+use App\Http\Controllers\Backend\JoinApplicationController;
+use App\Http\Controllers\Backend\JoinController;
 use App\Http\Controllers\Backend\TeamController;
 use App\Http\Controllers\Backend\TestimonialController;
+use App\Http\Controllers\Frontend\PageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\IsAdmin;
 use App\Http\Middleware\IsUser;
@@ -50,80 +54,27 @@ Route::prefix('instructor')->middleware(['auth', IsUser::class])->group(function
 
 //End Instructor Route
 
-Route::get('/about', function () {
-    return view('frontend.pages.about');
-})->name('about');
-
-Route::get('/courses', function (Request $request) {
-    $query = Course::with('category')->latest();
-    if ($request->filled('category')) {
-        $query->where(function ($q) use ($request) {
-            $q->where('category_id', $request->category)
-                ->orWhere('category_name', $request->category);
-        });
-    }
-
-    return view('frontend.pages.courses', [
-        'courses' => $query->get(),
-        'categories' => Category::orderBy('title')->get(),
-    ]);
-})->name('courses');
-
-Route::get('/course-detail', function () {
-    return view('frontend.pages.course-detail');
-})->name('course.detail');
-
-Route::get('/blog', function () {
-    return view('frontend.pages.blog-grid');
-})->name('blog');
-
-Route::get('/blog-grid-left', function () {
-    return view('frontend.pages.blog-grid-left');
-})->name('blog.grid.left');
-
-Route::get('/blog-grid-right', function () {
-    return view('frontend.pages.blog-grid-right');
-})->name('blog.grid.right');
-
-Route::get('/blog-list-left', function () {
-    return view('frontend.pages.blog-list-left');
-})->name('blog.list.left');
-
-Route::get('/blog-list-right', function () {
-    return view('frontend.pages.blog-list-right');
-})->name('blog.list.right');
-
-Route::get('/blog-detail', function () {
-    return view('frontend.pages.blog-detail');
-})->name('blog.detail');
-
-Route::get('/team', function () {
-    return view('frontend.pages.team');
-})->name('team');
-
-Route::get('/team-detail', function () {
-    return view('frontend.pages.team-detail');
-})->name('team.detail');
-
-Route::get('/join', function () {
-    return view('frontend.pages.join');
-})->name('join');
-
-Route::get('/gallery', function () {
-    return view('frontend.pages.gallery');
-})->name('gallery');
-
-Route::get('/faq', function () {
-    return view('frontend.pages.faq');
-})->name('faq');
-
-Route::get('/contact', function () {
-    return view('frontend.pages.contact');
-})->name('contact');
-
-Route::get('/home-2', function () {
-    return view('frontend.pages.home-2');
-})->name('home.two');
+Route::controller(PageController::class)->group(function () {
+    Route::get('/about', 'about')->name('about');
+    Route::get('/courses', 'courses')->name('courses');
+    Route::get('/course-detail/{id?}', 'courseDetail')->name('course.detail');
+    Route::get('/blog', 'blog')->name('blog');
+    Route::get('/blog-grid-left', 'blogGridLeft')->name('blog.grid.left');
+    Route::get('/blog-grid-right', 'blogGridRight')->name('blog.grid.right');
+    Route::get('/blog-list-left', 'blogListLeft')->name('blog.list.left');
+    Route::get('/blog-list-right', 'blogListRight')->name('blog.list.right');
+    Route::get('/blog-detail/{id?}', 'blogDetail')->name('blog.detail');
+    Route::get('/team', 'team')->name('team');
+    Route::get('/team-detail/{id?}', 'teamDetail')->name('team.detail');
+    Route::get('/join', 'join')->name('join');
+    Route::post('/join', 'joinApply')->name('join.apply');
+    Route::get('/gallery', 'gallery')->name('gallery');
+    Route::get('/faq', 'faq')->name('faq');
+    Route::post('/faq', 'faqAsk')->name('faq.ask');
+    Route::get('/contact', 'contact')->name('contact');
+    Route::post('/contact', 'contactSend')->name('contact.send');
+    Route::get('/home-2', 'homeTwo')->name('home.two');
+});
 
 //End User Route
 
@@ -247,6 +198,48 @@ Route::prefix('admin')->middleware(['auth', IsAdmin::class])->group(function () 
         Route::get('/edit/contact/{id}', 'EditContact')->name('edit.contact');
         Route::post('/update/contact', 'UpdateContact')->name('update.contact');
         Route::get('/delete/contact/{id}', 'DeleteContact')->name('delete.contact');
+    });
+
+    Route::controller(FaqController::class)->group(function () {
+        Route::get('all/faq', 'AllFaq')->name('all.faq');
+        Route::get('/add/faq', 'AddFaq')->name('add.faq');
+        Route::post('/store/faq', 'StoreFaq')->name('store.faq');
+        Route::get('/edit/faq/{id}', 'EditFaq')->name('edit.faq');
+        Route::post('/update/faq', 'UpdateFaq')->name('update.faq');
+        Route::get('/delete/faq/{id}', 'DeleteFaq')->name('delete.faq');
+    });
+
+    Route::controller(GalleryController::class)->group(function () {
+        Route::get('all/gallery', 'AllGallery')->name('all.gallery');
+        Route::get('/add/gallery', 'AddGallery')->name('add.gallery');
+        Route::post('/store/gallery', 'StoreGallery')->name('store.gallery');
+        Route::get('/edit/gallery/{id}', 'EditGallery')->name('edit.gallery');
+        Route::post('/update/gallery', 'UpdateGallery')->name('update.gallery');
+        Route::get('/delete/gallery/{id}', 'DeleteGallery')->name('delete.gallery');
+    });
+
+    Route::controller(JoinController::class)->group(function () {
+        Route::get('all/join', 'AllJoin')->name('all.join');
+        Route::get('/add/join', 'AddJoin')->name('add.join');
+        Route::post('/store/join', 'StoreJoin')->name('store.join');
+        Route::get('/edit/join/{id}', 'EditJoin')->name('edit.join');
+        Route::post('/update/join', 'UpdateJoin')->name('update.join');
+        Route::get('/delete/join/{id}', 'DeleteJoin')->name('delete.join');
+    });
+
+    Route::controller(JoinApplicationController::class)->group(function () {
+        Route::get('all/join/application', 'AllJoinApplication')->name('all.join.application');
+        Route::get('/delete/join/application/{id}', 'DeleteJoinApplication')->name('delete.join.application');
+    });
+
+    Route::controller(ContactMessageController::class)->group(function () {
+        Route::get('all/contact/message', 'AllContactMessage')->name('all.contact.message');
+        Route::get('/delete/contact/message/{id}', 'DeleteContactMessage')->name('delete.contact.message');
+    });
+
+    Route::controller(FaqMessageController::class)->group(function () {
+        Route::get('all/faq/message', 'AllFaqMessage')->name('all.faq.message');
+        Route::get('/delete/faq/message/{id}', 'DeleteFaqMessage')->name('delete.faq.message');
     });
 });
 

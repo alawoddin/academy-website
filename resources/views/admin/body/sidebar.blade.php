@@ -84,6 +84,42 @@
                   <span class="menu-text">Contact</span>
                 </a>
               </li>
+              <li>
+                <a href="{{ route('all.faq') }}">
+                  <i class="bi bi-question-circle"></i>
+                  <span class="menu-text">FAQ's</span>
+                </a>
+              </li>
+              <li>
+                <a href="{{ route('all.gallery') }}">
+                  <i class="bi bi-images"></i>
+                  <span class="menu-text">Gallery</span>
+                </a>
+              </li>
+              <li>
+                <a href="{{ route('all.join') }}">
+                  <i class="bi bi-person-plus"></i>
+                  <span class="menu-text">Become Teacher</span>
+                </a>
+              </li>
+              <li>
+                <a href="{{ route('all.join.application') }}">
+                  <i class="bi bi-file-earmark-person"></i>
+                  <span class="menu-text">Teacher Applications</span>
+                </a>
+              </li>
+              <li>
+                <a href="{{ route('all.contact.message') }}">
+                  <i class="bi bi-envelope"></i>
+                  <span class="menu-text">Contact Messages</span>
+                </a>
+              </li>
+              <li>
+                <a href="{{ route('all.faq.message') }}">
+                  <i class="bi bi-chat-left-text"></i>
+                  <span class="menu-text">FAQ Questions</span>
+                </a>
+              </li>
               <li class="sidebar-title">
                 <h6 class="m-0 text-truncate fw-bold small">Pages</h6>
               </li>
