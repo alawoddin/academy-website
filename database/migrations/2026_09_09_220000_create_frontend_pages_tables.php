@@ -64,12 +64,18 @@ return new class extends Migration
         });
 
         Schema::table('contacts', function (Blueprint $table) {
-            $table->string('address')->nullable()->after('phone');
-            $table->string('email')->nullable()->after('address');
+            if (! Schema::hasColumn('contacts', 'address')) {
+                $table->string('address')->nullable()->after('phone');
+            }
+            if (! Schema::hasColumn('contacts', 'email')) {
+                $table->string('email')->nullable()->after('address');
+            }
         });
 
         Schema::table('courses', function (Blueprint $table) {
-            $table->text('description')->nullable()->after('author_role');
+            if (! Schema::hasColumn('courses', 'description')) {
+                $table->text('description')->nullable()->after('author_role');
+            }
         });
     }
 
