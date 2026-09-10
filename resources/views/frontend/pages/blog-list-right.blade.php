@@ -1,34 +1,29 @@
 @extends('frontend.dashboard')
 @section('frontend')
 
-        @include('frontend.pages.partials.page-banner', ['title' => 'Blog list'])
+        @include('frontend.pages.partials.page-banner', ['title' => 'Our Blog'])
 
-        <section class="py-60">
+        <section class="blog-listing py-60">
             <div class="container">
+                <div class="blog-listing__intro">
+                    <div class="heading">
+                        <h6 class="color-primary mb-8">–––– Latest News</h6>
+                        <h2>Latest News By Talented <span class="fm-sec">Authors!</span></h2>
+                    </div>
+                    <div class="blog-listing__count">
+                        <i class="fal fa-newspaper"></i>
+                        Showing {{ $blogs->count() }} posts
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-lg-8">
                         @forelse ($blogs as $item)
-                        <div class="blog_list_card mb-24">
-                            <div class="blog_list_card_img_block">
-                                <img src="{{ \App\Support\Media::url($item->image, 'frontend/assets/media/blog/bl-1.png') }}" alt="{{ $item->title }}">
-                            </div>
-                            <div class="blog_card_text_block">
-                                <div>
-                                    <p class="date mb-24">{{ $item->date }}</p>
-                                    <h4 class="mb-8"><a class="blog_title" href="{{ route('blog.detail', $item->id) }}">{{ $item->title }}</a></h4>
-                                    <p>{{ Str::limit($item->description, 120) }}</p>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="author">
-                                        <img src="{{ \App\Support\Media::url($item->author_image, 'frontend/assets/media/users/u-1.png') }}" alt="{{ $item->author_name }}">
-                                        <h6 class="dark-gray">{{ $item->author_name }}</h6>
-                                    </div>
-                                    <a href="{{ route('blog.detail', $item->id) }}" class="h6 color-primary educate_link_btn">Read More<i class="far fa-chevron-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
+                            @include('frontend.pages.partials.blog-list-card')
                         @empty
-                        <p class="text-center">No blogs found.</p>
+                        <div class="blogs-empty">
+                            <h4>No blogs found</h4>
+                            <p>Try another search or check back soon for new posts.</p>
+                        </div>
                         @endforelse
                     </div>
                     <div class="col-lg-4 mb-48 mb-lg-0">

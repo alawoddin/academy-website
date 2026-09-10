@@ -189,11 +189,21 @@ class PageController extends Controller
 
     private function blogData(): array
     {
-        $blogs = Blog::latest()->get();
+        $query = Blog::latest();
+        if (request()->filled('q')) {
+            $search = request('q');
+            $query->where(function ($inner) use ($search) {
+                $inner->where('title', 'like', '%'.$search.'%')
+                    ->orWhere('description', 'like', '%'.$search.'%')
+                    ->orWhere('author_name', 'like', '%'.$search.'%');
+            });
+        }
+
+        $blogs = $query->get();
 
         return [
             'blogs' => $blogs,
-            'popularBlogs' => $blogs->take(3),
+            'popularBlogs' => Blog::latest()->take(3)->get(),
         ];
     }
 }

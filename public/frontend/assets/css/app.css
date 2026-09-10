@@ -6569,6 +6569,9 @@ footer .copyright_row P {
   flex-direction: column;
   width: 100%;
 }
+.listing-blog-row__body .listing-blog-card__footer {
+  margin-top: auto;
+}
 .listing-blog-row__body .date {
   display: inline-flex;
   width: fit-content;
