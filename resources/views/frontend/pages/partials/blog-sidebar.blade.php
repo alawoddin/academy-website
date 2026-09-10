@@ -1,14 +1,14 @@
-<div class="sidebar">
-    <div class="sidebar_block mb-32">
-        <form action="{{ route('blog') }}" class="search_bar">
+<div class="sidebar blog-sidebar">
+    <div class="sidebar_block mb-24">
+        <form action="{{ route('blog') }}" method="GET" class="search_bar">
+            <input type="search" class="form-control" name="q" value="{{ request('q') }}" placeholder="Search here">
             <button type="submit"><i class="fal fa-search"></i></button>
-            <input type="search" class="form-control" name="q" placeholder="Search here">
         </form>
     </div>
-    <div class="sidebar_block mb-32">
+    <div class="sidebar_block">
         <h5 class="mb-16">Popular Blogs</h5>
         @forelse (($popularBlogs ?? collect()) as $popular)
-        <a href="{{ route('blog.detail', $popular->id) }}" class="sidebar_blog_card mb-24">
+        <a href="{{ route('blog.detail', $popular->id) }}" class="sidebar_blog_card {{ !$loop->last ? 'mb-16' : '' }}">
             <div class="img_block">
                 <img src="{{ \App\Support\Media::url($popular->image, 'frontend/assets/media/blog/sb.png') }}" alt="{{ $popular->title }}">
             </div>
@@ -18,7 +18,7 @@
             </div>
         </a>
         @empty
-        <p>No blogs yet.</p>
+        <p class="mb-0">No blogs yet.</p>
         @endforelse
     </div>
 </div>

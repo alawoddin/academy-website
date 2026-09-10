@@ -1,11 +1,11 @@
-<div class="listing-blog-card">
-    <div class="listing-blog-card__image">
-        <img src="{{ \App\Support\Media::url($item->image, 'frontend/assets/media/blog/b-1.png') }}" alt="{{ $item->title }}">
-        <p class="date">{{ $item->date }}</p>
+<div class="listing-blog-row">
+    <div class="listing-blog-row__image">
+        <img src="{{ \App\Support\Media::url($item->image, 'frontend/assets/media/blog/bl-1.png') }}" alt="{{ $item->title }}">
     </div>
-    <div class="listing-blog-card__body">
-        <h5><a href="{{ route('blog.detail', $item->id) }}">{{ $item->title }}</a></h5>
-        <p>{{ Str::limit($item->description, 110) }}</p>
+    <div class="listing-blog-row__body">
+        <span class="date">{{ $item->date }}</span>
+        <h4 class="mb-8"><a href="{{ route('blog.detail', $item->id) }}">{{ $item->title }}</a></h4>
+        <p>{{ Str::limit($item->description, 140) }}</p>
         <div class="listing-blog-card__footer">
             <div class="listing-blog-card__author">
                 <img src="{{ \App\Support\Media::url($item->author_image, 'frontend/assets/media/users/u-1.png') }}" alt="{{ $item->author_name }}">
