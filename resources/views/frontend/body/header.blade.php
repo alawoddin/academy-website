@@ -25,23 +25,9 @@
                     </ul>
                   </li>
                   <li class="dropdown">
-                    <a href="javascript:void(0);" class="{{ request()->routeIs('blog*') ? 'active' : '' }}">Blog</a>
-                    <ul class="sub-menu">
-                      <li class="dropdown">
-                        <a href="javascript:void(0);">Blog Grid</a>
-                        <ul class="sub-menu">
-                          <li><a href="{{ route('blog') }}">No Sidebar</a></li>
-                          <li><a href="{{ route('blog.grid.left') }}">Left Sidebar</a></li>
-                          <li><a href="{{ route('blog.grid.right') }}">Right Sidebar</a></li>
-                        </ul>
-                      </li>
-                      <li class="dropdown">
-                        <a href="javascript:void(0);">Blog List</a>
-                        <ul class="sub-menu">
-                          <li><a href="{{ route('blog.list.left') }}">Left Sidebar</a></li>
-                          <li><a href="{{ route('blog.list.right') }}">Right Sidebar</a></li>
-                        </ul>
-                      </li>
+                    <a href="{{ route('blog') }}" class="{{ request()->routeIs('blog*') ? 'active' : '' }}">Blog</a>
+                    <ul>
+                      <li><a href="{{ route('blog') }}">Blog</a></li>
                       <li><a href="{{ route('blog.detail') }}">Blog Detail</a></li>
                     </ul>
                   </li>
