@@ -34,9 +34,14 @@ class PageController extends Controller
             });
         }
 
+        $categories = Category::whereHas('courses')->orderBy('title')->get();
+        if ($categories->isEmpty()) {
+            $categories = Category::orderBy('title')->get();
+        }
+
         return view('frontend.pages.courses', [
             'courses' => $query->get(),
-            'categories' => Category::orderBy('title')->get(),
+            'categories' => $categories,
         ]);
     }
 
