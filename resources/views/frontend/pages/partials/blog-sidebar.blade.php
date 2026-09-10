@@ -1,7 +1,7 @@
 <div class="sidebar blog-sidebar">
     <div class="sidebar_block mb-24">
-        <form action="{{ route('blog') }}" method="GET" class="search_bar">
-            <input type="search" class="form-control" name="q" value="{{ request('q') }}" placeholder="Search here">
+        <form action="{{ route('blog') }}" method="GET" class="blog-search">
+            <input type="search" name="q" value="{{ request('q') }}" placeholder="Search blogs...">
             <button type="submit"><i class="fal fa-search"></i></button>
         </form>
     </div>
