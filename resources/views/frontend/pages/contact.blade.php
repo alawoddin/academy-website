@@ -68,11 +68,11 @@
                             </div>
                         </div>
                         <div class="col-lg-4">
-                            <a href="tel:{{ preg_replace('/\s+/', '', $contact?->phone ?? '+93788077685') }}" class="contact_link_block mb-48 mb-lg-0">
+                            <a href="tel:{{ preg_replace('/\s+/', '', $contact?->phone ?? '+93 0744620492') }}" class="contact_link_block mb-48 mb-lg-0">
                                 <div class="icon">
                                     <i class="fal fa-phone-alt"></i>
                                 </div>
-                                <span class="h6">{{ $contact?->phone ?? '+93 788077685' }}</span>
+                                <span class="h6">{{ $contact?->phone ?? '+93 0744620492' }}</span>
                             </a>
                         </div>
                         <div class="col-lg-4">
@@ -80,7 +80,7 @@
                                 <div class="icon">
                                     <i class="fal fa-envelope"></i>
                                 </div>
-                                <span class="h6">{{ $contact?->email ?? 'tawanatechnology.com' }}</span>
+                                <span class="h6">{{ $contact?->email ?? '.com' }}</span>
                             </a>
                         </div>
                     </div>
