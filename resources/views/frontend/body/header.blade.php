@@ -13,10 +13,8 @@
               <div class="main-menu__nav">
                 <ul class="main-menu__list">
                   <li class="dropdown">
-                    <a href="javascript:void(0);" class="{{ request()->is('/') || request()->routeIs('home.two') ? 'active' : '' }}">Home</a>
+                    <a href="{{ url('/') }}" class="">Home</a>
                     <ul>
-                      <li><a href="{{ url('/') }}">Home 1</a></li>
-                      <li><a href="{{ route('home.two') }}">Home 2</a></li>
                     </ul>
                   </li>
                   <li class="dropdown">
