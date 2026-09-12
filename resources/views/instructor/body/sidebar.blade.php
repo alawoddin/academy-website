@@ -58,6 +58,18 @@
                 </a>
               </li>
               <li>
+                <a href="{{ route('instructor.teacher') }}">
+                  <i class="bi bi-person-badge"></i>
+                  <span class="menu-text">Teacher Page</span>
+                </a>
+              </li>
+              <li>
+                <a href="{{ route('instructor.courses') }}">
+                  <i class="bi bi-journal-text"></i>
+                  <span class="menu-text">My Courses</span>
+                </a>
+              </li>
+              <li>
                 <a href="{{ route('instructor.change.password') }}">
                   <i class="bi bi-gear"></i>
                   <span class="menu-text">Account Settings</span>

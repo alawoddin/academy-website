@@ -25,6 +25,7 @@ class InstructorApprovalController extends Controller
     {
         $instructor = User::where('role', 'instructor')->findOrFail($id);
         $instructor->update(['status' => User::STATUS_APPROVED]);
+        $instructor->ensureTeam();
 
         return redirect()->route('all.instructor')->with([
             'message' => $instructor->name.' has been accepted. They can now login.',

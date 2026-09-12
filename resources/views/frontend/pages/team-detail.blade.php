@@ -13,6 +13,12 @@
                         <h2 class="mb-16">{{ $team?->name ?? 'Teacher' }}</h2>
                         <span class="h5 color-primary mb-16"><i class="fal fa-graduation-cap me-2"></i>{{ $team?->subject }}</span>
                         <p class="mb-16">{{ $team?->description }}</p>
+                        @if ($team?->experience)
+                        <div class="teacher-experience mb-16">
+                            <h5 class="mb-8">Experience</h5>
+                            <p class="mb-0">{{ $team->experience }}</p>
+                        </div>
+                        @endif
                         <div class="teacher_stats mb-16">
                             <div class="stats_block">
                                 <div class="d-flex justify-content-between align-items-center">
@@ -31,6 +37,36 @@
                             Touch</a>
                     </div>
                 </div>
+
+                @if ($team && $team->instructorCourses->isNotEmpty())
+                <div class="teacher-courses mt-48">
+                    <div class="heading mb-24">
+                        <h6 class="color-primary mb-8">–––– Courses</h6>
+                        <h2>Courses Taught By {{ $team->name }}</h2>
+                    </div>
+                    <div class="row g-4">
+                        @foreach ($team->instructorCourses as $course)
+                        <div class="col-lg-6">
+                            <div class="teacher-course-card">
+                                <div class="teacher-course-card__head">
+                                    <h4 class="mb-8">{{ $course->title }}</h4>
+                                    @if ($course->duration)
+                                        <span class="teacher-course-card__duration"><i class="fal fa-clock"></i>{{ $course->duration }}</span>
+                                    @endif
+                                </div>
+                                @if ($course->outlines->isNotEmpty())
+                                <ol class="teacher-course-card__outline">
+                                    @foreach ($course->outlines as $outline)
+                                        <li>{{ $outline->title }}</li>
+                                    @endforeach
+                                </ol>
+                                @endif
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+                @endif
             </div>
         </section>
 

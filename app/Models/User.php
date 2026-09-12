@@ -4,6 +4,8 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -52,6 +54,29 @@ class User extends Authenticatable
     public function isRejected(): bool
     {
         return $this->isInstructor() && $this->status === self::STATUS_REJECTED;
+    }
+
+    public function team(): HasOne
+    {
+        return $this->hasOne(Team::class);
+    }
+
+    public function instructorCourses(): HasMany
+    {
+        return $this->hasMany(InstructorCourse::class)->latest();
+    }
+
+    public function ensureTeam(): Team
+    {
+        $image = null;
+        if ($this->photo && is_file(public_path('upload/instructor_images/'.$this->photo))) {
+            $image = 'upload/instructor_images/'.$this->photo;
+        }
+
+        return $this->team()->firstOrCreate([], [
+            'name' => $this->name,
+            'image' => $image,
+        ]);
     }
 
     /**

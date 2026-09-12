@@ -17,6 +17,7 @@ use App\Http\Controllers\Backend\FeatureController;
 use App\Http\Controllers\Backend\GalleryController;
 use App\Http\Controllers\Backend\InstructorApprovalController;
 use App\Http\Controllers\Backend\InstructorController;
+use App\Http\Controllers\Backend\InstructorTeacherController;
 use App\Http\Controllers\Backend\JoinApplicationController;
 use App\Http\Controllers\Backend\JoinController;
 use App\Http\Controllers\Backend\TeamController;
@@ -59,6 +60,15 @@ Route::prefix('instructor')->middleware(['auth', IsUser::class])->group(function
     Route::post('/profile/store', [InstructorController::class, 'InstructorProfileStore'])->name('instructor.profile.store');
     Route::get('/change/password', [InstructorController::class, 'InstructorChangePassword'])->name('instructor.change.password');
     Route::post('/password/update', [InstructorController::class, 'InstructorPasswordUpdate'])->name('instructor.password.update');
+
+    Route::get('/teacher', [InstructorTeacherController::class, 'TeacherProfile'])->name('instructor.teacher');
+    Route::post('/teacher/store', [InstructorTeacherController::class, 'TeacherProfileStore'])->name('instructor.teacher.store');
+    Route::get('/courses', [InstructorTeacherController::class, 'AllCourse'])->name('instructor.courses');
+    Route::get('/course/add', [InstructorTeacherController::class, 'AddCourse'])->name('instructor.course.add');
+    Route::post('/course/store', [InstructorTeacherController::class, 'StoreCourse'])->name('instructor.course.store');
+    Route::get('/course/edit/{id}', [InstructorTeacherController::class, 'EditCourse'])->name('instructor.course.edit');
+    Route::post('/course/update', [InstructorTeacherController::class, 'UpdateCourse'])->name('instructor.course.update');
+    Route::get('/course/delete/{id}', [InstructorTeacherController::class, 'DeleteCourse'])->name('instructor.course.delete');
 });
 
 //End Instructor Route

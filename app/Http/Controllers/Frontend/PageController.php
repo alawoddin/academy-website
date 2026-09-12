@@ -95,7 +95,8 @@ class PageController extends Controller
 
     public function teamDetail($id = null)
     {
-        $team = $id ? Team::findOrFail($id) : Team::latest()->first();
+        $query = Team::with(['instructorCourses.outlines']);
+        $team = $id ? $query->findOrFail($id) : $query->latest()->first();
 
         return view('frontend.pages.team-detail', compact('team'));
     }

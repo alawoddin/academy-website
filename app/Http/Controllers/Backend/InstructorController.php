@@ -70,6 +70,10 @@ class InstructorController extends Controller
 
         $data->save();
 
+        if ($data->team) {
+            $data->team->update(['name' => $data->name]);
+        }
+
         $notification = array(
             'message' => 'Instructor Profile Updated Successfully',
             'alert-type' => 'success'
