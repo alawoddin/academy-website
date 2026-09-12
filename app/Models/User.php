@@ -68,12 +68,23 @@ class User extends Authenticatable
 
     public function ensureTeam(): Team
     {
+        if ($this->team) {
+            return $this->team;
+        }
+
+        $existing = Team::whereNull('user_id')->where('name', $this->name)->first();
+        if ($existing) {
+            $existing->update(['user_id' => $this->id]);
+
+            return $existing->fresh();
+        }
+
         $image = null;
         if ($this->photo && is_file(public_path('upload/instructor_images/'.$this->photo))) {
             $image = 'upload/instructor_images/'.$this->photo;
         }
 
-        return $this->team()->firstOrCreate([], [
+        return $this->team()->create([
             'name' => $this->name,
             'image' => $image,
         ]);

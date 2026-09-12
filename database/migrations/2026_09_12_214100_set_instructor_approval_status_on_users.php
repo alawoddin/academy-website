@@ -18,7 +18,7 @@ return new class extends Migration
 
         DB::table('users')
             ->where('role', 'instructor')
-            ->whereIn('status', ['1', 1, ''])
+            ->where('status', '1')
             ->update(['status' => 'approved']);
     }
 
