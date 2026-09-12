@@ -49,6 +49,16 @@ class LoginRequest extends FormRequest
             ]);
         }
 
+        $user = Auth::user();
+
+        if ($user && $user->isRejected()) {
+            Auth::logout();
+
+            throw ValidationException::withMessages([
+                'email' => 'Your instructor account has been rejected. You cannot login.',
+            ]);
+        }
+
         RateLimiter::clear($this->throttleKey());
     }
 

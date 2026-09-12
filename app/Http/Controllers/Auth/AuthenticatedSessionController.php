@@ -39,6 +39,13 @@ class AuthenticatedSessionController extends Controller
             return redirect()->intended(route('admin.dashboard'))->with($notification);
         }
 
+        if ($user->isPending()) {
+            return redirect()->route('instructor.pending')->with([
+                'message' => 'Your account is waiting for admin approval.',
+                'alert-type' => 'warning',
+            ]);
+        }
+
         $notification = array(
             'message' => 'Instructor Login Successfully',
             'alert-type' => 'success'

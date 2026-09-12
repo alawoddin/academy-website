@@ -41,12 +41,16 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'role' => 'instructor',
+            'status' => User::STATUS_PENDING,
         ]);
 
         event(new Registered($user));
 
         Auth::login($user);
 
-        return redirect(route('instructor.dashboard', absolute: false));
+        return redirect(route('instructor.pending', absolute: false))->with([
+            'message' => 'Your registration was sent to the admin. Please wait for approval.',
+            'alert-type' => 'info',
+        ]);
     }
 }

@@ -19,6 +19,12 @@ class User extends Authenticatable
      */
     protected $guarded = [];
 
+    public const STATUS_PENDING = 'pending';
+
+    public const STATUS_APPROVED = 'approved';
+
+    public const STATUS_REJECTED = 'rejected';
+
     public function isAdmin(): bool
     {
         return $this->role === 'admin';
@@ -27,6 +33,25 @@ class User extends Authenticatable
     public function isInstructor(): bool
     {
         return $this->role === 'instructor';
+    }
+
+    public function isApproved(): bool
+    {
+        if ($this->isAdmin()) {
+            return true;
+        }
+
+        return in_array((string) $this->status, [self::STATUS_APPROVED, '1'], true);
+    }
+
+    public function isPending(): bool
+    {
+        return $this->isInstructor() && $this->status === self::STATUS_PENDING;
+    }
+
+    public function isRejected(): bool
+    {
+        return $this->isInstructor() && $this->status === self::STATUS_REJECTED;
     }
 
     /**
