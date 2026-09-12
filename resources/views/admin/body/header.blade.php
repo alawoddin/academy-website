@@ -19,17 +19,18 @@
         <!-- App brand starts -->
         <div class="app-brand d-flex align-items-center p-2">
 
-          <!-- Default screen starts -->
-          <a href="index-2.html" class="d-lg-flex d-none">
-            <img src="assets/images/logo.svg" class="logo" alt="Bootstrap Gallery">
+           <!-- Default screen starts -->
+          <a href="#" class="d-lg-flex d-none">
+            <img src="{{ asset('backend/assets/images/logo.svg') }}" class="logo" alt="Khedmat">
           </a>
           <!-- Default screen end -->
 
           <!-- Logo sm starts -->
-          <a href="index-2.html" class="d-lg-none">
-            <img src="assets/images/logo-sm.svg" class="logo-sm" alt="Bootstrap Gallery">
+          <a href="#" class="d-lg-none">
+            <img src="{{ asset('backend/assets/images/logo-sm.svg') }}" class="logo-sm" alt="Khedmat">
           </a>
           <!-- Logo sm end -->
+
 
         </div>
         <!-- App brand ends -->
