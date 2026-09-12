@@ -16,5 +16,5 @@ test('new users can register', function () {
     ]);
 
     $this->assertAuthenticated();
-    $response->assertRedirect(route('instructor.dashboard', absolute: false));
+    $response->assertRedirect(route('instructor.pending', absolute: false));
 });

@@ -109,6 +109,15 @@
                 </a>
               </li>
               <li>
+                <a href="{{ route('all.instructor') }}">
+                  <i class="bi bi-person-check"></i>
+                  <span class="menu-text">Instructor Requests</span>
+                  @if (($pendingInstructorCount ?? 0) > 0)
+                    <span class="badge bg-primary ms-2">{{ $pendingInstructorCount }}</span>
+                  @endif
+                </a>
+              </li>
+              <li>
                 <a href="{{ route('all.contact.message') }}">
                   <i class="bi bi-envelope"></i>
                   <span class="menu-text">Contact Messages</span>

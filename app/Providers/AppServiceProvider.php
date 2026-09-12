@@ -14,6 +14,7 @@ use App\Models\Discount;
 use App\Models\Feature;
 use App\Models\Team;
 use App\Models\Testimonial;
+use App\Models\User;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -80,6 +81,12 @@ class AppServiceProvider extends ServiceProvider
 
         View::composer('frontend.section.Contact', function ($view) {
             $view->with('contact', $this->safeFirst(Contact::class, 'contacts'));
+        });
+
+        View::composer('admin.body.sidebar', function ($view) {
+            $view->with('pendingInstructorCount', $this->safeQuery(function () {
+                return User::where('role', 'instructor')->where('status', User::STATUS_PENDING)->count();
+            }, 0));
         });
     }
 

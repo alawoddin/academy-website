@@ -15,6 +15,7 @@ use App\Http\Controllers\Backend\FaqController;
 use App\Http\Controllers\Backend\FaqMessageController;
 use App\Http\Controllers\Backend\FeatureController;
 use App\Http\Controllers\Backend\GalleryController;
+use App\Http\Controllers\Backend\InstructorApprovalController;
 use App\Http\Controllers\Backend\InstructorController;
 use App\Http\Controllers\Backend\JoinApplicationController;
 use App\Http\Controllers\Backend\JoinController;
@@ -35,11 +36,19 @@ Route::middleware('auth')->get('/dashboard', function () {
         return redirect()->route('admin.dashboard');
     }
 
+    if (auth()->user()->isPending()) {
+        return redirect()->route('instructor.pending');
+    }
+
     return redirect()->route('instructor.dashboard');
 })->name('dashboard');
 
 ///Instructor Route
 Route::prefix('instructor')->middleware(['auth', IsUser::class])->group(function () {
+
+    Route::get('/pending', function () {
+        return view('auth.pending');
+    })->name('instructor.pending');
 
     Route::get('/dashboard', function () {
         return view('instructor.index');
@@ -230,6 +239,12 @@ Route::prefix('admin')->middleware(['auth', IsAdmin::class])->group(function () 
     Route::controller(JoinApplicationController::class)->group(function () {
         Route::get('all/join/application', 'AllJoinApplication')->name('all.join.application');
         Route::get('/delete/join/application/{id}', 'DeleteJoinApplication')->name('delete.join.application');
+    });
+
+    Route::controller(InstructorApprovalController::class)->group(function () {
+        Route::get('all/instructor', 'AllInstructor')->name('all.instructor');
+        Route::get('/accept/instructor/{id}', 'AcceptInstructor')->name('accept.instructor');
+        Route::get('/reject/instructor/{id}', 'RejectInstructor')->name('reject.instructor');
     });
 
     Route::controller(ContactMessageController::class)->group(function () {
