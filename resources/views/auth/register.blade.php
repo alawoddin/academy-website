@@ -13,7 +13,8 @@
                                     <h2 class="mb-48">Create an account</h2>
                                 </div>
                                 <div class="text-center">
-                                    <h6 class="mb-24">Sign up with your email address</h6>
+                                    <h6 class="mb-8">Sign up with your email address</h6>
+                                    <p class="mb-24">After registration, wait for admin approval before you can start work.</p>
                                 </div>
                                 @if ($errors->any())
                                     <div class="mb-24">
