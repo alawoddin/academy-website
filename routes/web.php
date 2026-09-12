@@ -253,6 +253,8 @@ Route::prefix('admin')->middleware(['auth', IsAdmin::class])->group(function () 
 
     Route::controller(InstructorApprovalController::class)->group(function () {
         Route::get('all/instructor', 'AllInstructor')->name('all.instructor');
+        Route::get('/add/instructor', 'AddInstructor')->name('add.instructor');
+        Route::post('/store/instructor', 'StoreInstructor')->name('store.instructor');
         Route::get('/accept/instructor/{id}', 'AcceptInstructor')->name('accept.instructor');
         Route::get('/reject/instructor/{id}', 'RejectInstructor')->name('reject.instructor');
     });

@@ -13,7 +13,7 @@
                     <h5 class="card-title">Public Teacher Information</h5>
                 </div>
                 <div class="card-body">
-                    <p class="text-muted">This information is shown on the frontend teacher detail page.</p>
+                    <p class="text-muted">Add your own photo, description, and experience. This is shown on the frontend teacher detail page.</p>
                     <form action="{{ route('instructor.teacher.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row g-3">

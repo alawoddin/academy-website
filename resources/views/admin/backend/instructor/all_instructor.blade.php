@@ -2,7 +2,8 @@
 @section('admin')
     <div class="app-container">
         <div class="app-hero-header d-flex align-items-center">
-            <h3 class="m-0">Instructor Requests</h3>
+            <h3 class="m-0">Instructors</h3>
+            <a href="{{ route('add.instructor') }}" class="btn btn-primary ms-auto">Add Instructor</a>
         </div>
         <div class="app-body">
             <div class="row">

@@ -111,7 +111,7 @@
             <li>
                 <a href="{{ route('all.instructor') }}">
                     <i class="bi bi-person-check"></i>
-                    <span class="menu-text">Instructor Requests</span>
+                    <span class="menu-text">Instructors</span>
                     @if (($pendingInstructorCount ?? 0) > 0)
                         <span class="badge bg-primary ms-2">{{ $pendingInstructorCount }}</span>
                     @endif

@@ -65,6 +65,36 @@ test('admin can accept a pending instructor', function () {
     ])->assertRedirect(route('instructor.dashboard', absolute: false));
 });
 
+test('admin can add an instructor who can login and manage their own teacher page', function () {
+    $admin = User::factory()->create(['role' => 'admin', 'status' => User::STATUS_APPROVED]);
+
+    $this->actingAs($admin)
+        ->post(route('store.instructor'), [
+            'name' => 'Elyas Khan',
+            'email' => 'elyas.khan@example.com',
+            'phone' => '0799000000',
+            'password' => 'password',
+            'password_confirmation' => 'password',
+        ])
+        ->assertRedirect(route('all.instructor'));
+
+    $instructor = User::where('email', 'elyas.khan@example.com')->first();
+
+    expect($instructor)->not->toBeNull()
+        ->and($instructor->isApproved())->toBeTrue()
+        ->and($instructor->team)->not->toBeNull();
+
+    $this->post('/logout');
+
+    $this->post('/login', [
+        'email' => 'elyas.khan@example.com',
+        'password' => 'password',
+    ])->assertRedirect(route('instructor.dashboard', absolute: false));
+
+    $this->get(route('instructor.teacher'))->assertOk()->assertSee('Public Teacher Information');
+    $this->get(route('instructor.courses'))->assertOk()->assertSee('Course Outlines');
+});
+
 test('admin can reject a pending instructor', function () {
     $admin = User::factory()->create(['role' => 'admin', 'status' => User::STATUS_APPROVED]);
     $instructor = User::factory()->pending()->create();
