@@ -34,7 +34,11 @@
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Description</label>
-                                <textarea name="description" class="form-control" rows="3">{{ $team->description }}</textarea>
+                                <textarea name="description" class="form-control" rows="3">{{ old('description', $team->description) }}</textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Experience</label>
+                                <textarea name="experience" class="form-control" rows="4" placeholder="Teaching experience, background, and qualifications">{{ old('experience', $team->experience) }}</textarea>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Image</label>

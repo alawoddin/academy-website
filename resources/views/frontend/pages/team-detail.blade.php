@@ -16,7 +16,7 @@
                         @if ($team?->experience)
                         <div class="teacher-experience mb-16">
                             <h5 class="mb-8">Experience</h5>
-                            <p class="mb-0">{{ $team->experience }}</p>
+                            <p class="mb-0" style="white-space: pre-line;">{{ $team->experience }}</p>
                         </div>
                         @endif
                         <div class="teacher_stats mb-16">
@@ -38,12 +38,29 @@
                     </div>
                 </div>
 
-                @if ($team && $team->instructorCourses->isNotEmpty())
+                @if ($team && ($team->instructorCourses->isNotEmpty() || $teacherCourses->isNotEmpty()))
                 <div class="teacher-courses mt-48">
                     <div class="heading mb-24">
                         <h6 class="color-primary mb-8">–––– Courses</h6>
                         <h2>Courses Taught By {{ $team->name }}</h2>
                     </div>
+                    @if ($teacherCourses->isNotEmpty())
+                    <div class="row g-4 mb-32">
+                        @foreach ($teacherCourses as $pricedCourse)
+                        <div class="col-md-6 col-lg-4">
+                            <div class="teacher-course-card">
+                                <div class="teacher-course-card__head">
+                                    <h4 class="mb-8"><a href="{{ route('course.detail', $pricedCourse->id) }}">{{ $pricedCourse->title }}</a></h4>
+                                    <span class="teacher-course-card__duration">{{ $pricedCourse->price }}</span>
+                                </div>
+                                <p class="mb-8">{{ $pricedCourse->category?->title ?? $pricedCourse->category_name }}</p>
+                                <p class="mb-0"><i class="fal fa-clock me-1"></i>{{ $pricedCourse->hours }} · {{ $pricedCourse->videos }}</p>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                    @endif
+                    @if ($team->instructorCourses->isNotEmpty())
                     <div class="row g-4">
                         @foreach ($team->instructorCourses as $course)
                         <div class="col-lg-6">
@@ -65,6 +82,7 @@
                         </div>
                         @endforeach
                     </div>
+                    @endif
                 </div>
                 @endif
             </div>

@@ -102,7 +102,14 @@ class PageController extends Controller
         $query = Team::with(['instructorCourses.outlines']);
         $team = $id ? $query->findOrFail($id) : $query->latest()->first();
 
-        return view('frontend.pages.team-detail', compact('team'));
+        $teacherCourses = $team
+            ? Course::with('category')
+                ->where('author_name', $team->name)
+                ->latest()
+                ->get()
+            : collect();
+
+        return view('frontend.pages.team-detail', compact('team', 'teacherCourses'));
     }
 
     public function join()

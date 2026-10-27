@@ -29,7 +29,8 @@ class TeamController extends Controller
             'subject' => 'nullable|string|max:150',
             'rating' => 'nullable|string|max:20',
             'hours' => 'nullable|string|max:50',
-            'description' => 'nullable|string|max:2000',
+            'description' => 'nullable|string|max:5000',
+            'experience' => 'nullable|string|max:5000',
             'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:4096',
         ]);
 
@@ -39,6 +40,7 @@ class TeamController extends Controller
             'rating' => $request->rating,
             'hours' => $request->hours,
             'description' => $request->description,
+            'experience' => $request->experience,
         ];
 
         if ($request->file('image')) {
@@ -79,7 +81,8 @@ class TeamController extends Controller
             'subject' => 'nullable|string|max:150',
             'rating' => 'nullable|string|max:20',
             'hours' => 'nullable|string|max:50',
-            'description' => 'nullable|string|max:2000',
+            'description' => 'nullable|string|max:5000',
+            'experience' => 'nullable|string|max:5000',
             'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:4096',
         ]);
 
@@ -89,6 +92,7 @@ class TeamController extends Controller
             'rating' => $request->rating,
             'hours' => $request->hours,
             'description' => $request->description,
+            'experience' => $request->experience,
         ];
 
         if ($request->file('image')) {
