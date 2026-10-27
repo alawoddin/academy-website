@@ -25,7 +25,7 @@
                 <li><i class="fal fa-clock"></i>{{ $item->hours }}</li>
               </ul>
               <div class="author_card">
-                <img src="{{ \App\Support\Media::url($item->author_image, 'frontend/assets/media/a2.png') }}" style="height: 74px; width: 74px;" alt="{{ $item->author_name }}" class="author_img">
+                <img src="{{ \App\Support\Media::url($item->author_image, 'frontend/assets/media/a2.png') }}" alt="{{ $item->author_name }}" class="author_img">
                 <div class="author_text_block">
                   <a href="{{ url('/') }}#team" class="h6 mb-4p">{{ $item->author_name }}</a>
                   <p>{{ $item->author_role }}</p>
@@ -60,7 +60,7 @@
                 <li><i class="fal fa-clock"></i>05+ Hours</li>
               </ul>
               <div class="author_card">
-                <img src="{{ asset('frontend/assets/media/a2.png') }}" style="height: 74px; width: 74px;" alt="Alawoddin Khedmat" class="author_img">
+                <img src="{{ asset('frontend/assets/media/a2.png') }}" alt="Alawoddin Khedmat" class="author_img">
                 <div class="author_text_block">
                   <a href="{{ url('/') }}#team" class="h6 mb-4p">Alawoddin Khedmat</a>
                   <p>Adobe Embassador</p>

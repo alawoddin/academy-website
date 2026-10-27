@@ -33,6 +33,6 @@
             <img src="{{ asset('frontend/assets/media/shapes/target-2.png') }}" alt="Target" class="target_icon">
           </div>
         </div>
-        <img src="{{ ($banner && $banner->main_image) ? asset($banner->main_image) : asset('frontend/assets/media/banners/hero-banner-1/main-img.png') }}" alt="Academy students" class="main-img">
+        <img src="{{ \App\Support\Media::url($banner?->main_image, 'frontend/assets/media/banners/hero-banner-1/main-img.png') }}" alt="Academy students" class="main-img">
       </div>
     </section>

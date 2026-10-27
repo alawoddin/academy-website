@@ -92,6 +92,7 @@ Route::controller(PageController::class)->group(function () {
     Route::post('/faq', 'faqAsk')->name('faq.ask');
     Route::get('/contact', 'contact')->name('contact');
     Route::post('/contact', 'contactSend')->name('contact.send');
+    Route::post('/enroll', 'enrollSend')->name('enroll.send');
     Route::get('/home-2', 'homeTwo')->name('home.two');
 });
 

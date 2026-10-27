@@ -140,6 +140,9 @@
                     break;
             }
         @endif
+        @if ($errors->any())
+            toastr.error(@json($errors->first()));
+        @endif
     </script>
 
 

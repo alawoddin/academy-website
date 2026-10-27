@@ -18,7 +18,7 @@
             @forelse ($teams as $item)
             <div class="team__card mb-24">
               <div class="team__img_block">
-                <img src="{{ $item->image ? asset($item->image) : asset('frontend/assets/media/team/Card.png') }}" alt="{{ $item->name }}" class="team_img">
+                <img src="{{ \App\Support\Media::url($item->image, 'frontend/assets/media/team/Card.png') }}" alt="{{ $item->name }}" class="team_img">
                 <div class="team__content_block">
                   <div class="team__text_block">
                     <h5 class="mb-8"><a href="{{ route('team.detail', $item->id) }}">{{ $item->name }}</a></h5>

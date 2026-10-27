@@ -18,27 +18,28 @@
                             <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label class="form-label">Title</label>
-                                <input type="text" name="title" class="form-control" value="{{ $banner->title }}">
+                                <input type="text" name="title" class="form-control" value="{{ old('title', $banner->title) }}">
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label class="form-label">Subtitle</label>
-                                <input type="text" name="subtitle" class="form-control" value="{{ $banner->subtitle }}">
+                                <input type="text" name="subtitle" class="form-control" value="{{ old('subtitle', $banner->subtitle) }}">
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label class="form-label">Button Text</label>
-                                <input type="text" name="button_text" class="form-control" value="{{ $banner->button_text }}">
+                                <input type="text" name="button_text" class="form-control" value="{{ old('button_text', $banner->button_text) }}">
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label class="form-label">Video Url</label>
-                                <input type="text" name="video_url" class="form-control" value="{{ $banner->video_url }}">
+                                <input type="url" name="video_url" class="form-control @error('video_url') is-invalid @enderror" value="{{ old('video_url', $banner->video_url) }}" placeholder="https://www.youtube.com/watch?v=...">
+                                @error('video_url')<span class="text-danger">{{ $message }}</span>@enderror
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label class="form-label">Feature Title</label>
-                                <input type="text" name="feature_title" class="form-control" value="{{ $banner->feature_title }}">
+                                <input type="text" name="feature_title" class="form-control" value="{{ old('feature_title', $banner->feature_title) }}">
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label class="form-label">Feature Text</label>
-                                <input type="text" name="feature_text" class="form-control" value="{{ $banner->feature_text }}">
+                                <input type="text" name="feature_text" class="form-control" value="{{ old('feature_text', $banner->feature_text) }}">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Main Image</label>

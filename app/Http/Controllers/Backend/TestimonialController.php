@@ -24,6 +24,13 @@ class TestimonialController extends Controller
 
     public function StoreTestimonial(Request $request)
     {
+        $request->validate([
+            'name' => 'required|string|max:150',
+            'rating' => 'nullable|integer|min:1|max:5',
+            'review' => 'nullable|string|max:2000',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:4096',
+        ]);
+
         $data = [
             'name' => $request->name,
             'rating' => $request->rating,
@@ -62,6 +69,13 @@ class TestimonialController extends Controller
     public function UpdateTestimonial(Request $request)
     {
         $testimonial = Testimonial::findOrFail($request->id);
+
+        $request->validate([
+            'name' => 'required|string|max:150',
+            'rating' => 'nullable|integer|min:1|max:5',
+            'review' => 'nullable|string|max:2000',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:4096',
+        ]);
 
         $data = [
             'name' => $request->name,

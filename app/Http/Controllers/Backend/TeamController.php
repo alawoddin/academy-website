@@ -24,6 +24,15 @@ class TeamController extends Controller
 
     public function StoreTeam(Request $request)
     {
+        $request->validate([
+            'name' => 'required|string|max:150',
+            'subject' => 'nullable|string|max:150',
+            'rating' => 'nullable|string|max:20',
+            'hours' => 'nullable|string|max:50',
+            'description' => 'nullable|string|max:2000',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:4096',
+        ]);
+
         $data = [
             'name' => $request->name,
             'subject' => $request->subject,
@@ -64,6 +73,15 @@ class TeamController extends Controller
     public function UpdateTeam(Request $request)
     {
         $team = Team::findOrFail($request->id);
+
+        $request->validate([
+            'name' => 'required|string|max:150',
+            'subject' => 'nullable|string|max:150',
+            'rating' => 'nullable|string|max:20',
+            'hours' => 'nullable|string|max:50',
+            'description' => 'nullable|string|max:2000',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:4096',
+        ]);
 
         $data = [
             'name' => $request->name,

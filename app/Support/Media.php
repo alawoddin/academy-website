@@ -3,6 +3,8 @@
 namespace App\Support;
 
 use Illuminate\Http\UploadedFile;
+use Intervention\Image\Drivers\Gd\Driver;
+use Intervention\Image\ImageManager;
 
 class Media
 {
@@ -15,7 +17,7 @@ class Media
         return asset($fallback);
     }
 
-    public static function store(?UploadedFile $file, string $folder): ?string
+    public static function store(?UploadedFile $file, string $folder, ?int $maxWidth = 1200): ?string
     {
         if (! $file) {
             return null;
@@ -27,6 +29,22 @@ class Media
         }
 
         $name = hexdec(uniqid()).'.'.$file->getClientOriginalExtension();
+        $destination = $dir.'/'.$name;
+
+        $mime = (string) $file->getMimeType();
+        if ($maxWidth && str_starts_with($mime, 'image/')) {
+            try {
+                $manager = new ImageManager(new Driver());
+                $manager->read($file->getRealPath())
+                    ->scaleDown(width: $maxWidth)
+                    ->save($destination);
+
+                return $folder.'/'.$name;
+            } catch (\Throwable) {
+                // Fall through to a plain move if image processing fails.
+            }
+        }
+
         $file->move($dir, $name);
 
         return $folder.'/'.$name;

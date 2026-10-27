@@ -28,9 +28,13 @@ class PageController extends Controller
     {
         $query = Course::with('category')->latest();
         if ($request->filled('category')) {
-            $query->where(function ($q) use ($request) {
-                $q->where('category_id', $request->category)
-                    ->orWhere('category_name', $request->category);
+            $category = $request->category;
+            $query->where(function ($q) use ($category) {
+                if (is_numeric($category)) {
+                    $q->where('category_id', $category);
+                } else {
+                    $q->where('category_name', $category);
+                }
             });
         }
 
@@ -179,6 +183,36 @@ class PageController extends Controller
 
         return back()->with([
             'message' => 'Your message has been sent successfully',
+            'alert-type' => 'success',
+        ]);
+    }
+
+    public function enrollSend(Request $request)
+    {
+        $data = $request->validate([
+            'name' => 'required|string|max:150',
+            'email' => 'required|email|max:150',
+            'phone' => 'required|string|max:50',
+            'course' => 'required|string|max:200',
+            'message' => 'nullable|string|max:2000',
+        ]);
+
+        $parts = preg_split('/\s+/', trim($data['name']), 2);
+        $body = 'Phone: '.$data['phone']."\nCourse: ".$data['course'];
+        if (! empty($data['message'])) {
+            $body .= "\n\n".$data['message'];
+        }
+
+        ContactMessage::create([
+            'first_name' => $parts[0] ?? $data['name'],
+            'last_name' => $parts[1] ?? '',
+            'email' => $data['email'],
+            'subject' => 'Course Enrollment: '.$data['course'],
+            'message' => $body,
+        ]);
+
+        return back()->with([
+            'message' => 'Your enrollment request has been sent successfully',
             'alert-type' => 'success',
         ]);
     }

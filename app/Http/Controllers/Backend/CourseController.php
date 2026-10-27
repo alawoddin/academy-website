@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Course;
 use App\Support\Media;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class CourseController extends Controller
 {
@@ -26,6 +27,24 @@ class CourseController extends Controller
 
     public function StoreCourse(Request $request)
     {
+        $request->validate([
+            'title' => 'required|string|max:255|unique:courses,title',
+            'category_id' => 'nullable|exists:categories,id',
+            'category_name' => 'nullable|string|max:255',
+            'new_category' => 'nullable|string|max:255',
+            'videos' => 'nullable|string|max:100',
+            'hours' => 'nullable|string|max:50',
+            'price' => 'nullable|string|max:50',
+            'author_name' => 'nullable|string|max:150',
+            'author_role' => 'nullable|string|max:150',
+            'description' => 'nullable|string|max:5000',
+            'icon' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:4096',
+            'tag_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:4096',
+            'author_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:4096',
+        ], [
+            'title.unique' => 'A course with this title already exists.',
+        ]);
+
         $category = $this->resolveCategory($request);
 
         $data = [
@@ -41,7 +60,7 @@ class CourseController extends Controller
         ];
 
         foreach (['icon', 'tag_image', 'author_image'] as $field) {
-            if ($path = Media::store($request->file($field), 'upload/course')) {
+            if ($path = Media::store($request->file($field), 'upload/course', 800)) {
                 $data[$field] = $path;
             }
         }
@@ -71,6 +90,30 @@ class CourseController extends Controller
     public function UpdateCourse(Request $request)
     {
         $course = Course::findOrFail($request->id);
+
+        $request->validate([
+            'title' => [
+                'required',
+                'string',
+                'max:255',
+                Rule::unique('courses', 'title')->ignore($course->id),
+            ],
+            'category_id' => 'nullable|exists:categories,id',
+            'category_name' => 'nullable|string|max:255',
+            'new_category' => 'nullable|string|max:255',
+            'videos' => 'nullable|string|max:100',
+            'hours' => 'nullable|string|max:50',
+            'price' => 'nullable|string|max:50',
+            'author_name' => 'nullable|string|max:150',
+            'author_role' => 'nullable|string|max:150',
+            'description' => 'nullable|string|max:5000',
+            'icon' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:4096',
+            'tag_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:4096',
+            'author_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:4096',
+        ], [
+            'title.unique' => 'A course with this title already exists.',
+        ]);
+
         $category = $this->resolveCategory($request);
 
         $data = [
@@ -86,7 +129,7 @@ class CourseController extends Controller
         ];
 
         foreach (['icon', 'tag_image', 'author_image'] as $field) {
-            if ($path = Media::store($request->file($field), 'upload/course')) {
+            if ($path = Media::store($request->file($field), 'upload/course', 800)) {
                 $data[$field] = $path;
             }
         }

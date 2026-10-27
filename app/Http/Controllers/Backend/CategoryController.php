@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Support\Media;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class CategoryController extends Controller
 {
@@ -23,13 +24,18 @@ class CategoryController extends Controller
 
     public function StoreCategory(Request $request)
     {
-        $data = [
-            'title' => $request->title,
-            'description' => $request->description,
-            'rating' => $request->rating,
-            'teachers' => $request->teachers,
-            'hours' => $request->hours,
-        ];
+        $data = $request->validate([
+            'title' => 'required|string|max:255|unique:categories,title',
+            'description' => 'nullable|string|max:2000',
+            'rating' => 'nullable|string|max:20',
+            'teachers' => 'nullable|string|max:100',
+            'hours' => 'nullable|string|max:50',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:4096',
+        ], [
+            'title.unique' => 'This category title already exists. Please use a different name.',
+        ]);
+
+        unset($data['image']);
 
         if ($path = Media::store($request->file('image'), 'upload/category')) {
             $data['image'] = $path;
@@ -55,13 +61,23 @@ class CategoryController extends Controller
     {
         $category = Category::findOrFail($request->id);
 
-        $data = [
-            'title' => $request->title,
-            'description' => $request->description,
-            'rating' => $request->rating,
-            'teachers' => $request->teachers,
-            'hours' => $request->hours,
-        ];
+        $data = $request->validate([
+            'title' => [
+                'required',
+                'string',
+                'max:255',
+                Rule::unique('categories', 'title')->ignore($category->id),
+            ],
+            'description' => 'nullable|string|max:2000',
+            'rating' => 'nullable|string|max:20',
+            'teachers' => 'nullable|string|max:100',
+            'hours' => 'nullable|string|max:50',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:4096',
+        ], [
+            'title.unique' => 'This category title already exists. Please use a different name.',
+        ]);
+
+        unset($data['image']);
 
         if ($path = Media::store($request->file('image'), 'upload/category')) {
             $data['image'] = $path;

@@ -7,6 +7,7 @@ use App\Models\Banner;
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class BannerController extends Controller
 {
@@ -24,14 +25,25 @@ class BannerController extends Controller
 
     public function StoreBanner(Request $request)
     {
-        $data = [
-            'title' => $request->title,
-            'subtitle' => $request->subtitle,
-            'button_text' => $request->button_text,
-            'video_url' => $request->video_url,
-            'feature_title' => $request->feature_title,
-            'feature_text' => $request->feature_text,
-        ];
+        $data = $request->validate([
+            'title' => 'nullable|string|max:255',
+            'subtitle' => 'nullable|string|max:255',
+            'button_text' => 'nullable|string|max:100',
+            'video_url' => [
+                'nullable',
+                'url',
+                'max:500',
+                Rule::unique('banners', 'video_url'),
+            ],
+            'feature_title' => 'nullable|string|max:255',
+            'feature_text' => 'nullable|string|max:255',
+            'main_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:4096',
+        ], [
+            'video_url.url' => 'Please enter a valid video link (e.g. https://youtube.com/...).',
+            'video_url.unique' => 'This video link is already used on another banner.',
+        ]);
+
+        unset($data['main_image']);
 
         if ($request->file('main_image')) {
             $dir = public_path('upload/banner');
@@ -66,14 +78,25 @@ class BannerController extends Controller
     {
         $banner = Banner::findOrFail($request->id);
 
-        $data = [
-            'title' => $request->title,
-            'subtitle' => $request->subtitle,
-            'button_text' => $request->button_text,
-            'video_url' => $request->video_url,
-            'feature_title' => $request->feature_title,
-            'feature_text' => $request->feature_text,
-        ];
+        $data = $request->validate([
+            'title' => 'nullable|string|max:255',
+            'subtitle' => 'nullable|string|max:255',
+            'button_text' => 'nullable|string|max:100',
+            'video_url' => [
+                'nullable',
+                'url',
+                'max:500',
+                Rule::unique('banners', 'video_url')->ignore($banner->id),
+            ],
+            'feature_title' => 'nullable|string|max:255',
+            'feature_text' => 'nullable|string|max:255',
+            'main_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:4096',
+        ], [
+            'video_url.url' => 'Please enter a valid video link (e.g. https://youtube.com/...).',
+            'video_url.unique' => 'This video link is already used on another banner.',
+        ]);
+
+        unset($data['main_image']);
 
         if ($request->file('main_image')) {
             $dir = public_path('upload/banner');

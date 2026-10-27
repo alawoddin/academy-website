@@ -41,41 +41,45 @@
             <div class="join_form_block enroll-form-card wow fadeInRight" data-wow-delay="300ms">
               <h4 class="mb-8">Enrollment Form</h4>
               <p class="mb-24">Fill in your information to enroll in a course.</p>
-              <form id="enroll-form" class="enroll-form">
+              <form action="{{ route('enroll.send') }}" method="POST" id="enroll-form" class="enroll-form">
+                @csrf
                 <div class="row">
                   <div class="col-md-6 mb-16">
-                    <input type="text" name="name" class="form-control p_lg" placeholder="Full Name" required>
+                    <input type="text" name="name" class="form-control p_lg @error('name') is-invalid @enderror" placeholder="Full Name" value="{{ old('name') }}" required>
+                    @error('name')<span class="text-danger small">{{ $message }}</span>@enderror
                   </div>
                   <div class="col-md-6 mb-16">
-                    <input type="email" name="email" class="form-control p_lg" placeholder="Email Address" required>
+                    <input type="email" name="email" class="form-control p_lg @error('email') is-invalid @enderror" placeholder="Email Address" value="{{ old('email') }}" required>
+                    @error('email')<span class="text-danger small">{{ $message }}</span>@enderror
                   </div>
                   <div class="col-md-6 mb-16">
-                    <input type="tel" name="phone" class="form-control p_lg" placeholder="Phone Number" required>
+                    <input type="tel" name="phone" class="form-control p_lg @error('phone') is-invalid @enderror" placeholder="Phone Number" value="{{ old('phone') }}" required>
+                    @error('phone')<span class="text-danger small">{{ $message }}</span>@enderror
                   </div>
                   <div class="col-md-6 mb-16">
-                    <select name="course" class="form-control p_lg" required>
-                      <option value="" disabled selected>Select Course</option>
+                    <select name="course" class="form-control p_lg @error('course') is-invalid @enderror" required>
+                      <option value="" disabled {{ old('course') ? '' : 'selected' }}>Select Course</option>
                       @forelse ($courses as $course)
-                        <option value="{{ $course->title }}">{{ $course->title }}</option>
+                        <option value="{{ $course->title }}" @selected(old('course') === $course->title)>{{ $course->title }}</option>
                       @empty
-                        <option value="photoshop">Photoshop Course</option>
-                        <option value="artificial-intelligence">Artificial Intelligence</option>
-                        <option value="web-design">Web Design Course</option>
-                        <option value="figma">Figma Course</option>
-                        <option value="illustrator">Illustrator Course</option>
-                        <option value="after-effects">After Effects Course</option>
+                        <option value="Photoshop Course" @selected(old('course') === 'Photoshop Course')>Photoshop Course</option>
+                        <option value="Artificial Intelligence" @selected(old('course') === 'Artificial Intelligence')>Artificial Intelligence</option>
+                        <option value="Web Design Course" @selected(old('course') === 'Web Design Course')>Web Design Course</option>
+                        <option value="Figma Course" @selected(old('course') === 'Figma Course')>Figma Course</option>
+                        <option value="Illustrator Course" @selected(old('course') === 'Illustrator Course')>Illustrator Course</option>
+                        <option value="After Effects Course" @selected(old('course') === 'After Effects Course')>After Effects Course</option>
                       @endforelse
                     </select>
+                    @error('course')<span class="text-danger small">{{ $message }}</span>@enderror
                   </div>
                   <div class="col-12 mb-24">
-                    <textarea name="message" class="form-control p_lg" rows="4" placeholder="Your Message (optional)"></textarea>
+                    <textarea name="message" class="form-control p_lg" rows="4" placeholder="Your Message (optional)">{{ old('message') }}</textarea>
                   </div>
                   <div class="col-12">
                     <button type="submit" class="educate-btn"><span class="educate-btn__curve"></span>Enroll Now</button>
                   </div>
                 </div>
               </form>
-              <p class="enroll-success" id="enroll-success" hidden>Thank you! Your enrollment request has been received.</p>
             </div>
           </div>
         </div>

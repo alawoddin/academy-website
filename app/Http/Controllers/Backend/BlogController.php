@@ -7,6 +7,7 @@ use App\Models\Blog;
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class BlogController extends Controller
 {
@@ -24,6 +25,17 @@ class BlogController extends Controller
 
     public function StoreBlog(Request $request)
     {
+        $request->validate([
+            'title' => 'required|string|max:255|unique:blogs,title',
+            'description' => 'nullable|string|max:5000',
+            'date' => 'nullable|string|max:50',
+            'author_name' => 'nullable|string|max:150',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:4096',
+            'author_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:4096',
+        ], [
+            'title.unique' => 'A blog with this title already exists.',
+        ]);
+
         $data = [
             'title' => $request->title,
             'description' => $request->description,
@@ -75,6 +87,22 @@ class BlogController extends Controller
     public function UpdateBlog(Request $request)
     {
         $blog = Blog::findOrFail($request->id);
+
+        $request->validate([
+            'title' => [
+                'required',
+                'string',
+                'max:255',
+                Rule::unique('blogs', 'title')->ignore($blog->id),
+            ],
+            'description' => 'nullable|string|max:5000',
+            'date' => 'nullable|string|max:50',
+            'author_name' => 'nullable|string|max:150',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:4096',
+            'author_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:4096',
+        ], [
+            'title.unique' => 'A blog with this title already exists.',
+        ]);
 
         $data = [
             'title' => $request->title,

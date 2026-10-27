@@ -21,16 +21,25 @@ class FeatureController extends Controller
     }
 
     public function StoreFeature(Request $request) {
-        
-     if ($request->file('feturebg')) {
+        $request->validate([
+            'featureicon' => 'required|string|max:100',
+            'featurecontent' => 'required|string|max:255',
+            'featureinfo' => 'nullable|string|max:500',
+            'feturebg' => 'required|image|mimes:jpg,jpeg,png,webp|max:4096',
+        ]);
+
+        $dir = public_path('upload/feature');
+        if (! is_dir($dir)) {
+            mkdir($dir, 0755, true);
+        }
+
         $image = $request->file('feturebg');
         $manager = new ImageManager(new Driver());
         $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
         $img = $manager->read($image);
-        $img->resize(300,64)->save(public_path('upload/feature/'.$name_gen));
+        $img->cover(300, 64)->save($dir.'/'.$name_gen);
         $save_url = 'upload/feature/'.$name_gen;
 
-        // Create Feature
         Feature::create([
             'featureicon'  => $request->featureicon,
             'featurecontent' => $request->featurecontent,
@@ -38,16 +47,12 @@ class FeatureController extends Controller
             'feturebg' => $save_url
         ]);
 
-        
-    }
+        $notification = [
+            'message' => 'Feature Inserted Successfully',
+            'alert-type' => 'success'
+        ];
 
-    $notification = [
-        'message' => 'Feature Inserted Successfully',
-        'alert-type' => 'success'
-    ];
-
-    return redirect()->route('all.feature')->with($notification);
-
+        return redirect()->route('all.feature')->with($notification);
     }
 
     public function EditFeature($id) {
@@ -59,15 +64,25 @@ class FeatureController extends Controller
         $feature_id = $request->id;
         $feature = Feature::findOrFail($feature_id);
 
+        $request->validate([
+            'featureicon' => 'required|string|max:100',
+            'featurecontent' => 'required|string|max:255',
+            'featureinfo' => 'nullable|string|max:500',
+            'feturebg' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:4096',
+        ]);
+
         if ($request->file('feturebg')) {
+            $dir = public_path('upload/feature');
+            if (! is_dir($dir)) {
+                mkdir($dir, 0755, true);
+            }
             $image = $request->file('feturebg');
             $manager = new ImageManager(new Driver());
             $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
             $img = $manager->read($image);
-            $img->resize(300,64)->save(public_path('upload/feature/'.$name_gen));
+            $img->cover(300, 64)->save($dir.'/'.$name_gen);
             $save_url = 'upload/feature/'.$name_gen;
 
-            // Update Feature
             $feature->update([
                 'featureicon'  => $request->featureicon,
                 'featurecontent' => $request->featurecontent,
@@ -75,7 +90,6 @@ class FeatureController extends Controller
                 'feturebg' => $save_url
             ]);
         } else {
-            // Update Feature without changing the image
             $feature->update([
                 'featureicon'  => $request->featureicon,
                 'featurecontent' => $request->featurecontent,

@@ -23,6 +23,11 @@ class GalleryController extends Controller
 
     public function StoreGallery(Request $request)
     {
+        $request->validate([
+            'caption' => 'nullable|string|max:255',
+            'image' => 'required|image|mimes:jpg,jpeg,png,webp|max:4096',
+        ]);
+
         Gallery::create([
             'caption' => $request->caption,
             'image' => Media::store($request->file('image'), 'upload/gallery'),
@@ -44,6 +49,12 @@ class GalleryController extends Controller
     public function UpdateGallery(Request $request)
     {
         $gallery = Gallery::findOrFail($request->id);
+
+        $request->validate([
+            'caption' => 'nullable|string|max:255',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:4096',
+        ]);
+
         $data = ['caption' => $request->caption];
 
         if ($path = Media::store($request->file('image'), 'upload/gallery')) {

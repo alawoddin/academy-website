@@ -17,7 +17,8 @@
                             <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label class="form-label">Title</label>
-                                <input type="text" name="title" class="form-control">
+                                <input type="text" name="title" class="form-control @error('title') is-invalid @enderror" value="{{ old('title') }}" required>
+                                @error('title')<span class="text-danger">{{ $message }}</span>@enderror
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Description</label>
